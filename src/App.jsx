@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import ChatbotWidget from './components/ChatbotWidget'
 
 const navigation = [
   {
@@ -53,73 +54,66 @@ const services = [
   {
     title: 'Well Child Visits',
     description:
-      'Preventive care, screenings, and age-based support for children through every phase of growth.',
+      'Routine checkups, developmental screenings, school and sports forms, and preventive care to support healthy growth at every stage.',
     image: '/images/care-well-child-visits-300x150-1.jpg',
   },
   {
     title: 'Immunizations',
     description:
-      'Current vaccine guidance and scheduling support in a format that is easy for families to understand.',
+      'Recommended childhood and adolescent vaccines, clear guidance for families, and help keeping immunization records up to date.',
     image: '/images/care-immunization-300x150-1.jpg',
   },
   {
     title: 'Health Issues & Illnesses',
     description:
-      'Trusted pediatric care for common illnesses, acute concerns, and the questions that come with them.',
+      'Evaluation and treatment for common illnesses, minor injuries, fevers, respiratory concerns, rashes, and other everyday pediatric needs.',
     image: '/images/care-health-issues-300x150-1.jpg',
   },
   {
     title: 'Safety',
     description:
-      'Practical guidance that helps parents navigate school, home, activity, and seasonal safety with confidence.',
+      'Practical support for injury prevention, seasonal concerns, school health questions, and guidance that helps families feel prepared.',
     image: '/images/care-safety-300x150-1.jpg',
   },
 ]
 
 const locations = [
   {
+    city: 'St. Paul',
+    hours: 'Mon-Fri, 8:00 AM - 5:00 PM',
+    detail:
+      'The St. Paul office continues to support families with established pediatric care and everyday visit needs.',
+    image: '/images/st-paul-closing-april-30-2026-1-300x200.jpg',
+  },
+  {
     city: 'Maplewood',
     hours: 'Mon-Fri, 8:00 AM - 5:00 PM',
     detail:
-      'A convenient east metro location designed around easy scheduling and quick family access.',
+      'Our Maplewood office offers convenient east metro access for well visits, illness care, and ongoing pediatric support.',
     image: '/images/location-maplewood-300x200-1.jpg',
   },
   {
     city: 'Eagan',
     hours: 'Mon-Fri, 8:00 AM - 5:00 PM',
     detail:
-      'South metro pediatric care with a calm office experience and strong continuity of care.',
+      'The Eagan office provides south metro families with trusted pediatric care in a convenient and welcoming setting.',
     image: '/images/location_eagan-300x200-1.jpg',
-  },
-  {
-    city: 'Telemedicine',
-    hours: 'Available for select visit types',
-    detail:
-      'Video visits help families stay connected to care when an in-person appointment is not the best fit.',
-    image: '/images/slide-telemedicine-400x300-1-300x225.jpg',
   },
 ]
 
 const news = [
   {
-    category: 'Location Update',
-    title: 'St. Paul location closing April 30',
-    summary:
-      'Important transition information can be surfaced more clearly in a modern card-based news layout.',
-    image: '/images/st-paul-closing-april-30-2026-1-300x200.jpg',
-  },
-  {
     category: 'Care Team',
     title: 'Dr. Christopher Ordonez spotlight',
     summary:
-      'Provider highlights can feel more personal with photography, short bios, and stronger visual hierarchy.',
+      'Learn more about Dr. Christopher Ordonez and the physicians who support care for children and young adults.',
     image: '/images/dr-christopher-ordonez-400x300.jpg',
   },
   {
     category: 'Community Care',
     title: 'iHealth collaborative support',
     summary:
-      'Partnerships and family resources can live in a flexible editorial section without cluttering the homepage.',
+      'Community partnerships and family resources help extend care beyond the clinic and into everyday life.',
     image: '/images/i-health-768x576.jpg',
   },
 ]
@@ -128,6 +122,42 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const closeMenu = () => setIsMenuOpen(false)
+
+  useEffect(() => {
+    const elements = Array.from(document.querySelectorAll('.reveal-on-scroll'))
+    if (!elements.length) return
+
+    const revealVisibleElements = () => {
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight
+
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect()
+        const entersViewport = rect.top <= viewportHeight * 0.86
+        const remainsOnScreen = rect.bottom >= viewportHeight * 0.14
+
+        if (entersViewport && remainsOnScreen) {
+          element.classList.add('is-visible')
+        } else {
+          element.classList.remove('is-visible')
+        }
+      })
+    }
+
+    const runRevealCheck = () => {
+      window.requestAnimationFrame(revealVisibleElements)
+    }
+
+    runRevealCheck()
+    window.addEventListener('load', runRevealCheck)
+    window.addEventListener('resize', runRevealCheck)
+    window.addEventListener('scroll', runRevealCheck, { passive: true })
+
+    return () => {
+      window.removeEventListener('load', runRevealCheck)
+      window.removeEventListener('resize', runRevealCheck)
+      window.removeEventListener('scroll', runRevealCheck)
+    }
+  }, [])
 
   return (
     <div className="page-shell">
@@ -304,68 +334,175 @@ function App() {
       </section>
 
       <main>
-        <section className="section intro-section shell" id="intro">
-          <div className="section-heading intro-heading">
-            <h2>
-              Exceptional Health Care from Experienced Pediatricians in St. Paul,
-              Eagan, and Maplewood, Minnesota
-            </h2>
-            <p>
-              At Pediatric & Young Adult Medicine, our team of board-certified
-              physicians, nurse practitioners and support staff are dedicated to
-              providing the highest-level of quality care for infants, children,
-              and young adults. We have been a cornerstone in Minnesota&apos;s
-              pediatric community since 1980.
-            </p>
-            <p>
-              As your child&apos;s primary care clinic, we believe in delivering and
-              coordinating all your child&apos;s healthcare needs. We are a
-              privately-owned clinic who focuses on the individualized needs of
-              your family. Our providers offer comprehensive pediatric care
-              including acute care services, urgent medical care, routine well
-              checkup visits, and immunizations in an intimate family-focused
-              care setting. We strive to create a comfortable and safe
-              environment for your family. Our goal is to put family back in
-              healthcare.
-            </p>
+        <section className="section intro-section section-contrast" id="intro">
+          <div className="shell intro-panel reveal-on-scroll">
+            <div className="intro-top">
+              <div className="intro-heading">
+                <p className="eyebrow intro-eyebrow">Our Approach</p>
+                <h2>
+                  Exceptional Health Care from Experienced Pediatricians in St. Paul,
+                  Eagan, and Maplewood, Minnesota
+                </h2>
+              </div>
+
+              <div className="intro-visual">
+                <img
+                  src="/images/family_photo.png"
+                  alt="Family smiling together"
+                />
+                <div className="intro-visual-overlay">
+                  <span className="intro-stat-kicker">since</span>
+                  <span className="intro-stat-number">1980</span>
+                  <span className="intro-stat-label">serving Minnesota families</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="intro-body">
+              <div className="intro-copy">
+                <p>
+                  At Pediatric & Young Adult Medicine, our team of board-certified
+                  physicians, nurse practitioners and support staff are dedicated to
+                  providing the highest-level of quality care for infants, children,
+                  and young adults. We have been a cornerstone in Minnesota&apos;s
+                  pediatric community since 1980.
+                </p>
+                <p>
+                  As your child&apos;s primary care clinic, we believe in delivering and
+                  coordinating all your child&apos;s healthcare needs. We are a
+                  privately-owned clinic who focuses on the individualized needs of
+                  your family. Our providers offer comprehensive pediatric care
+                  including acute care services, urgent medical care, routine well
+                  checkup visits, and immunizations in an intimate family-focused
+                  care setting. We strive to create a comfortable and safe
+                  environment for your family. Our goal is to put family back in
+                  healthcare.
+                </p>
+              </div>
+
+              <aside className="intro-aside">
+                <div className="intro-highlight">
+                  <h3>Family-first care</h3>
+                  <p>
+                    Personalized support, coordinated visits, and a welcoming
+                    environment designed around long-term trust.
+                  </p>
+                </div>
+              </aside>
+            </div>
           </div>
         </section>
 
-        <section className="section shell" id="services">
-          <div className="section-heading">
+        <section className="section shell section-soft" id="services">
+          <div className="section-heading reveal-on-scroll">
             <p className="eyebrow">Services</p>
-            <h2>Same PYAM homepage components, now structured to scan quickly.</h2>
+            <h2>Everyday pediatric care</h2>
             <p>
-              The main care categories are still here, but now they are supported by
-              imagery, consistent spacing, and card layouts that adapt smoothly from
-              desktop to mobile.
+              From preventive visits to treatment for common illnesses, our clinic
+              offers care designed to support children, teens, and young adults
+              through every stage of growth.
             </p>
           </div>
 
-          <div className="service-grid">
+          <div className="service-grid reveal-on-scroll">
             {services.map((service) => (
               <article className="service-card" key={service.title}>
                 <img src={service.image} alt={service.title} />
                 <div className="service-body">
-                  <p className="service-index">Care Area</p>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
+                  <a href="/" className="section-link">
+                    Learn more
+                  </a>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="section section-band" id="telemedicine">
-          <div className="shell telemedicine-layout">
-            <div className="telemedicine-copy">
-              <p className="eyebrow">Telemedicine</p>
-              <h2>Virtual visits should feel like part of the same care journey.</h2>
+        <section className="section shell section-soft-alt" id="refill-line">
+          <div className="refill-banner reveal-on-scroll">
+            <div className="refill-copy">
+              <p className="eyebrow">Prescription Refill Line</p>
+              <h2>Prescription refill support.</h2>
               <p>
-                Instead of hiding telemedicine in a small homepage block, this design
-                gives it a dedicated section with imagery, context, and a mobile-friendly
-                call to action.
+                Call the refill line for medication requests and follow the recorded
+                instructions so your child&apos;s provider has the information needed to
+                process the request.
               </p>
+              <div className="refill-details">
+                <div className="refill-detail">
+                  <span className="refill-label">Refill line</span>
+                  <a href="tel:6512566796">(651) 256-6796</a>
+                </div>
+                <div className="refill-detail">
+                  <a className="button button-secondary" href="/">
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="refill-media">
+              <img
+                src="/images/prescription-hotline-phone-24.png"
+                alt="Prescription hotline phone"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="section shell section-soft-alt" id="locations">
+          <div className="section-heading reveal-on-scroll">
+            <p className="eyebrow">Locations & Access</p>
+            <h2>Family-friendly Convenient Healthcare</h2>
+            <p>
+              Accommodating the needs of today’s busy families is important to us. Our clinics are centrally located, offering family-friendly expertise at four convenient locations: St. Paul, Eagan, and Maplewood, 
+              Minnesota. We offer flexible scheduling in the day, and on Saturdays, coordinated visits for multiple children within a family as well as online telemedicine appointments. 
+              Same day appointments with your provider, urgent care, 24-hour phone service and online services are key factors in providing consistent and easy health care for all children.
+            </p>
+          </div>
+
+          <div className="location-grid reveal-on-scroll">
+            {locations.map((location) => (
+              <article className="location-card" key={location.city}>
+                <img src={location.image} alt={location.city} />
+                <div className="location-body">
+                  <p className="location-hours">{location.hours}</p>
+                  <h3>{location.city}</h3>
+                  <p>{location.detail}</p>
+                  <a href="/" className="section-link">
+                    View office details
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section shell section-soft">
+          <div className="section-heading reveal-on-scroll" id="telemedicine">
+            <p className="eyebrow">Telemedicine</p>
+            <h2>Telemedicine offers families another convenient way to connect with care.</h2>
+            <p>
+              For select visit types, virtual appointments make it easier to check
+              in with your provider, review treatment plans, and get answers
+              without always needing to come into the office.
+            </p>
+          </div>
+
+          <div className="telemedicine-layout telemedicine-card reveal-on-scroll">
+            <div className="telemedicine-copy">
+              <div className="telemedicine-points">
+                <div className="telemedicine-point">
+                  <strong>Convenient access</strong>
+                  <span>Video visits are available for select follow-ups and care needs.</span>
+                </div>
+                <div className="telemedicine-point">
+                  <strong>Flexible care option</strong>
+                  <span>Connect by phone, tablet, or computer from the comfort of home.</span>
+                </div>
+              </div>
               <div className="telemedicine-actions">
                 <a className="button button-primary" href="/">
                   Book a Telemedicine Visit
@@ -381,79 +518,24 @@ function App() {
                 src="/images/slide-telemed-lt-blue.jpg"
                 alt="Laptop showing a telemedicine visit"
               />
+              <div className="telemedicine-badge">
+                <span className="telemedicine-badge-label">Available</span>
+                <strong>Virtual care for select appointment types</strong>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="section shell" id="locations">
-          <div className="section-heading">
-            <p className="eyebrow">Locations & Access</p>
-            <h2>Location cards are more visual, and much easier to use on mobile.</h2>
-          </div>
-
-          <div className="location-grid">
-            {locations.map((location) => (
-              <article className="location-card" key={location.city}>
-                <img src={location.image} alt={location.city} />
-                <div className="location-body">
-                  <p className="location-hours">{location.hours}</p>
-                  <h3>{location.city}</h3>
-                  <p>{location.detail}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section shell">
-          <div className="feature-panel">
-            <div className="feature-copy">
-              <p className="eyebrow">Resource Pathways</p>
-              <h2>Support information can be organized around what families need most.</h2>
-              <p>
-                Refill support, portal access, forms, location updates, and community
-                resources no longer need to compete for attention in one crowded zone.
-              </p>
-            </div>
-
-            <div className="feature-stack">
-              <article className="feature-card">
-                <img
-                  src="/images/prescription-hotline-phone-24.png"
-                  alt="Prescription hotline"
-                />
-                <div>
-                  <p className="card-kicker">Refill line</p>
-                  <h3>Easy prescription support</h3>
-                  <p>(651) 256-6796 with a more prominent mobile presentation.</p>
-                </div>
-              </article>
-
-              <article className="feature-card">
-                <img
-                  src="/images/i-health-768x576.jpg"
-                  alt="iHealth collaborative support"
-                />
-                <div>
-                  <p className="card-kicker">Family resources</p>
-                  <h3>Health guidance and community support</h3>
-                  <p>
-                    Resource modules can grow over time without breaking the homepage
-                    layout.
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="section shell" id="news">
-          <div className="section-heading">
+        <section className="section shell section-soft-alt" id="news">
+          <div className="section-heading reveal-on-scroll">
             <p className="eyebrow">Latest News</p>
-            <h2>Updates and announcements feel more current with real imagery.</h2>
+            <h2>Practice news and announcements help families stay informed.</h2>
+            <p>
+              Stay up to date with office changes, provider highlights, and community-related updates from Pediatric & Young Adult Medicine.
+            </p>
           </div>
 
-          <div className="news-grid">
+          <div className="news-grid reveal-on-scroll">
             {news.map((item) => (
               <article className="news-card" key={item.title}>
                 <img src={item.image} alt={item.title} />
@@ -461,21 +543,32 @@ function App() {
                   <span className="news-tag">{item.category}</span>
                   <h3>{item.title}</h3>
                   <p>{item.summary}</p>
+                  <a href="/" className="section-link">
+                    Read update
+                  </a>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="section shell" id="resources">
-          <div className="resource-banner">
+        <section className="section shell section-soft" id="resources">
+          <div className="resource-banner reveal-on-scroll">
             <div className="resource-copy">
               <p className="eyebrow">Patient Resources</p>
-              <h2>Portal access, forms, recipes, and family guidance in one cleaner hub.</h2>
+              <h2>Patient resources for appointments, forms, and follow-up support.</h2>
+              <p>
+                Find the tools families use most often, including patient portal access,
+                office forms, and practical information that helps make visits,
+                follow-up, and ongoing care easier to manage.
+              </p>
             </div>
             <div className="resource-actions">
               <a className="button button-primary" href="/">
                 Open Patient Portal
+              </a>
+              <a className="button button-secondary" href="#locations">
+                Locations & Hours
               </a>
               <a className="button button-light" href="/">
                 View Forms & Resources
@@ -486,25 +579,68 @@ function App() {
       </main>
 
       <footer className="site-footer" id="footer">
-        <div className="shell footer-grid">
-          <div>
-            <img
-              className="footer-logo"
-              src="/images/pyam_logo.jpg"
-              alt="Pediatric & Young Adult Medicine"
-            />
+        <div className="shell footer-grid reveal-on-scroll">
+          <div className="footer-brand">
+            <p className="footer-heading">PYAM Locations</p>
             <p className="footer-copy">
-              Pediatric & Young Adult Medicine serving families with compassionate,
-              responsive care across the Twin Cities.
+              For appointments only please call <strong>651-256-6714</strong>. To
+              speak with a provider and for all other purposes please call{' '}
+              <strong>651-227-7806</strong> (MN).
             </p>
           </div>
           <div>
-            <p className="footer-label">Appointments</p>
-            <a href="tel:6512566714">(651) 256-6714</a>
+            <p className="footer-heading">Locations</p>
+            <a href="#locations">St. Paul</a>
+            <a href="#locations">Maplewood</a>
+            <a href="#locations">Eagan</a>
+            <a href="#telemedicine">Telemedicine</a>
           </div>
           <div>
-            <p className="footer-label">Medical Records</p>
-            <a href="mailto:medicalrecords@pyam.com">medicalrecords@pyam.com</a>
+            <p className="footer-heading">Sitemap</p>
+            <a href="#services">Well Child Visits</a>
+            <a href="#services">Health Issues / Illnesses</a>
+            <a href="#resources">Nutrition</a>
+            <a href="#services">Safety</a>
+            <a href="#resources">Medical Links</a>
+            <a href="#resources">F.A.Q.</a>
+            <a href="#services">Immunization</a>
+            <a href="#top">Site Map</a>
+            <a href="#resources">FollowMyHealth Portal</a>
+          </div>
+          <div className="footer-newsletter">
+            <p className="footer-heading">Newsletter</p>
+            <p className="footer-copy">
+              Get the latest news, events and announcements straight to your inbox.
+            </p>
+            <a href="/" className="footer-newsletter-button">
+              Join Newsletter
+            </a>
+          </div>
+        </div>
+
+        <div className="shell footer-bottom">
+          <div className="footer-socials" aria-label="Footer social media">
+            <a href="/" aria-label="Facebook" className="social-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.3 0-.9-.1-1.8-.1-2.7 0-4.4 1.6-4.4 4.7V11H7v3h2.8v7h3.7Z" />
+              </svg>
+            </a>
+            <a href="/" aria-label="Instagram" className="social-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9Zm9.45 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 1.8A2.7 2.7 0 1 0 14.7 12 2.7 2.7 0 0 0 12 9.3Z" />
+              </svg>
+            </a>
+            <a href="/" aria-label="YouTube" className="social-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21.2 8.2a2.8 2.8 0 0 0-2-2C17.4 5.7 12 5.7 12 5.7s-5.4 0-7.2.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.3 12a29 29 0 0 0 .5 3.8 2.8 2.8 0 0 0 2 2c1.8.5 7.2.5 7.2.5s5.4 0 7.2-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-3.8 29 29 0 0 0-.5-3.8ZM10.2 15.1V8.9l5.4 3.1-5.4 3.1Z" />
+              </svg>
+            </a>
+          </div>
+
+          <div className="footer-legal">
+            <span>Copyright © 2026 · Pediatric & Young Adult Medicine</span>
+            <a href="/">Privacy Policy</a>
+            <a href="/">Log in</a>
           </div>
         </div>
       </footer>
@@ -512,6 +648,8 @@ function App() {
       <div className="mobile-cta-bar">
         <a href="#appointments">Schedule</a>
       </div>
+
+      <ChatbotWidget />
     </div>
   )
 }
