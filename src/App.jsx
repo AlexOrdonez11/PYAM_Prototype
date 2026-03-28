@@ -44,10 +44,9 @@ const navigation = [
 ]
 
 const quickActions = [
-  'Well Exam',
-  'Sick Visit',
-  'Medication Check',
-  'Well Exam / Med Check',
+  { label: 'Med Refill', href: '#refill-line' },
+  { label: 'Talk to Virtual Assistant', action: 'open-chatbot' },
+  { label: 'Talk with Front Desk', href: 'tel:6512566714' },
 ]
 
 const services = [
@@ -120,6 +119,7 @@ const news = [
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [chatbotOpenSignal, setChatbotOpenSignal] = useState(0)
 
   const closeMenu = () => setIsMenuOpen(false)
 
@@ -158,6 +158,15 @@ function App() {
       window.removeEventListener('scroll', runRevealCheck)
     }
   }, [])
+
+  const handleQuickActionClick = (event, action) => {
+    if (action.action !== 'open-chatbot') {
+      return
+    }
+
+    event.preventDefault()
+    setChatbotOpenSignal((signal) => signal + 1)
+  }
 
   return (
     <div className="page-shell">
@@ -227,7 +236,7 @@ function App() {
                 <path d="M6.6 3h2.7c.4 0 .7.3.8.6l.8 3.6c.1.3 0 .7-.3.9l-1.7 1.7a13.4 13.4 0 0 0 5.3 5.3l1.7-1.7c.2-.2.6-.4.9-.3l3.6.8c.4.1.6.4.6.8v2.7c0 .5-.4.9-.9.9A17.4 17.4 0 0 1 3 6.6c0-.5.4-.9.9-.9Z" />
               </svg>
             </span>
-            <span>(651) 256-6714</span>
+            <span><strong>(651) 256-6714</strong></span>
           </a>
           <a href="mailto:medicalrecords@pyam.com">
             <span className="utility-icon" aria-hidden="true">
@@ -324,9 +333,14 @@ function App() {
 
             <div className="quick-actions" aria-label="Quick actions">
               {quickActions.map((action) => (
-                <span key={action} className="pill">
-                  {action}
-                </span>
+                <a
+                  key={action.label}
+                  className="pill"
+                  href={action.href ?? '#'}
+                  onClick={(event) => handleQuickActionClick(event, action)}
+                >
+                  {action.label}
+                </a>
               ))}
             </div>
           </div>
@@ -393,7 +407,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section shell section-soft" id="services">
+        <section className="section shell section-soft section-services" id="services">
           <div className="section-heading reveal-on-scroll">
             <p className="eyebrow">Services</p>
             <h2>Everyday pediatric care</h2>
@@ -420,7 +434,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section shell section-soft-alt" id="refill-line">
+        <section className="section shell section-soft-alt section-refill" id="refill-line">
           <div className="refill-banner reveal-on-scroll">
             <div className="refill-copy">
               <p className="eyebrow">Prescription Refill Line</p>
@@ -452,7 +466,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section shell section-soft-alt" id="locations">
+        <section className="section shell section-soft section-locations" id="locations">
           <div className="section-heading reveal-on-scroll">
             <p className="eyebrow">Locations & Access</p>
             <h2>Family-friendly Convenient Healthcare</h2>
@@ -480,7 +494,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section shell section-soft">
+        <section className="section shell section-soft-alt section-telemedicine">
           <div className="section-heading reveal-on-scroll" id="telemedicine">
             <p className="eyebrow">Telemedicine</p>
             <h2>Telemedicine offers families another convenient way to connect with care.</h2>
@@ -526,7 +540,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section shell section-soft-alt" id="news">
+        <section className="section shell section-soft section-news" id="news">
           <div className="section-heading reveal-on-scroll">
             <p className="eyebrow">Latest News</p>
             <h2>Practice news and announcements help families stay informed.</h2>
@@ -552,7 +566,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section shell section-soft" id="resources">
+        <section className="section shell section-soft section-resources" id="resources">
           <div className="resource-banner reveal-on-scroll">
             <div className="resource-copy">
               <p className="eyebrow">Patient Resources</p>
@@ -649,7 +663,7 @@ function App() {
         <a href="#appointments">Schedule</a>
       </div>
 
-      <ChatbotWidget />
+      <ChatbotWidget openSignal={chatbotOpenSignal} />
     </div>
   )
 }

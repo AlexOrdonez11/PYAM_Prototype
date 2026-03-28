@@ -27,7 +27,7 @@ function getGreeting() {
   return 'Good evening'
 }
 
-function ChatbotWidget() {
+function ChatbotWidget({ openSignal = 0 }) {
   const [isMounted, setIsMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [draftMessage, setDraftMessage] = useState('')
@@ -49,6 +49,14 @@ function ChatbotWidget() {
       window.clearTimeout(timer)
     }
   }, [])
+
+  useEffect(() => {
+    if (!openSignal) {
+      return
+    }
+
+    setIsOpen(true)
+  }, [openSignal])
 
   const currentStatus = useMemo(() => {
     const now = new Date()
