@@ -106,7 +106,7 @@ const news = [
     title: 'Dr. Christopher Ordonez spotlight',
     summary:
       'Learn more about Dr. Christopher Ordonez and the physicians who support care for children and young adults.',
-    image: '/images/dr-christopher-ordonez-400x300.jpg',
+    image: '/images/dr-christopher-ordonez.png',
   },
   {
     category: 'Community Care',
