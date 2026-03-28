@@ -54,25 +54,25 @@ const services = [
     title: 'Well Child Visits',
     description:
       'Routine checkups, developmental screenings, school and sports forms, and preventive care to support healthy growth at every stage.',
-    image: '/images/care-well-child-visits-300x150-1.jpg',
+    image: '/images/care-well-child-visits-300x150-1.png',
   },
   {
     title: 'Immunizations',
     description:
       'Recommended childhood and adolescent vaccines, clear guidance for families, and help keeping immunization records up to date.',
-    image: '/images/care-immunization-300x150-1.jpg',
+    image: '/images/care-immunization-300x150-1.png',
   },
   {
     title: 'Health Issues & Illnesses',
     description:
       'Evaluation and treatment for common illnesses, minor injuries, fevers, respiratory concerns, rashes, and other everyday pediatric needs.',
-    image: '/images/care-health-issues-300x150-1.jpg',
+    image: '/images/care-health-issues-300x150-1.png',
   },
   {
     title: 'Safety',
     description:
       'Practical support for injury prevention, seasonal concerns, school health questions, and guidance that helps families feel prepared.',
-    image: '/images/care-safety-300x150-1.jpg',
+    image: '/images/care-safety-300x150-1.png',
   },
 ]
 
@@ -82,21 +82,21 @@ const locations = [
     hours: 'Mon-Fri, 8:00 AM - 5:00 PM',
     detail:
       'The St. Paul office continues to support families with established pediatric care and everyday visit needs.',
-    image: '/images/st-paul-closing-april-30-2026-1-300x200.jpg',
+    image: '/images/st-paul.png',
   },
   {
     city: 'Maplewood',
     hours: 'Mon-Fri, 8:00 AM - 5:00 PM',
     detail:
       'Our Maplewood office offers convenient east metro access for well visits, illness care, and ongoing pediatric support.',
-    image: '/images/location-maplewood-300x200-1.jpg',
+    image: '/images/maplewood.jpg',
   },
   {
     city: 'Eagan',
     hours: 'Mon-Fri, 8:00 AM - 5:00 PM',
     detail:
       'The Eagan office provides south metro families with trusted pediatric care in a convenient and welcoming setting.',
-    image: '/images/location_eagan-300x200-1.jpg',
+    image: '/images/eagan.jpg',
   },
 ]
 
