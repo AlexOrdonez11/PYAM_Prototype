@@ -119,9 +119,11 @@ const news = [
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [chatbotOpenSignal, setChatbotOpenSignal] = useState(0)
 
   const closeMenu = () => setIsMenuOpen(false)
+  const closeSearch = () => setIsSearchOpen(false)
 
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll('.reveal-on-scroll'))
@@ -178,7 +180,7 @@ function App() {
           <a className="brand-mark" href="#top" aria-label="PYAM home">
             <img
               className="brand-logo"
-              src="/images/pyam_logo.jpg"
+              src="/images/pyam_logo.png"
               alt="Pediatric & Young Adult Medicine"
             />
           </a>
@@ -211,11 +213,28 @@ function App() {
 
           <button
             type="button"
+            className="mobile-search-button"
+            aria-expanded={isSearchOpen}
+            aria-controls="mobile-search-widget"
+            aria-label="Open site search"
+            onClick={() => {
+              setIsSearchOpen((open) => !open)
+              setIsMenuOpen(false)
+            }}
+          >
+            <span className="search-icon" aria-hidden="true" />
+          </button>
+
+          <button
+            type="button"
             className="mobile-menu-button"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
             aria-label="Open navigation menu"
-            onClick={() => setIsMenuOpen((open) => !open)}
+            onClick={() => {
+              setIsMenuOpen((open) => !open)
+              setIsSearchOpen(false)
+            }}
           >
             <span className="menu-icon" aria-hidden="true">
               <span />
@@ -229,65 +248,13 @@ function App() {
           </a>
         </header>
 
-        <div className="utility-strip shell" aria-label="Quick links">
-          <a href="tel:6512566714">
-            <span className="utility-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M6.6 3h2.7c.4 0 .7.3.8.6l.8 3.6c.1.3 0 .7-.3.9l-1.7 1.7a13.4 13.4 0 0 0 5.3 5.3l1.7-1.7c.2-.2.6-.4.9-.3l3.6.8c.4.1.6.4.6.8v2.7c0 .5-.4.9-.9.9A17.4 17.4 0 0 1 3 6.6c0-.5.4-.9.9-.9Z" />
-              </svg>
-            </span>
-            <span><strong>(651) 256-6714</strong></span>
-          </a>
-          <a href="mailto:medicalrecords@pyam.com">
-            <span className="utility-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M4.5 6h15A1.5 1.5 0 0 1 21 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 16.5v-9A1.5 1.5 0 0 1 4.5 6Zm0 1.8V8l7.5 5.1L19.5 8v-.2h-15Zm15 8.4V10l-7.1 4.8a.9.9 0 0 1-1 0L4.5 10v6.2h15Z" />
-              </svg>
-            </span>
-            <span>medicalrecords@pyam.com</span>
-          </a>
-          <a href="/">
-            <span className="utility-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M3.8 6.8A1.8 1.8 0 0 1 5.6 5h12.8a1.8 1.8 0 0 1 1.8 1.8v10.4a1.8 1.8 0 0 1-1.8 1.8H5.6a1.8 1.8 0 0 1-1.8-1.8V6.8Zm1.8 0v2h12.8v-2H5.6Zm0 4v6.4h12.8v-6.4H5.6Zm2.2 1.5h3v1.8h-3v-1.8Z" />
-              </svg>
-            </span>
-            <span>Payment</span>
-          </a>
-          <a href="/">
-            <span className="utility-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 2.8 4.5 6v5.2c0 4.6 3.2 8.9 7.5 10 4.3-1.1 7.5-5.4 7.5-10V6L12 2.8Zm0 1.9 5.7 2.4v4.1c0 3.7-2.5 7.2-5.7 8.2-3.2-1-5.7-4.5-5.7-8.2V7.1L12 4.7Zm-.9 3.3h1.8v5.1h-1.8V8Zm0 6.5h1.8v1.8h-1.8v-1.8Z" />
-              </svg>
-            </span>
-            <span>HIPAA</span>
-          </a>
-          <a href="#resources">
-            <span className="utility-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11A2.5 2.5 0 0 1 6.5 4Zm0 1.8c-.4 0-.7.3-.7.7v11c0 .4.3.7.7.7h11c.4 0 .7-.3.7-.7v-11c0-.4-.3-.7-.7-.7h-11Zm1.4 2.1h8.2v1.8H7.9V7.9Zm0 3.7h8.2v1.8H7.9v-1.8Zm0 3.7h5v1.8h-5v-1.8Z" />
-              </svg>
-            </span>
-            <span>FollowMyHealth Portal</span>
-          </a>
-          <div className="utility-socials" aria-label="Social media">
-            <a href="/" aria-label="Facebook" className="social-link">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.3 0-.9-.1-1.8-.1-2.7 0-4.4 1.6-4.4 4.7V11H7v3h2.8v7h3.7Z" />
-              </svg>
-            </a>
-            <a href="/" aria-label="Instagram" className="social-link">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9Zm9.45 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 1.8A2.7 2.7 0 1 0 14.7 12 2.7 2.7 0 0 0 12 9.3Z" />
-              </svg>
-            </a>
-            <a href="/" aria-label="YouTube" className="social-link">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M21.2 8.2a2.8 2.8 0 0 0-2-2C17.4 5.7 12 5.7 12 5.7s-5.4 0-7.2.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.3 12a29 29 0 0 0 .5 3.8 2.8 2.8 0 0 0 2 2c1.8.5 7.2.5 7.2.5s5.4 0 7.2-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-3.8 29 29 0 0 0-.5-3.8ZM10.2 15.1V8.9l5.4 3.1-5.4 3.1Z" />
-              </svg>
-            </a>
-          </div>
-        </div>
+        <form
+          className={`mobile-search-widget shell ${isSearchOpen ? 'mobile-search-open' : ''}`}
+          id="mobile-search-widget"
+          role="search"
+        >
+          <input type="search" placeholder="Search" aria-label="Search site" />
+        </form>
 
         <div
           className={`mobile-menu shell ${isMenuOpen ? 'mobile-menu-open' : ''}`}
@@ -295,13 +262,26 @@ function App() {
         >
           {navigation.map((item) => (
             <div key={item.label} className="mobile-menu-group">
-              <a href={item.href} onClick={closeMenu}>
+              <a
+                href={item.href}
+                onClick={() => {
+                  closeMenu()
+                  closeSearch()
+                }}
+              >
                 {item.label}
               </a>
               {item.children ? (
                 <div className="mobile-submenu">
                   {item.children.map((child) => (
-                    <a key={child.label} href={child.href} onClick={closeMenu}>
+                    <a
+                      key={child.label}
+                      href={child.href}
+                      onClick={() => {
+                        closeMenu()
+                        closeSearch()
+                      }}
+                    >
                       {child.label}
                     </a>
                   ))}
@@ -313,10 +293,9 @@ function App() {
 
         <div className="shell hero-grid" id="top">
           <div className="hero-copy">
-            <h1>Pediatric & Young Adult Medicine</h1>
-            <p className="hero-lead">
+            <h2 className="hero-lead">
               3 Locations Plus Telemedicine To Serve You.
-            </p>
+            </h2>
             <p className="hero-text">
               PYAM has same day appointments for acute care, please call to make an
               appointment if you feel you need to be seen urgently.
@@ -342,6 +321,69 @@ function App() {
                   {action.label}
                 </a>
               ))}
+            </div>
+
+            <div className="hero-utility-wrap">
+              <div className="hero-utility-divider" aria-hidden="true" />
+              <div className="utility-strip" aria-label="Quick links">
+                <a href="tel:6512566714">
+                  <span className="utility-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M6.6 3h2.7c.4 0 .7.3.8.6l.8 3.6c.1.3 0 .7-.3.9l-1.7 1.7a13.4 13.4 0 0 0 5.3 5.3l1.7-1.7c.2-.2.6-.4.9-.3l3.6.8c.4.1.6.4.6.8v2.7c0 .5-.4.9-.9.9A17.4 17.4 0 0 1 3 6.6c0-.5.4-.9.9-.9Z" />
+                    </svg>
+                  </span>
+                  <span><strong>(651) 256-6714</strong></span>
+                </a>
+                <a href="mailto:medicalrecords@pyam.com">
+                  <span className="utility-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M4.5 6h15A1.5 1.5 0 0 1 21 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 16.5v-9A1.5 1.5 0 0 1 4.5 6Zm0 1.8V8l7.5 5.1L19.5 8v-.2h-15Zm15 8.4V10l-7.1 4.8a.9.9 0 0 1-1 0L4.5 10v6.2h15Z" />
+                    </svg>
+                  </span>
+                  <span>medicalrecords@pyam.com</span>
+                </a>
+                <a href="/">
+                  <span className="utility-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M3.8 6.8A1.8 1.8 0 0 1 5.6 5h12.8a1.8 1.8 0 0 1 1.8 1.8v10.4a1.8 1.8 0 0 1-1.8 1.8H5.6a1.8 1.8 0 0 1-1.8-1.8V6.8Zm1.8 0v2h12.8v-2H5.6Zm0 4v6.4h12.8v-6.4H5.6Zm2.2 1.5h3v1.8h-3v-1.8Z" />
+                    </svg>
+                  </span>
+                  <span>Payment</span>
+                </a>
+                <a href="/">
+                  <span className="utility-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 2.8 4.5 6v5.2c0 4.6 3.2 8.9 7.5 10 4.3-1.1 7.5-5.4 7.5-10V6L12 2.8Zm0 1.9 5.7 2.4v4.1c0 3.7-2.5 7.2-5.7 8.2-3.2-1-5.7-4.5-5.7-8.2V7.1L12 4.7Zm-.9 3.3h1.8v5.1h-1.8V8Zm0 6.5h1.8v1.8h-1.8v-1.8Z" />
+                    </svg>
+                  </span>
+                  <span>HIPAA</span>
+                </a>
+                <a href="#resources">
+                  <span className="utility-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11A2.5 2.5 0 0 1 6.5 4Zm0 1.8c-.4 0-.7.3-.7.7v11c0 .4.3.7.7.7h11c.4 0 .7-.3.7-.7v-11c0-.4-.3-.7-.7-.7h-11Zm1.4 2.1h8.2v1.8H7.9V7.9Zm0 3.7h8.2v1.8H7.9v-1.8Zm0 3.7h5v1.8h-5v-1.8Z" />
+                    </svg>
+                  </span>
+                  <span>FollowMyHealth Portal</span>
+                </a>
+                <div className="utility-socials" aria-label="Social media">
+                  <a href="/" aria-label="Facebook" className="social-link">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.3 0-.9-.1-1.8-.1-2.7 0-4.4 1.6-4.4 4.7V11H7v3h2.8v7h3.7Z" />
+                    </svg>
+                  </a>
+                  <a href="/" aria-label="Instagram" className="social-link">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9Zm9.45 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 1.8A2.7 2.7 0 1 0 14.7 12 2.7 2.7 0 0 0 12 9.3Z" />
+                    </svg>
+                  </a>
+                  <a href="/" aria-label="YouTube" className="social-link">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M21.2 8.2a2.8 2.8 0 0 0-2-2C17.4 5.7 12 5.7 12 5.7s-5.4 0-7.2.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.3 12a29 29 0 0 0 .5 3.8 2.8 2.8 0 0 0 2 2c1.8.5 7.2.5 7.2.5s5.4 0 7.2-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-3.8 29 29 0 0 0-.5-3.8ZM10.2 15.1V8.9l5.4 3.1-5.4 3.1Z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -424,10 +466,11 @@ function App() {
                 <img src={service.image} alt={service.title} />
                 <div className="service-body">
                   <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                  <a href="/" className="section-link">
-                    Learn more
-                  </a>
+                  <p>{service.description}
+                    <a href="/" className="section-link">
+                    &ensp;Learn more
+                    </a>
+                  </p>
                 </div>
               </article>
             ))}
@@ -506,6 +549,16 @@ function App() {
           </div>
 
           <div className="telemedicine-layout telemedicine-card reveal-on-scroll">
+            <div className="telemedicine-media">
+              <a className="button button-primary telemedicine-overlay-cta" href="/">
+                Book a Telemedicine Visit
+              </a>
+              <img
+                src="/images/slide-telemed-lt-blue.jpg"
+                alt="Laptop showing a telemedicine visit"
+              />
+            </div>
+
             <div className="telemedicine-copy">
               <div className="telemedicine-points">
                 <div className="telemedicine-point">
@@ -516,25 +569,6 @@ function App() {
                   <strong>Flexible care option</strong>
                   <span>Connect by phone, tablet, or computer from the comfort of home.</span>
                 </div>
-              </div>
-              <div className="telemedicine-actions">
-                <a className="button button-primary" href="/">
-                  Book a Telemedicine Visit
-                </a>
-                <a className="button button-light" href="/">
-                  Learn More
-                </a>
-              </div>
-            </div>
-
-            <div className="telemedicine-media">
-              <img
-                src="/images/slide-telemed-lt-blue.jpg"
-                alt="Laptop showing a telemedicine visit"
-              />
-              <div className="telemedicine-badge">
-                <span className="telemedicine-badge-label">Available</span>
-                <strong>Virtual care for select appointment types</strong>
               </div>
             </div>
           </div>
@@ -566,30 +600,6 @@ function App() {
           </div>
         </section>
 
-        <section className="section shell section-soft section-resources" id="resources">
-          <div className="resource-banner reveal-on-scroll">
-            <div className="resource-copy">
-              <p className="eyebrow">Patient Resources</p>
-              <h2>Patient resources for appointments, forms, and follow-up support.</h2>
-              <p>
-                Find the tools families use most often, including patient portal access,
-                office forms, and practical information that helps make visits,
-                follow-up, and ongoing care easier to manage.
-              </p>
-            </div>
-            <div className="resource-actions">
-              <a className="button button-primary" href="/">
-                Open Patient Portal
-              </a>
-              <a className="button button-secondary" href="#locations">
-                Locations & Hours
-              </a>
-              <a className="button button-light" href="/">
-                View Forms & Resources
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer className="site-footer" id="footer">
@@ -602,24 +612,28 @@ function App() {
               <strong>651-227-7806</strong> (MN).
             </p>
           </div>
-          <div>
+          <div className="footer-column">
             <p className="footer-heading">Locations</p>
-            <a href="#locations">St. Paul</a>
-            <a href="#locations">Maplewood</a>
-            <a href="#locations">Eagan</a>
-            <a href="#telemedicine">Telemedicine</a>
+            <div className="footer-links">
+              <a href="#locations">St. Paul</a>
+              <a href="#locations">Maplewood</a>
+              <a href="#locations">Eagan</a>
+              <a href="#telemedicine">Telemedicine</a>
+            </div>
           </div>
-          <div>
+          <div className="footer-column">
             <p className="footer-heading">Sitemap</p>
-            <a href="#services">Well Child Visits</a>
-            <a href="#services">Health Issues / Illnesses</a>
-            <a href="#resources">Nutrition</a>
-            <a href="#services">Safety</a>
-            <a href="#resources">Medical Links</a>
-            <a href="#resources">F.A.Q.</a>
-            <a href="#services">Immunization</a>
-            <a href="#top">Site Map</a>
-            <a href="#resources">FollowMyHealth Portal</a>
+            <div className="footer-links">
+              <a href="#services">Well Child Visits</a>
+              <a href="#services">Health Issues / Illnesses</a>
+              <a href="#resources">Nutrition</a>
+              <a href="#services">Safety</a>
+              <a href="#resources">Medical Links</a>
+              <a href="#resources">F.A.Q.</a>
+              <a href="#services">Immunization</a>
+              <a href="#top">Site Map</a>
+              <a href="#resources">FollowMyHealth Portal</a>
+            </div>
           </div>
           <div className="footer-newsletter">
             <p className="footer-heading">Newsletter</p>
