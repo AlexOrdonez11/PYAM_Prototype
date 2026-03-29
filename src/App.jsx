@@ -542,9 +542,6 @@ function App() {
 
           <div className="telemedicine-layout telemedicine-card reveal-on-scroll">
             <div className="telemedicine-copy">
-              <a className="button button-primary telemedicine-overlay-cta" href="/">
-                Book a Telemedicine Visit
-              </a>
               <div className="telemedicine-points">
                 <div className="telemedicine-point">
                   <strong>Convenient access</strong>
@@ -555,6 +552,9 @@ function App() {
                   <span>Connect by phone, tablet, or computer from the comfort of home.</span>
                 </div>
               </div>
+              <a className="button button-primary telemedicine-overlay-cta" href="/">
+                Book a Telemedicine Visit
+              </a>
             </div>
           </div>
         </section>
