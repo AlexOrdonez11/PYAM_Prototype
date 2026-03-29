@@ -288,7 +288,7 @@ function App() {
         <div className="shell hero-grid" id="top">
           <div className="hero-copy">
             <h2 className="hero-lead">
-              3 Locations Plus Telemedicine To Serve You.
+              2 Locations Plus Telemedicine To Serve You.
             </h2>
             <p className="hero-text">
               PYAM has same day appointments for acute care, please call to make an

@@ -171,17 +171,20 @@ function ChatbotWidget({ openSignal = 0 }) {
           ) : null}
         </div>
 
-        <div className="chatbot-quick-replies">
-          {quickReplies.map((reply) => (
-            <button
-              key={reply}
-              type="button"
-              className="chatbot-chip"
-              onClick={() => handleQuickReply(reply)}
-            >
-              {reply}
-            </button>
-          ))}
+        <div className="chatbot-quick-replies-section">
+          <p className="chatbot-quick-replies-label">Quick questions</p>
+          <div className="chatbot-quick-replies">
+            {quickReplies.map((reply) => (
+              <button
+                key={reply}
+                type="button"
+                className="chatbot-chip"
+                onClick={() => handleQuickReply(reply)}
+              >
+                {reply}
+              </button>
+            ))}
+          </div>
         </div>
 
         <form className="chatbot-composer" onSubmit={handleSendMessage}>
