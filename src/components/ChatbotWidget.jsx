@@ -212,9 +212,7 @@ function ChatbotWidget({ openSignal = 0 }) {
         onClick={() => setIsOpen((open) => !open)}
       >
         <span className="chatbot-trigger-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 3c-4.97 0-9 3.58-9 8 0 2.4 1.2 4.54 3.1 6.01V21l4.09-2.05c.59.12 1.2.18 1.81.18 4.97 0 9-3.58 9-8s-4.03-8.13-9-8.13Zm-3.75 8.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm3.75 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm3.75 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z" />
-          </svg>
+          <img src="/images/nurse.PNG" alt="" />
         </span>
         <span className="chatbot-trigger-copy">
           <strong>Chat with us</strong>

@@ -78,13 +78,6 @@ const services = [
 
 const locations = [
   {
-    city: 'St. Paul',
-    hours: 'Mon-Fri, 8:00 AM - 5:00 PM',
-    detail:
-      'The St. Paul office continues to support families with established pediatric care and everyday visit needs.',
-    image: '/images/st-paul.png',
-  },
-  {
     city: 'Maplewood',
     hours: 'Mon-Fri, 8:00 AM - 5:00 PM',
     detail:
@@ -120,6 +113,7 @@ const news = [
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isIntroExpanded, setIsIntroExpanded] = useState(false)
   const [chatbotOpenSignal, setChatbotOpenSignal] = useState(0)
 
   const closeMenu = () => setIsMenuOpen(false)
@@ -304,12 +298,6 @@ function App() {
               Use the button below to schedule online.
             </p>
 
-            <div className="hero-actions" id="appointments">
-              <a className="button button-primary" href="/">
-                Schedule Online
-              </a>
-            </div>
-
             <div className="quick-actions" aria-label="Quick actions">
               {quickActions.map((action) => (
                 <a
@@ -414,7 +402,7 @@ function App() {
               </div>
             </div>
 
-            <div className="intro-body">
+            <div className={`intro-body ${isIntroExpanded ? 'intro-body-expanded' : ''}`}>
               <div className="intro-copy">
                 <p>
                   At Pediatric & Young Adult Medicine, our team of board-certified
@@ -446,6 +434,14 @@ function App() {
                 </div>
               </aside>
             </div>
+            <button
+              type="button"
+              className="intro-mobile-toggle"
+              aria-expanded={isIntroExpanded}
+              onClick={() => setIsIntroExpanded((open) => !open)}
+            >
+              {isIntroExpanded ? 'Show Less' : 'Read More'}
+            </button>
           </div>
         </section>
 
@@ -615,7 +611,6 @@ function App() {
           <div className="footer-column">
             <p className="footer-heading">Locations</p>
             <div className="footer-links">
-              <a href="#locations">St. Paul</a>
               <a href="#locations">Maplewood</a>
               <a href="#locations">Eagan</a>
               <a href="#telemedicine">Telemedicine</a>
