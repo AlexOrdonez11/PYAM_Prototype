@@ -86,7 +86,7 @@ const locations = [
   },
   {
     city: 'Eagan',
-    hours: 'Mon-Fri, 8:00 AM - 5:00 PM',
+    hours: 'Mon-Fri, 8:00 AM - 5:00 PM | Saturday 9:00 AM - 5:00 PM',
     detail:
       'The Eagan office provides south metro families with trusted pediatric care in a convenient and welcoming setting.',
     image: '/images/eagan.jpg',
@@ -96,18 +96,18 @@ const locations = [
 const news = [
   {
     category: 'Care Team',
+    title: 'Dr. Tammi Plotnik spotlight',
+    summary:
+      'Learn more about Dr. Tammi Plotnik and the physicians who support care for children and young adults.',
+    image: '/images/dr-tammi-plotnik.png',
+  },
+  {
+    category: 'Care Team',
     title: 'Dr. Christopher Ordonez spotlight',
     summary:
       'Learn more about Dr. Christopher Ordonez and the physicians who support care for children and young adults.',
     image: '/images/dr-christopher-ordonez.png',
-  },
-  {
-    category: 'Community Care',
-    title: 'iHealth collaborative support',
-    summary:
-      'Community partnerships and family resources help extend care beyond the clinic and into everyday life.',
-    image: '/images/i-health-768x576.jpg',
-  },
+  }
 ]
 
 function App() {
@@ -438,9 +438,10 @@ function App() {
               type="button"
               className="intro-mobile-toggle"
               aria-expanded={isIntroExpanded}
+              aria-label={isIntroExpanded ? 'Collapse section details' : 'Expand section details'}
               onClick={() => setIsIntroExpanded((open) => !open)}
             >
-              {isIntroExpanded ? 'Show Less' : 'Read More'}
+              <span className="intro-mobile-toggle-icon" aria-hidden="true" />
             </button>
           </div>
         </section>
@@ -487,11 +488,6 @@ function App() {
                 <div className="refill-detail">
                   <span className="refill-label">Refill line</span>
                   <a href="tel:6512566796">(651) 256-6796</a>
-                </div>
-                <div className="refill-detail">
-                  <a className="button button-secondary" href="/">
-                    Learn More
-                  </a>
                 </div>
               </div>
             </div>
@@ -545,17 +541,10 @@ function App() {
           </div>
 
           <div className="telemedicine-layout telemedicine-card reveal-on-scroll">
-            <div className="telemedicine-media">
+            <div className="telemedicine-copy">
               <a className="button button-primary telemedicine-overlay-cta" href="/">
                 Book a Telemedicine Visit
               </a>
-              <img
-                src="/images/slide-telemed-lt-blue.jpg"
-                alt="Laptop showing a telemedicine visit"
-              />
-            </div>
-
-            <div className="telemedicine-copy">
               <div className="telemedicine-points">
                 <div className="telemedicine-point">
                   <strong>Convenient access</strong>
