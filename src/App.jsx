@@ -15,7 +15,6 @@ const navigation = [
     label: 'Locations & Hours',
     href: '#locations',
     children: [
-      { label: 'St Paul Office', href: '#locations' },
       { label: 'Maplewood Office', href: '#locations' },
       { label: 'Eagan Office', href: '#locations' },
     ],
@@ -79,14 +78,14 @@ const services = [
 const locations = [
   {
     city: 'Maplewood',
-    hours: 'Mon-Fri, 8:00 AM - 5:00 PM',
+    hours: ['Mon-Fri, 8:00 AM - 5:00 PM'],
     detail:
       'Our Maplewood office offers convenient east metro access for well visits, illness care, and ongoing pediatric support.',
     image: '/images/maplewood.jpg',
   },
   {
     city: 'Eagan',
-    hours: 'Mon-Fri, 8:00 AM - 5:00 PM | Saturday 9:00 AM - 5:00 PM',
+    hours: ['Mon-Fri, 8:00 AM - 5:00 PM', 'Saturday 9:00 AM - 5:00 PM'],
     detail:
       'The Eagan office provides south metro families with trusted pediatric care in a convenient and welcoming setting.',
     image: '/images/eagan.jpg',
@@ -288,7 +287,7 @@ function App() {
         <div className="shell hero-grid" id="top">
           <div className="hero-copy">
             <h2 className="hero-lead">
-              2 Locations Plus Telemedicine To Serve You.
+              Maplewood And Eagan Locations Plus Telemedicine To Serve You.
             </h2>
             <p className="hero-text">
               PYAM has same day appointments for acute care, please call to make an
@@ -430,19 +429,19 @@ function App() {
                   <p>
                     Personalized support, coordinated visits, and a welcoming
                     environment designed around long-term trust.
+                    <button
+                      type="button"
+                      className="intro-mobile-toggle"
+                      aria-expanded={isIntroExpanded}
+                      aria-label={isIntroExpanded ? 'Collapse section details' : 'Expand section details'}
+                      onClick={() => setIsIntroExpanded((open) => !open)}
+                    >
+                      <span className="intro-mobile-toggle-icon" aria-hidden="true" />
+                    </button>
                   </p>
                 </div>
               </aside>
             </div>
-            <button
-              type="button"
-              className="intro-mobile-toggle"
-              aria-expanded={isIntroExpanded}
-              aria-label={isIntroExpanded ? 'Collapse section details' : 'Expand section details'}
-              onClick={() => setIsIntroExpanded((open) => !open)}
-            >
-              <span className="intro-mobile-toggle-icon" aria-hidden="true" />
-            </button>
           </div>
         </section>
 
@@ -506,7 +505,7 @@ function App() {
             <h2>Family-friendly Convenient Healthcare</h2>
             <p>
               Our offices are located to make pediatric care easier for busy
-              families across Maplewood, and Eagan. With same-day
+              families across Maplewood and Eagan. With same-day
               appointments, Saturday availability at select locations,
               coordinated visits for siblings, and telemedicine for eligible
               appointment types, we work to keep care convenient, consistent,
@@ -519,7 +518,11 @@ function App() {
               <article className="location-card" key={location.city}>
                 <img src={location.image} alt={location.city} />
                 <div className="location-body">
-                  <p className="location-hours">{location.hours}</p>
+                  {location.hours.map((hour, index) => (
+                    <p className="location-hours" key={index}>
+                      {hour}
+                    </p>
+                  ))}
                   <h3>{location.city}</h3>
                   <p>{location.detail}</p>
                   <a href="/" className="section-link">

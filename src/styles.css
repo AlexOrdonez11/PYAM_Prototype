@@ -850,7 +850,7 @@ button {
 }
 
 .section-refill {
-  margin-top: -1.6rem;
+  margin-top: -1.35rem;
   padding-top: 0.6rem;
 }
 
@@ -882,8 +882,8 @@ button {
 
 .intro-panel {
   display: grid;
-  gap: 2rem;
-  padding: clamp(2rem, 4vw, 3rem);
+  gap: 0.55rem;
+  padding: clamp(0.2rem, 0.9vw, 1.2rem) clamp(2rem, 4vw, 3rem) clamp(0.3rem, 1vw, 0.75rem);
   border-radius: 34px;
   box-shadow: 0 28px 60px rgba(16, 49, 79, 0.18);
 }
@@ -891,7 +891,7 @@ button {
 .intro-top {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
-  gap: 2rem;
+  gap: 0.45rem;
   align-items: end;
 }
 
@@ -910,6 +910,7 @@ button {
 }
 
 .intro-eyebrow {
+  margin-bottom: 0;
   color: rgba(239, 251, 255, 0.72);
 }
 
@@ -961,7 +962,7 @@ button {
 .intro-body {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) 360px;
-  gap: 1.5rem;
+  gap: 0.2rem;
   align-items: start;
 }
 
@@ -983,7 +984,7 @@ button {
 
 .intro-aside {
   display: grid;
-  gap: 1rem;
+  gap: 0.05rem;
 }
 
 .intro-highlight {
@@ -1215,7 +1216,7 @@ button {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.9rem;
-  margin-top: 1.35rem;
+  margin-top: 0.1rem;
   margin-bottom: 0;
   max-width: min(100%, 34rem);
 }
@@ -1284,6 +1285,8 @@ button {
 .location-hours {
   color: #68819a;
   font-size: 0.8rem;
+  line-height: 1.15;
+  margin: 0;
 }
 
 .location-body .section-link {
@@ -1788,17 +1791,48 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.8rem;
-  height: 2.8rem;
+  position: relative;
+  width: 3.35rem;
+  height: 3.35rem;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.chatbot-trigger-image {
+  width: 100%;
+  height: 100%;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.18);
   overflow: hidden;
 }
 
-.chatbot-trigger-icon img {
+.chatbot-trigger-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.chatbot-trigger-badge {
+  position: absolute;
+  top: -0.18rem;
+  right: -0.18rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(224, 243, 247, 0.96));
+  box-shadow:
+    0 10px 18px rgba(9, 27, 47, 0.24),
+    inset 0 0 0 1px rgba(11, 89, 112, 0.08);
+}
+
+.chatbot-trigger-badge svg {
+  width: 0.92rem;
+  height: 0.92rem;
+  fill: #0b5970;
 }
 
 .chatbot-trigger-copy {
@@ -1920,6 +1954,11 @@ button {
     min-height: auto;
   }
 
+  .hero-grid {
+    min-height: clamp(500px, 66vh, 680px);
+    padding: 0.55rem 1rem 0.95rem 1rem;
+  }
+
   .hero-lead {
     font-size: clamp(1.28rem, 6vw, 1.58rem);
   }
@@ -1934,6 +1973,7 @@ button {
     grid-template-areas: 'brand search-toggle menu';
     align-items: center;
     gap: 0.75rem;
+    padding: 0.65rem 0 0.5rem;
   }
 
   .brand-logo {
@@ -1963,6 +2003,10 @@ button {
     display: block;
   }
 
+  .mobile-search-open {
+    margin-bottom: 0.35rem;
+  }
+
   .mobile-search-widget input {
     min-height: 3.45rem;
     padding: 0.95rem 1rem;
@@ -1970,12 +2014,12 @@ button {
   }
 
   .intro-panel {
-    gap: 1.2rem;
-    padding: 1.35rem 1.2rem;
+    gap: 0.42rem;
+    padding: 0.42rem 1.2rem 0.32rem;
   }
 
   .intro-top {
-    gap: 1rem;
+    gap: 0.22rem;
   }
 
   .intro-heading {
@@ -2002,9 +2046,11 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.9rem;
-    min-height: 2.9rem;
-    margin-top: 0.25rem;
+    width: 2.2rem;
+    min-height: 2.2rem;
+    margin-top: 0;
+    margin-left: 0.35rem;
+    vertical-align: middle;
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 999px;
     padding: 0;
@@ -2033,7 +2079,7 @@ button {
 
   .intro-body {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.16rem;
   }
 
   .intro-copy {
@@ -2054,13 +2100,21 @@ button {
     transform: translateY(0);
   }
 
-  .intro-body-expanded + .intro-mobile-toggle .intro-mobile-toggle-icon {
+  .intro-mobile-toggle[aria-expanded='true'] .intro-mobile-toggle-icon {
     transform: rotate(225deg) translateY(1px);
   }
 
   .intro-visual {
-    min-height: 180px;
-    max-height: 220px;
+    min-height: 170px;
+    max-height: 198px;
+  }
+
+  .intro-aside {
+    gap: 0;
+  }
+
+  .intro-highlight {
+    padding: 0.88rem 0.95rem;
   }
 
   .intro-stat-number {
@@ -2119,16 +2173,16 @@ button {
   }
 
   .section-refill {
-    margin-top: -1.65rem;
+    margin-top: -1.45rem;
     padding-top: 0;
   }
 
   .section-refill .refill-banner {
-    margin-top: -1.2rem;
+    margin-top: -1.05rem;
   }
 
   .section-refill::before {
-    top: 1.85rem;
+    top: 1.7rem;
     bottom: 0;
   }
 
@@ -2136,21 +2190,25 @@ button {
     left: auto;
     right: auto;
     bottom: auto;
-    margin-top: 1rem;
+    margin-top: 0.55rem;
     justify-content: center;
   }
 
   .telemedicine-copy {
-    min-height: 330px;
-    padding: 0.95rem 0.95rem 0.95rem 1rem;
+    min-height: 280px;
+    padding: 0.08rem 0.95rem 0.12rem 1rem;
     background:
       linear-gradient(180deg, rgba(244, 249, 255, 0.94) 0%, rgba(244, 249, 255, 0.88) 36%, rgba(244, 249, 255, 0.48) 100%),
       url('/images/slide-telemed-lt-blue.jpg') center / cover no-repeat;
   }
 
   .telemedicine-points {
-    margin-top: 0.8rem;
+    margin-top: 0;
     max-width: 100%;
+  }
+
+  .section-telemedicine .section-heading {
+    margin-bottom: 0.02rem;
   }
 
   .telemedicine-point {
@@ -2172,7 +2230,7 @@ button {
   }
 
   .section-refill.section-soft-alt::before {
-    top: 1.65rem;
+    top: 1.5rem;
     bottom: 0;
   }
 
@@ -2214,23 +2272,25 @@ button {
     justify-content: center;
     text-align: center;
     font-size: 0.92rem;
+    gap: 0.3rem 0.65rem;
   }
 
   .hero-utility-wrap {
-    margin-top: 1.15rem;
-    padding-top: 1.7rem;
+    margin-top: 0.3rem;
+    padding-top: 0.3rem;
   }
 
   .hero-utility-divider {
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.15rem;
   }
 
   .hero-utility-wrap .utility-strip {
     width: 100%;
+    padding: 0.15rem 0 0;
   }
 
   .utility-strip a {
-    min-height: 2.4rem;
+    min-height: 1.95rem;
   }
 
   .utility-socials {
@@ -2239,7 +2299,8 @@ button {
     margin-left: 0;
     padding-left: 0;
     border-left: 0;
-    padding-top: 0.35rem;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .chatbot-widget {
@@ -2274,8 +2335,15 @@ button {
   }
 
   .chatbot-trigger-icon {
-    width: 3rem;
-    height: 3rem;
+    width: 3.3rem;
+    height: 3.3rem;
+  }
+
+  .chatbot-trigger-badge {
+    top: -0.16rem;
+    right: -0.16rem;
+    width: 1.32rem;
+    height: 1.32rem;
   }
 
   .chatbot-composer-row {
