@@ -28,18 +28,18 @@ const navigation = [
       { label: 'Health Issues & Illnesses', href: '#services' },
       { label: 'Safety', href: '#services' },
       { label: 'Immunization', href: '#services' },
-      { label: 'Referrals', href: '#resources' },
-      { label: 'Medical Records', href: '#resources' },
-      { label: 'Business Office', href: '#resources' },
+      { label: 'Referrals', href: '#footer' },
+      { label: 'Medical Records', href: '#footer' },
+      { label: 'Business Office', href: '#footer' },
     ],
   },
   {
     label: 'Forms',
-    href: '#resources',
+    href: '#footer',
   },
   {
     label: 'Patient Portal',
-    href: '#resources',
+    href: '/',
   },
 ]
 
@@ -98,14 +98,14 @@ const news = [
     category: 'Care Team',
     title: 'Dr. Tammi Plotnik spotlight',
     summary:
-      'Learn more about Dr. Tammi Plotnik and the physicians who support care for children and young adults.',
+      'Meet Dr. Tammi Plotnik and learn more about the experienced providers who care for infants, children, and young adults at PYAM.',
     image: '/images/dr-tammi-plotnik.png',
   },
   {
     category: 'Care Team',
     title: 'Dr. Christopher Ordonez spotlight',
     summary:
-      'Learn more about Dr. Christopher Ordonez and the physicians who support care for children and young adults.',
+      'Get to know Dr. Christopher Ordonez and the care philosophy that guides long-term pediatric support for local families.',
     image: '/images/dr-christopher-ordonez.png',
   }
 ]
@@ -237,7 +237,7 @@ function App() {
             </span>
           </button>
 
-          <a className="nav-cta" href="#appointments">
+          <a className="nav-cta" href="#top">
             Schedule Visit
           </a>
         </header>
@@ -295,7 +295,7 @@ function App() {
               appointment if you feel you need to be seen urgently.
             </p>
             <p className="hero-text hero-text-secondary">
-              Use the button below to schedule online.
+              Choose the next step that fits your family&apos;s needs.
             </p>
 
             <div className="quick-actions" aria-label="Quick actions">
@@ -477,7 +477,6 @@ function App() {
         <section className="section shell section-soft-alt section-refill" id="refill-line">
           <div className="refill-banner reveal-on-scroll">
             <div className="refill-copy">
-              <p className="eyebrow">Prescription Refill Line</p>
               <h2>Prescription refill support.</h2>
               <p>
                 Call the refill line for medication requests and follow the recorded
@@ -506,9 +505,12 @@ function App() {
             <p className="eyebrow">Locations & Access</p>
             <h2>Family-friendly Convenient Healthcare</h2>
             <p>
-              Accommodating the needs of today’s busy families is important to us. Our clinics are centrally located, offering family-friendly expertise at four convenient locations: St. Paul, Eagan, and Maplewood, 
-              Minnesota. We offer flexible scheduling in the day, and on Saturdays, coordinated visits for multiple children within a family as well as online telemedicine appointments. 
-              Same day appointments with your provider, urgent care, 24-hour phone service and online services are key factors in providing consistent and easy health care for all children.
+              Our offices are located to make pediatric care easier for busy
+              families across Maplewood, and Eagan. With same-day
+              appointments, Saturday availability at select locations,
+              coordinated visits for siblings, and telemedicine for eligible
+              appointment types, we work to keep care convenient, consistent,
+              and close to home.
             </p>
           </div>
 
@@ -610,13 +612,13 @@ function App() {
             <div className="footer-links">
               <a href="#services">Well Child Visits</a>
               <a href="#services">Health Issues / Illnesses</a>
-              <a href="#resources">Nutrition</a>
+              <a href="#refill-line">Prescription Refill Line</a>
               <a href="#services">Safety</a>
-              <a href="#resources">Medical Links</a>
-              <a href="#resources">F.A.Q.</a>
+              <a href="#locations">Locations & Hours</a>
+              <a href="#news">Latest News</a>
               <a href="#services">Immunization</a>
               <a href="#top">Site Map</a>
-              <a href="#resources">FollowMyHealth Portal</a>
+              <a href="/">FollowMyHealth Portal</a>
             </div>
           </div>
           <div className="footer-newsletter">
@@ -649,16 +651,12 @@ function App() {
             </a>
           </div>
 
-          <div className="footer-legal">
-            <span>Copyright © 2026 · Pediatric & Young Adult Medicine</span>
-            <a href="/">Privacy Policy</a>
-            <a href="/">Log in</a>
-          </div>
+          <div className="footer-legal">            <span>Copyright &copy; 2026 &middot; Pediatric & Young Adult Medicine</span>            <a href="/">Privacy Policy</a>            <a href="/">Log in</a>         </div>
         </div>
       </footer>
 
       <div className="mobile-cta-bar">
-        <a href="#appointments">Schedule</a>
+        <a href="#top">Schedule</a>
       </div>
 
       <ChatbotWidget openSignal={chatbotOpenSignal} />
@@ -667,3 +665,4 @@ function App() {
 }
 
 export default App
+
