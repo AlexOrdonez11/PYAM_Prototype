@@ -74,7 +74,7 @@ function HomePage() {
                       <path d="M3.8 6.8A1.8 1.8 0 0 1 5.6 5h12.8a1.8 1.8 0 0 1 1.8 1.8v10.4a1.8 1.8 0 0 1-1.8 1.8H5.6a1.8 1.8 0 0 1-1.8-1.8V6.8Zm1.8 0v2h12.8v-2H5.6Zm0 4v6.4h12.8v-6.4H5.6Zm2.2 1.5h3v1.8h-3v-1.8Z" />
                     </svg>
                   </span>
-                  <span>Billing & Forms</span>
+                  <span>Payment</span>
                 </a>
                 <a href="/forms">
                   <span className="utility-icon" aria-hidden="true">
@@ -82,9 +82,9 @@ function HomePage() {
                       <path d="M12 2.8 4.5 6v5.2c0 4.6 3.2 8.9 7.5 10 4.3-1.1 7.5-5.4 7.5-10V6L12 2.8Zm0 1.9 5.7 2.4v4.1c0 3.7-2.5 7.2-5.7 8.2-3.2-1-5.7-4.5-5.7-8.2V7.1L12 4.7Zm-.9 3.3h1.8v5.1h-1.8V8Zm0 6.5h1.8v1.8h-1.8v-1.8Z" />
                     </svg>
                   </span>
-                  <span>Forms & Policies</span>
+                  <span>HIPAA</span>
                 </a>
-                <a href="/forms">
+                <a href="https://www.followmyhealth.com/Login/Home/Index?authproviders=0&returnArea=PatientAccess#!/default" target="_blank" rel="noopener noreferrer">
                   <span className="utility-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                       <path d="M6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11A2.5 2.5 0 0 1 6.5 4Zm0 1.8c-.4 0-.7.3-.7.7v11c0 .4.3.7.7.7h11c.4 0 .7-.3.7-.7v-11c0-.4-.3-.7-.7-.7h-11Zm1.4 2.1h8.2v1.8H7.9V7.9Zm0 3.7h8.2v1.8H7.9v-1.8Zm0 3.7h5v1.8h-5v-1.8Z" />

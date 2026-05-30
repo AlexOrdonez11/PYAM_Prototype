@@ -54,7 +54,9 @@ function SiteLayout() {
       <Outlet context={{ openChatbot: () => setChatbotOpenSignal((signal) => signal + 1) }} />
       <SiteFooter />
       <div className="mobile-cta-bar">
-        <a href="tel:6512566714">Schedule</a>
+        <a href="https://phreesia.me/PYAMReturningPatient/" target="_blank" rel="noopener noreferrer">
+          Schedule
+        </a>
       </div>
       <ChatbotWidget openSignal={chatbotOpenSignal} />
     </div>

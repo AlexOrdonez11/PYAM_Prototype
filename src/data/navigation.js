@@ -6,6 +6,10 @@ export const navigation = [
     children: [
       { label: 'Dr. Tammi Plotnik', to: '/providers/tammi-plotnik' },
       { label: 'Dr. Christopher Ordonez', to: '/providers/christopher-ordonez' },
+      { label: 'Maggie Smith, CPNP, CBS', to: '/providers/margaret-maggie-smith' },
+      { label: 'Meredith Duran, CNP', to: '/providers/meredith-duran' },
+      { label: 'Tiffany Maher, CPNP-PC', to: '/providers/tiffany-maher' },
+      { label: 'Afiifa Karie, CPNP', to: '/providers/afiifa-karie' },
     ],
   },
   {
@@ -31,7 +35,7 @@ export const navigation = [
 ]
 
 export const quickActions = [
-  { label: 'Med Refill', href: '/#refill-line' },
+  { label: 'Med Refill', href: 'tel:6512566796' },
   { label: 'Talk to Virtual Assistant', action: 'open-chatbot' },
   { label: 'Talk with Front Desk', href: 'tel:6512566714' },
 ]

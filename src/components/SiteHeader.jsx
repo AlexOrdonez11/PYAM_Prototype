@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { href, Link, NavLink } from 'react-router-dom'
 import { navigation } from '../data'
 
 function SiteHeader({ onOpenChatbot }) {
@@ -12,11 +12,12 @@ function SiteHeader({ onOpenChatbot }) {
   }
 
   return (
-    <header className="site-header-wrap">
-      <div className="header-glow header-glow-one" />
-      <div className="header-glow header-glow-two" />
+    <>
+      <header className="site-header-wrap">
+        <div className="header-glow header-glow-one" />
+        <div className="header-glow header-glow-two" />
 
-      <div className="site-header shell">
+        <div className="site-header shell">
         <Link className="brand-mark" to="/" aria-label="PYAM home" onClick={closeMenus}>
           <img
             className="brand-logo"
@@ -98,7 +99,7 @@ function SiteHeader({ onOpenChatbot }) {
           </span>
         </button>
 
-        <button type="button" className="nav-cta" onClick={onOpenChatbot}>
+        <button type="button" className="nav-cta" onClick={() => window.location.href = 'https://phreesia.me/PYAMReturningPatient/'}>
           Schedule Visit
         </button>
       </div>
@@ -144,7 +145,8 @@ function SiteHeader({ onOpenChatbot }) {
           </div>
         ))}
       </div>
-    </header>
+      </header>
+    </>
   )
 }
 

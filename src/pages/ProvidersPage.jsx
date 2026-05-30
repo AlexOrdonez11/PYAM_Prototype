@@ -17,14 +17,26 @@ function ProvidersPage() {
       </section>
 
       <section className="section shell section-soft">
-        <div className="listing-grid reveal-on-scroll">
+        <div className="listing-grid provider-listing-grid reveal-on-scroll">
           {providers.map((provider) => (
             <article className="listing-card provider-card" key={provider.slug}>
               <img src={provider.image} alt={provider.name} />
               <div className="listing-card-body">
-                <p className="card-kicker">{provider.role}</p>
+                <p className="card-kicker">
+                  {provider.role}
+                  {provider.credentials ? ` | ${provider.credentials}` : ''}
+                </p>
                 <h2>{provider.name}</h2>
                 <p>{provider.summary}</p>
+                {provider.officeLocations?.length ? (
+                  <div className="chip-row">
+                    {provider.officeLocations.map((office) => (
+                      <span key={office} className="info-chip">
+                        {office}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
                 <div className="chip-row">
                   {provider.specialties.map((specialty) => (
                     <span key={specialty} className="info-chip">
