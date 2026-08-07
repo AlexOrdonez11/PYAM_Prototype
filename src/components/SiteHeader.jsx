@@ -1,14 +1,26 @@
 import { useState } from 'react'
-import { href, Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { navigation } from '../data'
 
-function SiteHeader({ onOpenChatbot }) {
+function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const navigate = useNavigate()
 
   const closeMenus = () => {
     setIsMenuOpen(false)
     setIsSearchOpen(false)
+  }
+
+  const submitSearch = (event) => {
+    event.preventDefault()
+    const query = searchQuery.trim()
+
+    if (!query) return
+
+    navigate(`/search?q=${encodeURIComponent(query)}`)
+    closeMenus()
   }
 
   return (
@@ -63,8 +75,14 @@ function SiteHeader({ onOpenChatbot }) {
           ))}
         </nav>
 
-        <form className="header-search" role="search">
-          <input type="search" placeholder="Search" aria-label="Search site" />
+        <form className="header-search" role="search" onSubmit={submitSearch}>
+          <input
+            type="search"
+            placeholder="Search providers, services..."
+            aria-label="Search site"
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
+          />
         </form>
 
         <button
@@ -108,8 +126,15 @@ function SiteHeader({ onOpenChatbot }) {
         className={`mobile-search-widget shell ${isSearchOpen ? 'mobile-search-open' : ''}`}
         id="mobile-search-widget"
         role="search"
+        onSubmit={submitSearch}
       >
-        <input type="search" placeholder="Search" aria-label="Search site" />
+        <input
+          type="search"
+          placeholder="Search providers, services..."
+          aria-label="Search site"
+          value={searchQuery}
+          onChange={(event) => setSearchQuery(event.target.value)}
+        />
       </form>
 
       <div

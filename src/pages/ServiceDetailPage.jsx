@@ -42,45 +42,8 @@ function ServiceDetailPage() {
             ))}
           </div>
           <a href="tel:6512566714" className="button button-primary">
-            Ask about this service
+            Schedule
           </a>
-        </div>
-      </section>
-
-      <section className="section shell detail-sections">
-        <div className="detail-section-card reveal-on-scroll">
-          <p className="card-kicker">What This Includes</p>
-          <h2>Typical parts of this care area</h2>
-          <div className="stacked-list">
-            {service.includes.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
-        </div>
-
-        <div className="detail-section-card reveal-on-scroll">
-          <p className="card-kicker">Helpful Connections</p>
-          <h2>Related resources</h2>
-          <div className="chip-row">
-            {service.relatedLinks.map((item) => (
-              <span key={item} className="info-chip">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="detail-section-card reveal-on-scroll detail-section-wide">
-          <p className="card-kicker">Common Questions</p>
-          <h2>What families often want to know</h2>
-          <div className="faq-list">
-            {service.commonQuestions.map((item) => (
-              <div key={item.question} className="faq-item">
-                <h3>{item.question}</h3>
-                <p>{item.answer}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </main>

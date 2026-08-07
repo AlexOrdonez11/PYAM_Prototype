@@ -28,6 +28,7 @@ export const navigation = [
       { label: 'Health Issues & Illnesses', to: '/services/health-issues-and-illnesses' },
       { label: 'Safety', to: '/services/safety' },
       { label: 'Immunizations', to: '/services/immunizations' },
+      { label: 'Newborn Care', to: '/services/newborn-care' },
     ],
   },
   { label: 'Forms', to: '/forms' },
@@ -36,7 +37,6 @@ export const navigation = [
 
 export const quickActions = [
   { label: 'Med Refill', href: 'tel:6512566796' },
-  { label: 'Talk to Virtual Assistant', action: 'open-chatbot' },
   { label: 'Talk with Front Desk', href: 'tel:6512566714' },
 ]
 
@@ -48,6 +48,7 @@ export const sitemapLinks = [
   { label: 'Services', to: '/services' },
   { label: 'Well Child Visits', to: '/services/well-child-visits' },
   { label: 'Health Issues / Illnesses', to: '/services/health-issues-and-illnesses' },
+  { label: 'Newborn Care', to: '/services/newborn-care' },
   { label: 'Prescription Refill Line', href: '/#refill-line' },
   { label: 'Latest News', href: '/#news' },
   { label: 'Forms', to: '/forms' },

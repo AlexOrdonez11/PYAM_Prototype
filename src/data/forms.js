@@ -12,7 +12,7 @@ export const formResources = [
   {
     title: 'School & Sports Forms',
     description:
-      'A reusable section for common school, daycare, and activity paperwork families often need throughout the year.',
+      'Common school, daycare, and activity paperwork families often need throughout the year.',
   },
   {
     title: 'Billing & Office Policies',

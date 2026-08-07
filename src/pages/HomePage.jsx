@@ -1,20 +1,9 @@
 import { useState } from 'react'
-import { Link, useOutletContext } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { locations, news, quickActions, services } from '../data'
 
 function HomePage() {
   const [isIntroExpanded, setIsIntroExpanded] = useState(false)
-  const { openChatbot } = useOutletContext()
-
-  const handleQuickActionClick = (event, action) => {
-    if (action.action !== 'open-chatbot') {
-      return
-    }
-
-    event.preventDefault()
-    openChatbot()
-  }
-
   return (
     <>
       <section className="hero-wrap">
@@ -39,8 +28,7 @@ function HomePage() {
                 <a
                   key={action.label}
                   className="pill"
-                  href={action.href ?? '#'}
-                  onClick={(event) => handleQuickActionClick(event, action)}
+                  href={action.href}
                 >
                   {action.label}
                 </a>
@@ -122,8 +110,8 @@ function HomePage() {
               <div className="intro-heading">
                 <p className="eyebrow intro-eyebrow">Our Approach</p>
                 <h2>
-                  Exceptional Health Care from Experienced Pediatricians in St. Paul,
-                  Eagan, and Maplewood, Minnesota
+                  Exceptional Health Care from Experienced Pediatricians in Eagan and
+                  Maplewood, Minnesota
                 </h2>
               </div>
 
@@ -257,6 +245,9 @@ function HomePage() {
               <article className="location-card" key={location.city}>
                 <img src={location.image} alt={location.city} />
                 <div className="location-body">
+                  {location.featuredLabel ? (
+                    <p className="card-kicker">{location.featuredLabel}</p>
+                  ) : null}
                   {location.hours.map((hour) => (
                     <p className="location-hours" key={hour}>
                       {hour}
@@ -296,13 +287,14 @@ function HomePage() {
                   <span>Connect by phone, tablet, or computer from the comfort of home.</span>
                 </div>
               </div>
-              <button
-                type="button"
+              <a
                 className="button button-primary telemedicine-overlay-cta"
-                onClick={openChatbot}
+                href="https://phreesia.me/PYAMReturningPatient/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Book a Telemedicine Visit
-              </button>
+              </a>
             </div>
           </div>
         </section>

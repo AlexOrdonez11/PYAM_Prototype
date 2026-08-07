@@ -8,9 +8,8 @@ function FormsPage() {
           <p className="eyebrow">Forms & Resources</p>
           <h1>One place for the clinic forms and administrative resources families need most.</h1>
           <p>
-            This page gives you a clean landing spot for downloadable forms,
-            instructions, portal links, and office policies without burying them in
-            the footer.
+            Find downloadable forms, instructions, portal links, and office policies
+            in one convenient place.
           </p>
         </div>
       </section>

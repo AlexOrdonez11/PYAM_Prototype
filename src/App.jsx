@@ -8,6 +8,7 @@ import ProviderDetailPage from './pages/ProviderDetailPage'
 import ProvidersPage from './pages/ProvidersPage'
 import ServiceDetailPage from './pages/ServiceDetailPage'
 import ServicesPage from './pages/ServicesPage'
+import SearchResultsPage from './pages/SearchResultsPage'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/locations" element={<LocationsPage />} />
           <Route path="/locations/:locationSlug" element={<LocationDetailPage />} />
           <Route path="/forms" element={<FormsPage />} />
+          <Route path="/search" element={<SearchResultsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

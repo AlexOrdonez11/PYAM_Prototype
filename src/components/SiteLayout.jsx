@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import ChatbotWidget from './ChatbotWidget'
 import SiteFooter from './SiteFooter'
@@ -6,8 +6,6 @@ import SiteHeader from './SiteHeader'
 
 function SiteLayout() {
   const location = useLocation()
-  const [chatbotOpenSignal, setChatbotOpenSignal] = useState(0)
-
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll('.reveal-on-scroll'))
     if (!elements.length) return
@@ -50,15 +48,15 @@ function SiteLayout() {
 
   return (
     <div className="page-shell">
-      <SiteHeader onOpenChatbot={() => setChatbotOpenSignal((signal) => signal + 1)} />
-      <Outlet context={{ openChatbot: () => setChatbotOpenSignal((signal) => signal + 1) }} />
+      <SiteHeader />
+      <Outlet />
       <SiteFooter />
       <div className="mobile-cta-bar">
         <a href="https://phreesia.me/PYAMReturningPatient/" target="_blank" rel="noopener noreferrer">
           Schedule
         </a>
       </div>
-      <ChatbotWidget openSignal={chatbotOpenSignal} />
+      <ChatbotWidget />
     </div>
   )
 }

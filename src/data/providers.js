@@ -17,7 +17,7 @@ export const providers = [
     ],
     philosophy:
       'She brings long-term continuity and a family-centered approach to pediatric care, helping children grow with consistent support across the years.',
-    officeLocations: ['St. Paul'],
+    officeLocations: ['Eagan', 'Maplewood'],
     careFocus: [
       'Preventive pediatric visits',
       'Long-term relationships with families',
@@ -38,7 +38,7 @@ export const providers = [
           'She has been part of Pediatric and Young Adult Medicine since 2001, giving families the benefit of long-term continuity and experience within the clinic.',
       },
       {
-        question: 'What areas might families especially connect with on this page?',
+        question: 'What areas of care does Dr. Plotnik emphasize?',
         answer:
           'Her interest in sports medicine, preventive care, and relationship-based pediatric support make this profile useful for both routine and activity-related care questions.',
       },
@@ -101,7 +101,7 @@ export const providers = [
     ],
     philosophy:
       'She supports families with practical guidance during some of the most formative early-childhood stages, especially around feeding, sleep, and parenting confidence.',
-    officeLocations: ['Eagan', 'St. Paul'],
+    officeLocations: ['Eagan'],
     careFocus: [
       'Newborn and infant support',
       'Breastfeeding and feeding guidance',
@@ -118,7 +118,7 @@ export const providers = [
       {
         question: 'What makes this profile useful beyond a simple bio?',
         answer:
-          'It gives you a place to later add breastfeeding resources, newborn FAQs, and office-specific visit guidance without redesigning the page.',
+          'Maggie’s breastfeeding expertise and newborn-care experience help families find feeding support and practical guidance in one place.',
       },
     ],
   },

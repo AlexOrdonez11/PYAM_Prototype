@@ -9,9 +9,8 @@ function ProvidersPage() {
           <p className="eyebrow">Providers</p>
           <h1>Meet the pediatric care team families get to know by name.</h1>
           <p>
-            This listing page gives you a reusable pattern for the rest of the site:
-            cards for discovery now, then detail pages for richer provider bios,
-            specialties, and scheduling next.
+            Get to know our pediatricians and nurse practitioners, their experience,
+            specialties, and office availability.
           </p>
         </div>
       </section>
@@ -37,13 +36,6 @@ function ProvidersPage() {
                     ))}
                   </div>
                 ) : null}
-                <div className="chip-row">
-                  {provider.specialties.map((specialty) => (
-                    <span key={specialty} className="info-chip">
-                      {specialty}
-                    </span>
-                  ))}
-                </div>
                 <Link to={`/providers/${provider.slug}`} className="button button-primary">
                   View profile
                 </Link>

@@ -9,9 +9,8 @@ function ServicesPage() {
           <p className="eyebrow">Services</p>
           <h1>Pediatric services organized so families can find the right care quickly.</h1>
           <p>
-            This listing template is ready for your full services catalog. We can keep
-            adding cards here, then deepen each one with a detail page only when it
-            needs more explanation, forms, or FAQs.
+            Explore preventive, acute, safety, immunization, and newborn care for
+            infants, children, teens, and young adults.
           </p>
         </div>
       </section>
@@ -25,13 +24,6 @@ function ServicesPage() {
                 <p className="card-kicker">{service.eyebrow}</p>
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>
-                <div className="chip-row">
-                  {service.bullets.map((bullet) => (
-                    <span key={bullet} className="info-chip">
-                      {bullet}
-                    </span>
-                  ))}
-                </div>
                 <Link to={`/services/${service.slug}`} className="button button-primary">
                   View service
                 </Link>

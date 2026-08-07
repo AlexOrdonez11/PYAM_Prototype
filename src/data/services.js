@@ -7,7 +7,7 @@ export const services = [
       'Routine checkups, developmental screenings, school and sports forms, and preventive care to support healthy growth at every stage.',
     image: '/images/care-well-child-visits-300x150-1.png',
     detail:
-      'Well visits help families stay ahead of growth, development, school requirements, and preventive care milestones. This page pattern can later hold age-specific guidance, forms, FAQs, and scheduling rules.',
+      'Well visits help families stay ahead of growth, development, school requirements, and preventive care milestones at every age.',
     bullets: [
       'Routine preventive checkups',
       'Development and growth screenings',
@@ -23,7 +23,7 @@ export const services = [
       {
         question: 'What can families expect during a well visit?',
         answer:
-          'This page can cover screenings, preventive guidance, forms, milestone discussions, and the routine questions that come up at each stage of growth.',
+          'Families can expect screenings, preventive guidance, milestone discussions, and time for routine questions at each stage of growth.',
       },
       {
         question: 'Why keep a dedicated detail page for this service?',
@@ -41,7 +41,7 @@ export const services = [
       'Recommended childhood and adolescent vaccines, clear guidance for families, and help keeping immunization records up to date.',
     image: '/images/care-immunization-300x150-1.png',
     detail:
-      'Families can use this template for vaccine schedules, record requests, school compliance guidance, and common immunization questions.',
+      'We help families with vaccine schedules, record requests, school compliance guidance, and common immunization questions.',
     bullets: [
       'Routine childhood vaccine guidance',
       'Record updates and access',
@@ -55,14 +55,14 @@ export const services = [
     ],
     commonQuestions: [
       {
-        question: 'Can this page handle vaccine-specific FAQs later?',
+        question: 'Where can I find vaccine-specific guidance?',
         answer:
           'Yes. It is a good place for schedule overviews, common questions, record request links, and visit preparation guidance.',
       },
       {
         question: 'Why keep immunizations separate from the general services listing?',
         answer:
-          'It gives you a clean destination for one of the most frequently requested information areas without cluttering the broader services page.',
+          'Immunizations have their own timing, record, school, and visit-preparation needs, so families benefit from dedicated guidance.',
       },
     ],
     relatedLinks: ['Well Child Visits', 'Forms & Resources', 'Locations'],
@@ -75,7 +75,7 @@ export const services = [
       'Evaluation and treatment for common illnesses, minor injuries, fevers, respiratory concerns, rashes, and other everyday pediatric needs.',
     image: '/images/care-health-issues-300x150-1.png',
     detail:
-      'This detail page gives you a reusable place for urgent visit guidance, when-to-call instructions, same-day appointment notes, and condition-specific resources.',
+      'Find urgent visit guidance, when-to-call instructions, same-day appointment information, and condition-specific resources.',
     bullets: [
       'Same-day pediatric concerns',
       'Common illness evaluation',
@@ -89,14 +89,14 @@ export const services = [
     ],
     commonQuestions: [
       {
-        question: 'What belongs on this page long term?',
+        question: 'What health concerns can the clinic evaluate?',
         answer:
           'Common symptom guidance, urgent visit expectations, when-to-call advice, and links to related forms or phone support are all strong fits here.',
       },
       {
         question: 'How is this different from a provider page?',
         answer:
-          'This page explains the care category itself, while provider pages explain who families may meet during those visits.',
+          'Our care team evaluates common symptoms and helps families understand the appropriate next step for their child.',
       },
     ],
     relatedLinks: ['Locations', 'Telemedicine', 'Providers'],
@@ -109,7 +109,7 @@ export const services = [
       'Practical support for injury prevention, seasonal concerns, school health questions, and guidance that helps families feel prepared.',
     image: '/images/care-safety-300x150-1.png',
     detail:
-      'Safety content can grow into a resource hub with seasonal reminders, age-based recommendations, and links to trusted education materials.',
+      'Our safety guidance includes seasonal reminders, age-based recommendations, and trusted educational resources.',
     bullets: [
       'Seasonal safety reminders',
       'Injury prevention guidance',
@@ -123,7 +123,7 @@ export const services = [
     ],
     commonQuestions: [
       {
-        question: 'Does this page need to be very long at first?',
+        question: 'What kinds of safety guidance are available?',
         answer:
           'No. It can start with a few strong sections and gradually grow into a richer education hub as you add more resources.',
       },
@@ -134,5 +134,28 @@ export const services = [
       },
     ],
     relatedLinks: ['Well Child Visits', 'Forms & Resources', 'Locations'],
+  },
+  {
+    slug: 'newborn-care',
+    title: 'Newborn Care',
+    eyebrow: 'Infant Care',
+    description:
+      'Compassionate support for newborns and parents, including lactation consulting, newborn well-child checks, and circumcisions.',
+    image: '/images/newborn-care.png',
+    detail:
+      'Our newborn care team supports feeding, growth, development, preventive care, and common questions during your baby’s earliest weeks.',
+    bullets: [
+      'Lactation consultant support',
+      'Newborn well-child checks',
+      'Circumcisions',
+    ],
+    bestFor: 'New parents looking for coordinated medical and feeding support during the newborn stage.',
+    includes: [
+      'Lactation consultant support',
+      'Newborn well-child checks',
+      'Circumcisions',
+    ],
+    commonQuestions: [],
+    relatedLinks: ['Well Child Visits', 'Providers', 'Locations'],
   },
 ]

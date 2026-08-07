@@ -9,8 +9,8 @@ function LocationsPage() {
           <p className="eyebrow">Locations & Hours</p>
           <h1>Choose the office that works best for your family.</h1>
           <p>
-            This listing page can grow into maps, parking notes, office contacts, and
-            visit-specific instructions without changing the overall layout pattern.
+            Find hours, contact information, and pediatric services available at our
+            Maplewood and Eagan offices.
           </p>
         </div>
       </section>
@@ -22,6 +22,9 @@ function LocationsPage() {
               <img src={location.image} alt={location.title} />
               <div className="listing-card-body">
                 <p className="card-kicker">Office Location</p>
+                {location.featuredLabel ? (
+                  <p className="card-kicker">{location.featuredLabel}</p>
+                ) : null}
                 <h2>{location.title}</h2>
                 <p>{location.detail}</p>
                 <div className="stacked-info">

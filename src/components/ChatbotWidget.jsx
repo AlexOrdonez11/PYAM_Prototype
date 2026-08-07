@@ -6,7 +6,7 @@ const botAnswers = {
   'Schedule a visit':
     'You can schedule a visit online from the hero section or call the clinic for same-day appointment support.',
   'Office hours':
-    'Our clinic hours are Monday through Friday, 8:00 AM to 5:00 PM at our St. Paul, Maplewood, and Eagan locations.',
+    'Our Maplewood office is open Monday through Friday, 9:00 AM to 5:00 PM. Our Eagan office is open Monday through Friday, 8:00 AM to 5:00 PM, with Saturday medical appointments from 9:00 AM to 5:00 PM.',
   Telemedicine:
     'Telemedicine is available for select visit types, so families can connect with care from home when appropriate.',
   'Prescription refill':
@@ -216,7 +216,7 @@ function ChatbotWidget({ openSignal = 0 }) {
       >
         <span className="chatbot-trigger-icon" aria-hidden="true">
           <span className="chatbot-trigger-image">
-            <img src="/images/nurse.jpeg" alt="" />
+            <img src="/images/virtual-assistant.png" alt="" />
           </span>
           <span className="chatbot-trigger-badge">
             <svg viewBox="0 0 24 24" aria-hidden="true">

@@ -30,7 +30,7 @@ function LocationDetailPage() {
             <span>/</span>
             <span>{location.city}</span>
           </div>
-          <p className="eyebrow">Office Details</p>
+          <p className="eyebrow">{location.featuredLabel ?? 'Office Details'}</p>
           <h1>{location.title}</h1>
           <p>{location.detail}</p>
           <div className="stacked-info">
@@ -46,45 +46,6 @@ function LocationDetailPage() {
                 {highlight}
               </span>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section shell detail-sections">
-        <div className="detail-section-card reveal-on-scroll">
-          <p className="card-kicker">Visit Types</p>
-          <h2>What families commonly come here for</h2>
-          <div className="chip-row">
-            {location.visitTypes.map((item) => (
-              <span key={item} className="info-chip">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="detail-section-card reveal-on-scroll">
-          <p className="card-kicker">Scheduling</p>
-          <h2>Before you book</h2>
-          <p>{location.schedulingNote}</p>
-        </div>
-
-        <div className="detail-section-card reveal-on-scroll">
-          <p className="card-kicker">Arrival Tips</p>
-          <h2>Helpful visit prep</h2>
-          <div className="stacked-list">
-            {location.arrivalTips.map((tip) => (
-              <span key={tip}>{tip}</span>
-            ))}
-          </div>
-        </div>
-
-        <div className="detail-section-card reveal-on-scroll">
-          <p className="card-kicker">Access</p>
-          <h2>Getting to the office</h2>
-          <div className="stacked-list">
-            <span>{location.parking}</span>
-            <span>{location.transit}</span>
           </div>
         </div>
       </section>
