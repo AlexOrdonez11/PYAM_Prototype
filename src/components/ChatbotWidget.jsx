@@ -216,7 +216,12 @@ function ChatbotWidget({ openSignal = 0 }) {
       >
         <span className="chatbot-trigger-icon" aria-hidden="true">
           <span className="chatbot-trigger-image">
-            <img src="/images/virtual-assistant.png" alt="" />
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M15 14h34a7 7 0 0 1 7 7v19a7 7 0 0 1-7 7H32l-11 8v-8h-6a7 7 0 0 1-7-7V21a7 7 0 0 1 7-7Z" />
+              <path className="chatbot-trigger-smile" d="M22 31c2.5 4 6 6 10 6s7.5-2 10-6" />
+              <circle cx="23" cy="26" r="2.2" />
+              <circle cx="41" cy="26" r="2.2" />
+            </svg>
           </span>
           <span className="chatbot-trigger-badge">
             <svg viewBox="0 0 24 24" aria-hidden="true">
