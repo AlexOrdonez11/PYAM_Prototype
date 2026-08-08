@@ -36,6 +36,8 @@ export const navigation = [
 ]
 
 export const quickActions = [
+  { label: 'Sick Visit', href: 'https://phreesia.me/PYAMReturningPatient/' },
+  { label: 'Eagan Saturday Visit', href: 'https://phreesia.me/PYAMSaturdayVisits' },
   { label: 'Med Refill', href: 'tel:6512566796' },
   { label: 'Talk with Front Desk', href: 'tel:6512566714' },
 ]
