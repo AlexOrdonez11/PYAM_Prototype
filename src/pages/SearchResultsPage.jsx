@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from 'react-router-dom'
-import { locations, providers, services } from '../data'
+import { locations, news, providers, services } from '../data'
 
 const searchablePages = [
   {
@@ -43,6 +43,13 @@ const searchablePages = [
     description: `${location.address}. ${location.detail}`,
     to: `/locations/${location.slug}`,
     keywords: [location.city, location.hours, location.visitTypes],
+  })),
+  ...news.map((item) => ({
+    type: 'News',
+    title: item.title,
+    description: item.summary,
+    to: `/news/${item.slug}`,
+    keywords: [item.category, item.dateLabel, item.body],
   })),
 ]
 

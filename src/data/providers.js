@@ -225,22 +225,3 @@ export const providers = [
     ],
   },
 ]
-
-export const news = [
-  {
-    category: 'Care Team',
-    title: 'Dr. Tammi Plotnik spotlight',
-    summary:
-      'Meet Dr. Tammi Plotnik and learn more about her long-standing role at PYAM and her special interest in sports medicine.',
-    image: '/images/dr-tammi-plotnik.png',
-    href: '/providers/tammi-plotnik',
-  },
-  {
-    category: 'Care Team',
-    title: 'Dr. Christopher Ordonez spotlight',
-    summary:
-      'Get to know Dr. Christopher Ordonez and his family-partnered approach to preventive care, chronic condition management, and behavioral health.',
-    image: '/images/dr-christopher-ordonez.png',
-    href: '/providers/christopher-ordonez',
-  },
-]

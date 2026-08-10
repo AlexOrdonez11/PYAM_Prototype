@@ -293,6 +293,7 @@ function HomePage() {
               Stay up to date with office changes, provider highlights, and
               community-related updates from Pediatric & Young Adult Medicine.
             </p>
+            <Link to="/news" className="section-link section-heading-link">View all news</Link>
           </div>
 
           <div className="news-grid reveal-on-scroll">
@@ -303,7 +304,7 @@ function HomePage() {
                   <span className="news-tag">{item.category}</span>
                   <h3>{item.title}</h3>
                   <p>{item.summary}</p>
-                  <Link to={item.href} className="section-link">
+                  <Link to={`/news/${item.slug}`} className="section-link">
                     Read update
                   </Link>
                 </div>

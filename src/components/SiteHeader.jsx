@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { navigation } from '../data'
+import { navigation, siteAlerts } from '../data'
 
 function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [dismissedAlertId, setDismissedAlertId] = useState(null)
   const navigate = useNavigate()
+  const activeAlert = siteAlerts.find((alert) => alert.id !== dismissedAlertId)
 
   const closeMenus = () => {
     setIsMenuOpen(false)
@@ -26,6 +28,27 @@ function SiteHeader() {
   return (
     <>
       <header className="site-header-wrap">
+        {activeAlert ? (
+          <aside className="site-alert" aria-label="Important announcement">
+            <div className="site-alert-inner shell">
+              <div className="site-alert-copy">
+                <span className="site-alert-label">{activeAlert.label}</span>
+                <strong>{activeAlert.title}</strong>
+                <span className="site-alert-summary">{activeAlert.summary}</span>
+              </div>
+              <a href={activeAlert.href} target="_blank" rel="noopener noreferrer">
+                {activeAlert.actionLabel}
+              </a>
+              <button
+                type="button"
+                aria-label="Dismiss insurance reminder"
+                onClick={() => setDismissedAlertId(activeAlert.id)}
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+          </aside>
+        ) : null}
         <div className="header-glow header-glow-one" />
         <div className="header-glow header-glow-two" />
 

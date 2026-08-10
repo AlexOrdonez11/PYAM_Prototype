@@ -10,7 +10,7 @@ export const locations = [
     parking: 'On-site parking is available for families visiting the office.',
     transit: 'Convenient access for east metro families coming from nearby neighborhoods.',
     detail:
-      'Our Maplewood office offers convenient east metro access for well visits, illness care, and ongoing pediatric support.',
+      'Our Maplewood office offers convenient east metro access for well visits, illness care, behavioral disorder support, chronic medication management, and ongoing pediatric support.',
     image: '/images/maplewood.jpg',
     highlights: [
       'Behavioral disorder support',
@@ -36,7 +36,7 @@ export const locations = [
     parking: 'Families can use convenient on-site parking when arriving for appointments.',
     transit: 'Designed to serve south metro families with practical access for routine care.',
     detail:
-      'The Eagan office provides south metro families with trusted pediatric care in a convenient and welcoming setting.',
+      'The Eagan office provides south metro families with trusted pediatric care, including outpatient surgical procedures, behavioral disorder support, chronic medication management, and ongoing pediatric support.',
     image: '/images/eagan-clinic-optimized.jpg',
     highlights: [
       'Behavioral disorder support',

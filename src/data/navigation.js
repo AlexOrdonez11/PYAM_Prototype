@@ -35,6 +35,7 @@ export const navigation = [
     label: 'Patient Portal',
     to: '/patient-portal',
   },
+  { label: 'News', to: '/news' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -56,6 +57,7 @@ export const sitemapLinks = [
   { label: 'Newborn Care', to: '/services/newborn-care' },
   { label: 'Prescription Refill Line', href: '/#refill-line' },
   { label: 'Latest News', href: '/#news' },
+  { label: 'All News', to: '/news' },
   { label: 'Patient Portal', to: '/patient-portal' },
   { label: 'Contact', to: '/contact' },
 ]
