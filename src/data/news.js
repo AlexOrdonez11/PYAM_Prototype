@@ -30,19 +30,6 @@ export const news = [
     },
   },
   {
-    slug: 'dr-siefferman-retires',
-    category: 'Practice Update',
-    dateLabel: 'December 2025',
-    title: 'Dr. Thomas Siefferman retires after 32 years in practice',
-    summary:
-      'Dr. Siefferman retired from PYAM at the end of 2025 after 32 years of caring for patients and families.',
-    image: '/images/dr-thomas-siefferman.jpg',
-    body: [
-      'Dr. Thomas Siefferman retired from Pediatric & Young Adult Medicine on December 31, 2025, after 32 years in practice.',
-      'PYAM is grateful for his decades of service and the trust families placed in him. The care team remains committed to supporting his patients and providing continuity during this transition.',
-    ],
-  },
-  {
     slug: 'pyam-joins-i-health',
     category: 'Practice Update',
     dateLabel: 'December 2023',
