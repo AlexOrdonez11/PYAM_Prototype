@@ -42,7 +42,6 @@ export const quickActions = [
   { label: 'Well Exam', href: 'https://phreesia.me/PYAMReturningPatient' },
   { label: 'Sick Visit', href: 'https://phreesia.me/PYAMsickvisit' },
   { label: 'Medication Check', href: 'https://phreesia.me/PYAMmedicationchecks' },
-  { label: 'Well Exam / Med Check', href: 'https://phreesia.me/PYAMwellexamcheck' },
   { label: 'Eagan Saturday Visit', href: 'https://phreesia.me/PYAMSaturdayVisits' },
 ]
 

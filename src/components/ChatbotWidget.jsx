@@ -4,7 +4,7 @@ const quickReplies = ['Schedule a visit', 'Office hours', 'Telemedicine', 'Presc
 
 const botAnswers = {
   'Schedule a visit':
-    'Use the Schedule page to choose a Well Exam, Sick Visit, Medication Check, combined visit, or Eagan Saturday appointment. You can also call (651) 256-6714 for help.',
+    'Use the Schedule page to choose a Well Exam, Sick Visit, Medication Check, or Eagan Saturday appointment. You can also call (651) 256-6714 for help.',
   'Office hours':
     'Our Maplewood office is open Monday through Friday, 9:00 AM to 5:00 PM. Our Eagan office is open Monday through Friday, 8:00 AM to 5:00 PM, with Saturday medical appointments from 9:00 AM to 5:00 PM.',
   Telemedicine:

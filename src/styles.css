@@ -577,6 +577,14 @@ button {
   color: #efffff;
 }
 
+.detail-hero-copy .button-secondary,
+.detail-section-card .button-secondary,
+.interior-hero-copy .button-secondary {
+  border-color: rgba(15, 96, 115, 0.16);
+  background: linear-gradient(135deg, rgba(221, 243, 242, 0.94), rgba(242, 249, 252, 0.96));
+  color: #0f6073;
+}
+
 .nav-cta:hover,
 .button:hover {
   transform: translateY(-1.5px);
@@ -1009,6 +1017,157 @@ button {
 
 .stacked-info a {
   font-weight: 700;
+}
+
+.page-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contact-hero-media img {
+  object-position: center 34%;
+}
+
+.contact-directory-section,
+.portal-enrollment-section {
+  margin-top: 0.7rem;
+}
+
+.contact-directory {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-card-featured {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.contact-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.contact-card-heading .card-kicker,
+.contact-card-heading h2 {
+  margin: 0;
+}
+
+.contact-card-icon,
+.portal-step-number {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0f6f82, #72c9bf);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(15, 111, 130, 0.2);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.contact-card > p,
+.portal-step-card > p,
+.portal-resource-card > p {
+  margin: 0;
+  color: #435e79;
+}
+
+.contact-details {
+  display: grid;
+  gap: 0.5rem;
+  color: #435e79;
+}
+
+.contact-details a {
+  width: fit-content;
+  color: var(--brand-deep);
+  font-weight: 700;
+}
+
+.contact-location-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.portal-hero-media {
+  background: #eef7fa;
+}
+
+.portal-hero-media img {
+  object-fit: contain;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.portal-step-grid,
+.portal-resource-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.portal-step-card,
+.portal-resource-card {
+  align-content: start;
+}
+
+.portal-step-card h2,
+.portal-resource-card h2 {
+  font-size: 1.35rem;
+}
+
+.portal-file-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 17px;
+  background: rgba(221, 243, 242, 0.82);
+  color: #0f6073;
+}
+
+.portal-file-icon svg {
+  width: 1.65rem;
+  fill: currentColor;
+}
+
+.portal-help-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: clamp(1.5rem, 4vw, 2.6rem);
+  border-radius: 30px;
+  background: linear-gradient(135deg, #0f6073, #143c5d);
+  color: #f6fdff;
+  box-shadow: 0 24px 60px rgba(17, 43, 73, 0.18);
+}
+
+.portal-help-card .eyebrow,
+.portal-help-card p {
+  color: rgba(246, 253, 255, 0.82);
+}
+
+.portal-help-card h2 {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+}
+
+.portal-help-card p:last-child {
+  max-width: 58ch;
+  margin-bottom: 0;
 }
 
 .detail-hero {
@@ -2221,8 +2380,45 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .contact-page .detail-hero,
+  .portal-page .detail-hero {
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  }
+
   .detail-sections {
     grid-template-columns: 1fr;
+  }
+
+  .portal-step-grid,
+  .portal-resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-help-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-page .detail-hero,
+  .portal-page .detail-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page .detail-hero-copy,
+  .portal-page .detail-hero-copy {
+    order: -1;
+  }
+
+  .contact-page .detail-hero-media,
+  .portal-page .detail-hero-media {
+    min-height: 250px;
+    max-height: 360px;
   }
 }
 
@@ -2298,6 +2494,23 @@ button {
 
   .detail-hero-media {
     min-height: 220px;
+  }
+
+  .page-action-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .page-action-row .button,
+  .page-action-row .section-link {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .portal-help-card {
+    gap: 1.2rem;
+    border-radius: 24px;
   }
 
   .hero-lead {
