@@ -4,20 +4,23 @@ const portalResources = [
   {
     title: 'Patient Portal Registration',
     description: 'Use this form to begin registration for FollowMyHealth access.',
-    href: 'https://www.pyam.com/download/ihealth-patient-portal-registration-form/',
-    action: 'Open registration form',
+    href: '/portal-forms/patient-portal-registration.pdf',
+    filename: 'PYAM-patient-portal-registration.pdf',
+    action: 'Download registration form',
   },
   {
     title: 'Parent or Guardian Proxy Access',
     description: 'Request authorized portal access for a child or another patient.',
-    href: 'https://www.pyam.com/download/patient-portal-proxy-access/',
-    action: 'Open proxy access form',
+    href: '/portal-forms/patient-portal-proxy-access.pdf',
+    filename: 'PYAM-patient-portal-proxy-access.pdf',
+    action: 'Download proxy access form',
   },
   {
     title: 'Young Adult Full Proxy Access',
     description: 'Review the authorization needed for full proxy access to a young adult patient account.',
-    href: 'https://www.pyam.com/download/patient-portal-young-adult-full-proxy-access/',
-    action: 'Open young adult form',
+    href: '/portal-forms/young-adult-full-proxy-access.pdf',
+    filename: 'PYAM-young-adult-full-proxy-access.pdf',
+    action: 'Download young adult form',
   },
 ]
 
@@ -84,10 +87,9 @@ function PatientPortalPage() {
                 <a
                   className="section-link"
                   href={portalResources[0].href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  download={portalResources[0].filename}
                 >
-                  Start registration
+                  Download registration form
                 </a>
               ) : null}
             </article>
@@ -113,7 +115,7 @@ function PatientPortalPage() {
               <p className="card-kicker">Portal Form</p>
               <h2>{resource.title}</h2>
               <p>{resource.description}</p>
-              <a className="button button-secondary" href={resource.href} target="_blank" rel="noopener noreferrer">
+              <a className="button button-secondary" href={resource.href} download={resource.filename}>
                 {resource.action}
               </a>
             </article>
