@@ -926,7 +926,7 @@ button {
 }
 
 .interior-hero {
-  padding: clamp(2rem, 5vw, 4rem);
+  padding: 1.5rem clamp(2rem, 5vw, 4rem);
 }
 
 .interior-hero-copy {
