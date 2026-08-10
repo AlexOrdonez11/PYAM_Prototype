@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { locations, news, quickActions, services } from '../data'
+import { locations, news, quickActions, services, socialLinks } from '../data'
 
 function HomePage() {
   const [isIntroExpanded, setIsIntroExpanded] = useState(false)
@@ -29,6 +29,8 @@ function HomePage() {
                   key={action.label}
                   className="pill"
                   href={action.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {action.label}
                 </a>
@@ -56,22 +58,6 @@ function HomePage() {
                   </span>
                   <span>medicalrecords@pyam.com</span>
                 </a>
-                <a href="/forms">
-                  <span className="utility-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M3.8 6.8A1.8 1.8 0 0 1 5.6 5h12.8a1.8 1.8 0 0 1 1.8 1.8v10.4a1.8 1.8 0 0 1-1.8 1.8H5.6a1.8 1.8 0 0 1-1.8-1.8V6.8Zm1.8 0v2h12.8v-2H5.6Zm0 4v6.4h12.8v-6.4H5.6Zm2.2 1.5h3v1.8h-3v-1.8Z" />
-                    </svg>
-                  </span>
-                  <span>Payment</span>
-                </a>
-                <a href="/forms">
-                  <span className="utility-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M12 2.8 4.5 6v5.2c0 4.6 3.2 8.9 7.5 10 4.3-1.1 7.5-5.4 7.5-10V6L12 2.8Zm0 1.9 5.7 2.4v4.1c0 3.7-2.5 7.2-5.7 8.2-3.2-1-5.7-4.5-5.7-8.2V7.1L12 4.7Zm-.9 3.3h1.8v5.1h-1.8V8Zm0 6.5h1.8v1.8h-1.8v-1.8Z" />
-                    </svg>
-                  </span>
-                  <span>HIPAA</span>
-                </a>
                 <a href="https://www.followmyhealth.com/Login/Home/Index?authproviders=0&returnArea=PatientAccess#!/default" target="_blank" rel="noopener noreferrer">
                   <span className="utility-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
@@ -81,17 +67,17 @@ function HomePage() {
                   <span>FollowMyHealth Portal</span>
                 </a>
                 <div className="utility-socials" aria-label="Social media">
-                  <a href="/" aria-label="Facebook" className="social-link">
+                  <a href={socialLinks.facebook} aria-label="Facebook" className="social-link" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.3 0-.9-.1-1.8-.1-2.7 0-4.4 1.6-4.4 4.7V11H7v3h2.8v7h3.7Z" />
                     </svg>
                   </a>
-                  <a href="/" aria-label="Instagram" className="social-link">
+                  <a href={socialLinks.instagram} aria-label="Instagram" className="social-link" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9Zm9.45 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 1.8A2.7 2.7 0 1 0 14.7 12 2.7 2.7 0 0 0 12 9.3Z" />
                     </svg>
                   </a>
-                  <a href="/" aria-label="YouTube" className="social-link">
+                  <a href={socialLinks.youtube} aria-label="YouTube" className="social-link" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M21.2 8.2a2.8 2.8 0 0 0-2-2C17.4 5.7 12 5.7 12 5.7s-5.4 0-7.2.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.3 12a29 29 0 0 0 .5 3.8 2.8 2.8 0 0 0 2 2c1.8.5 7.2.5 7.2.5s5.4 0 7.2-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-3.8 29 29 0 0 0-.5-3.8ZM10.2 15.1V8.9l5.4 3.1-5.4 3.1Z" />
                     </svg>
@@ -116,7 +102,7 @@ function HomePage() {
               </div>
 
               <div className="intro-visual">
-                <img src="/images/family_photo.png" alt="Family smiling together" />
+                <img src="/images/family-photo-optimized.jpg" alt="Family smiling together" loading="lazy" decoding="async" />
                 <div className="intro-visual-overlay">
                   <span className="intro-stat-kicker">since</span>
                   <span className="intro-stat-number">1980</span>
@@ -186,7 +172,7 @@ function HomePage() {
           <div className="service-grid reveal-on-scroll">
             {services.map((service) => (
               <article className="service-card" key={service.title}>
-                <img src={service.image} alt={service.title} />
+                <img src={service.image} alt={service.title} loading="lazy" decoding="async" />
                 <div className="service-body">
                   <h3>{service.title}</h3>
                   <p>
@@ -222,6 +208,8 @@ function HomePage() {
               <img
                 src="/images/prescription-hotline-phone-24.png"
                 alt="Prescription hotline phone"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -243,7 +231,7 @@ function HomePage() {
           <div className="location-grid reveal-on-scroll">
             {locations.map((location) => (
               <article className="location-card" key={location.city}>
-                <img src={location.image} alt={location.city} />
+                <img src={location.image} alt={location.city} loading="lazy" decoding="async" />
                 <div className="location-body">
                   {location.featuredLabel ? (
                     <p className="card-kicker">{location.featuredLabel}</p>
@@ -287,14 +275,12 @@ function HomePage() {
                   <span>Connect by phone, tablet, or computer from the comfort of home.</span>
                 </div>
               </div>
-              <a
+              <Link
                 className="button button-primary telemedicine-overlay-cta"
-                href="https://phreesia.me/PYAMReturningPatient/"
-                target="_blank"
-                rel="noopener noreferrer"
+                to="/schedule"
               >
                 Book a Telemedicine Visit
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -312,7 +298,7 @@ function HomePage() {
           <div className="news-grid reveal-on-scroll">
             {news.map((item) => (
               <article className="news-card" key={item.title}>
-                <img src={item.image} alt={item.title} />
+                <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                 <div className="news-body">
                   <span className="news-tag">{item.category}</span>
                   <h3>{item.title}</h3>

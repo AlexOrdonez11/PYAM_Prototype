@@ -19,7 +19,7 @@ function ServicesPage() {
         <div className="listing-grid reveal-on-scroll">
           {services.map((service) => (
             <article className="listing-card" key={service.slug}>
-              <img src={service.image} alt={service.title} />
+              <img src={service.image} alt={service.title} loading="lazy" decoding="async" />
               <div className="listing-card-body">
                 <p className="card-kicker">{service.eyebrow}</p>
                 <h2>{service.title}</h2>

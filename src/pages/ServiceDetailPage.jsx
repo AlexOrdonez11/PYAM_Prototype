@@ -22,7 +22,7 @@ function ServiceDetailPage() {
     <main className="interior-page">
       <section className="detail-hero shell reveal-on-scroll">
         <div className="detail-hero-media">
-          <img src={service.image} alt={service.title} />
+          <img src={service.image} alt={service.title} decoding="async" />
         </div>
         <div className="detail-hero-copy">
           <div className="breadcrumbs">

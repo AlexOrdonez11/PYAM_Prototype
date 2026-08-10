@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Outlet, useLocation } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import ChatbotWidget from './ChatbotWidget'
 import SiteFooter from './SiteFooter'
 import SiteHeader from './SiteHeader'
@@ -52,9 +52,9 @@ function SiteLayout() {
       <Outlet />
       <SiteFooter />
       <div className="mobile-cta-bar">
-        <a href="https://phreesia.me/PYAMReturningPatient/" target="_blank" rel="noopener noreferrer">
+        <Link to="/schedule">
           Schedule
-        </a>
+        </Link>
       </div>
       <ChatbotWidget />
     </div>

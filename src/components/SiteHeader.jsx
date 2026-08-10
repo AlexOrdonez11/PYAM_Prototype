@@ -117,7 +117,7 @@ function SiteHeader() {
           </span>
         </button>
 
-        <button type="button" className="nav-cta" onClick={() => window.location.href = 'https://phreesia.me/PYAMReturningPatient/'}>
+        <button type="button" className="nav-cta" onClick={() => navigate('/schedule')}>
           Schedule Visit
         </button>
       </div>

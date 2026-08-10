@@ -1,7 +1,28 @@
 import { Link, useSearchParams } from 'react-router-dom'
-import { formResources, locations, providers, services } from '../data'
+import { locations, providers, services } from '../data'
 
 const searchablePages = [
+  {
+    type: 'Page',
+    title: 'Schedule a Visit',
+    description: 'Choose the correct online scheduling workflow or call the appointment line.',
+    to: '/schedule',
+    keywords: ['appointment', 'well exam', 'sick visit', 'medication check', 'Saturday'],
+  },
+  {
+    type: 'Page',
+    title: 'Contact PYAM',
+    description: 'Contact appointments, billing, medical records, referrals, or prescription refills.',
+    to: '/contact',
+    keywords: ['phone', 'fax', 'email', 'billing', 'medical records', 'referrals'],
+  },
+  {
+    type: 'Page',
+    title: 'Patient Portal',
+    description: 'Open FollowMyHealth and find portal registration or proxy-access resources.',
+    to: '/patient-portal',
+    keywords: ['FollowMyHealth', 'registration', 'proxy access'],
+  },
   ...providers.map((provider) => ({
     type: 'Provider',
     title: provider.name,
@@ -22,13 +43,6 @@ const searchablePages = [
     description: `${location.address}. ${location.detail}`,
     to: `/locations/${location.slug}`,
     keywords: [location.city, location.hours, location.visitTypes],
-  })),
-  ...formResources.map((resource) => ({
-    type: 'Form & resource',
-    title: resource.title,
-    description: resource.description,
-    to: '/forms',
-    keywords: [],
   })),
 ]
 

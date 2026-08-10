@@ -5,7 +5,7 @@ export const services = [
     eyebrow: 'Preventive Care',
     description:
       'Routine checkups, developmental screenings, school and sports forms, and preventive care to support healthy growth at every stage.',
-    image: '/images/care-well-child-visits-300x150-1.png',
+    image: '/images/care-well-child-visits-optimized.jpg',
     detail:
       'Well visits help families stay ahead of growth, development, school requirements, and preventive care milestones at every age.',
     bullets: [
@@ -39,7 +39,7 @@ export const services = [
     eyebrow: 'Preventive Care',
     description:
       'Recommended childhood and adolescent vaccines, clear guidance for families, and help keeping immunization records up to date.',
-    image: '/images/care-immunization-300x150-1.png',
+    image: '/images/care-immunization-optimized.jpg',
     detail:
       'We help families with vaccine schedules, record requests, school compliance guidance, and common immunization questions.',
     bullets: [
@@ -73,7 +73,7 @@ export const services = [
     eyebrow: 'Acute Care',
     description:
       'Evaluation and treatment for common illnesses, minor injuries, fevers, respiratory concerns, rashes, and other everyday pediatric needs.',
-    image: '/images/care-health-issues-300x150-1.png',
+    image: '/images/care-health-issues-optimized.jpg',
     detail:
       'Find urgent visit guidance, when-to-call instructions, same-day appointment information, and condition-specific resources.',
     bullets: [
@@ -107,7 +107,7 @@ export const services = [
     eyebrow: 'Family Guidance',
     description:
       'Practical support for injury prevention, seasonal concerns, school health questions, and guidance that helps families feel prepared.',
-    image: '/images/care-safety-300x150-1.png',
+    image: '/images/care-safety-optimized.jpg',
     detail:
       'Our safety guidance includes seasonal reminders, age-based recommendations, and trusted educational resources.',
     bullets: [
@@ -141,7 +141,7 @@ export const services = [
     eyebrow: 'Infant Care',
     description:
       'Compassionate support for newborns and parents, including lactation consulting, newborn well-child checks, and circumcisions.',
-    image: '/images/newborn-care.png',
+    image: '/images/newborn-care-optimized.jpg',
     detail:
       'Our newborn care team supports feeding, growth, development, preventive care, and common questions during your baby’s earliest weeks.',
     bullets: [

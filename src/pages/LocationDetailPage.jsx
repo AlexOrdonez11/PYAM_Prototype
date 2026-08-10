@@ -22,7 +22,7 @@ function LocationDetailPage() {
     <main className="interior-page">
       <section className="detail-hero shell reveal-on-scroll">
         <div className="detail-hero-media">
-          <img src={location.image} alt={location.title} />
+          <img src={location.image} alt={location.title} decoding="async" />
         </div>
         <div className="detail-hero-copy">
           <div className="breadcrumbs">

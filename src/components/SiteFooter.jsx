@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { locations, sitemapLinks } from '../data'
+import { locations, sitemapLinks, socialLinks } from '../data'
 
 function SiteFooter() {
   return (
@@ -41,29 +41,29 @@ function SiteFooter() {
           </div>
         </div>
         <div className="footer-newsletter">
-          <p className="footer-heading">Newsletter</p>
+          <p className="footer-heading">Patient Resources</p>
           <p className="footer-copy">
-            Get the latest news, events and announcements straight to your inbox.
+            Access your health information and communicate with your care team online.
           </p>
-          <a href="/forms" className="footer-newsletter-button">
-            View Resources
-          </a>
+          <Link to="/patient-portal" className="footer-newsletter-button">
+            Patient Portal
+          </Link>
         </div>
       </div>
 
       <div className="shell footer-bottom">
         <div className="footer-socials" aria-label="Footer social media">
-          <a href="/" aria-label="Facebook" className="social-link">
+          <a href={socialLinks.facebook} aria-label="Facebook" className="social-link" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.3 0-.9-.1-1.8-.1-2.7 0-4.4 1.6-4.4 4.7V11H7v3h2.8v7h3.7Z" />
             </svg>
           </a>
-          <a href="/" aria-label="Instagram" className="social-link">
+          <a href={socialLinks.instagram} aria-label="Instagram" className="social-link" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9Zm9.45 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 1.8A2.7 2.7 0 1 0 14.7 12 2.7 2.7 0 0 0 12 9.3Z" />
             </svg>
           </a>
-          <a href="/" aria-label="YouTube" className="social-link">
+          <a href={socialLinks.youtube} aria-label="YouTube" className="social-link" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M21.2 8.2a2.8 2.8 0 0 0-2-2C17.4 5.7 12 5.7 12 5.7s-5.4 0-7.2.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.3 12a29 29 0 0 0 .5 3.8 2.8 2.8 0 0 0 2 2c1.8.5 7.2.5 7.2.5s5.4 0 7.2-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-3.8 29 29 0 0 0-.5-3.8ZM10.2 15.1V8.9l5.4 3.1-5.4 3.1Z" />
             </svg>
@@ -72,8 +72,9 @@ function SiteFooter() {
 
         <div className="footer-legal">
           <span>Copyright &copy; 2026 &middot; Pediatric & Young Adult Medicine</span>
-          <a href="/forms">Privacy Policy</a>
-          <a href="/forms">Patient Portal</a>
+          <Link to="/contact">Contact</Link>
+          <a href="https://i-health.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <Link to="/patient-portal">Patient Portal</Link>
         </div>
       </div>
     </footer>

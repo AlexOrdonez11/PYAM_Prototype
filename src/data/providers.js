@@ -4,7 +4,7 @@ export const providers = [
     name: 'Dr. Tammi Plotnik',
     role: 'Pediatrician',
     credentials: 'MD',
-    image: '/images/dr-tammi-plotnik.png',
+    image: '/images/dr-tammi-plotnik-optimized.jpg',
     summary:
       'Board-certified pediatrician with longstanding clinic experience and a growing special interest in sports medicine.',
     bio:
@@ -49,7 +49,7 @@ export const providers = [
     name: 'Dr. Christopher Ordonez',
     role: 'Pediatrician',
     credentials: 'MD',
-    image: '/images/dr-christopher-ordonez.png',
+    image: '/images/dr-christopher-ordonez-optimized.jpg',
     summary:
       'Board-certified pediatrician with experience in preventive care, chronic condition management, and behavioral health.',
     bio:
@@ -88,7 +88,7 @@ export const providers = [
     name: 'Margaret (Maggie) Smith',
     role: 'Pediatric Nurse Practitioner',
     credentials: 'CPNP, CBS',
-    image: '/images/provider-margaret-maggie-smith.png',
+    image: '/images/provider-margaret-maggie-smith-optimized.jpg',
     summary:
       'Pediatric Nurse Practitioner and certified breastfeeding specialist with primary care experience and strong newborn and parenting support interests.',
     bio:
@@ -127,7 +127,7 @@ export const providers = [
     name: 'Meredith Duran',
     role: 'Pediatric Nurse Practitioner',
     credentials: 'CNP',
-    image: '/images/np-meredith-duran.png',
+    image: '/images/np-meredith-duran-optimized.jpg',
     summary:
       'Pediatric Nurse Practitioner with broad nursing experience across pediatric settings and advanced clinical training in child health.',
     bio:
@@ -159,7 +159,7 @@ export const providers = [
     name: 'Tiffany Maher',
     role: 'Pediatric Nurse Practitioner',
     credentials: 'CPNP-PC',
-    image: '/images/tiffany-maher-cpnp-pc.png',
+    image: '/images/tiffany-maher-optimized.jpg',
     summary:
       'Pediatric Nurse Practitioner with experience spanning adult cardiac care, postpartum care, and pediatric emergency care.',
     bio:
@@ -198,7 +198,7 @@ export const providers = [
     name: 'Nadiffa (Afiifa) Karie',
     role: 'Pediatric Nurse Practitioner',
     credentials: 'RN, PHN, MSN, APRN, CPNP',
-    image: '/images/nadiffa-afiifa-karie-rn-phn-msn-aprn-cpnp.png',
+    image: '/images/afiifa-karie-optimized.jpg',
     summary:
       'Pediatric Nurse Practitioner with more than eight years of pediatric experience, especially in neonatal intensive care.',
     bio:

@@ -31,15 +31,19 @@ export const navigation = [
       { label: 'Newborn Care', to: '/services/newborn-care' },
     ],
   },
-  { label: 'Forms', to: '/forms' },
-  { label: 'Patient Portal', to: '/forms' },
+  {
+    label: 'Patient Portal',
+    to: '/patient-portal',
+  },
+  { label: 'Contact', to: '/contact' },
 ]
 
 export const quickActions = [
-  { label: 'Sick Visit', href: 'https://phreesia.me/PYAMReturningPatient/' },
+  { label: 'Well Exam', href: 'https://phreesia.me/PYAMReturningPatient' },
+  { label: 'Sick Visit', href: 'https://phreesia.me/PYAMsickvisit' },
+  { label: 'Medication Check', href: 'https://phreesia.me/PYAMmedicationchecks' },
+  { label: 'Well Exam / Med Check', href: 'https://phreesia.me/PYAMwellexamcheck' },
   { label: 'Eagan Saturday Visit', href: 'https://phreesia.me/PYAMSaturdayVisits' },
-  { label: 'Med Refill', href: 'tel:6512566796' },
-  { label: 'Talk with Front Desk', href: 'tel:6512566714' },
 ]
 
 export const sitemapLinks = [
@@ -53,5 +57,12 @@ export const sitemapLinks = [
   { label: 'Newborn Care', to: '/services/newborn-care' },
   { label: 'Prescription Refill Line', href: '/#refill-line' },
   { label: 'Latest News', href: '/#news' },
-  { label: 'Forms', to: '/forms' },
+  { label: 'Patient Portal', to: '/patient-portal' },
+  { label: 'Contact', to: '/contact' },
 ]
+
+export const socialLinks = {
+  facebook: 'https://www.facebook.com/pyamadmin/',
+  instagram: 'https://www.instagram.com/pyam_mn/',
+  youtube: 'https://www.youtube.com/channel/UCK9uTQr8VyjwnBWaro3-dpw',
+}

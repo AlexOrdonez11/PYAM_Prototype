@@ -19,7 +19,7 @@ function LocationsPage() {
         <div className="listing-grid reveal-on-scroll">
           {locations.map((location) => (
             <article className="listing-card location-card-expanded" key={location.slug}>
-              <img src={location.image} alt={location.title} />
+              <img src={location.image} alt={location.title} loading="lazy" decoding="async" />
               <div className="listing-card-body">
                 <p className="card-kicker">Office Location</p>
                 {location.featuredLabel ? (

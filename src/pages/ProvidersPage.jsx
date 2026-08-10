@@ -19,7 +19,7 @@ function ProvidersPage() {
         <div className="listing-grid provider-listing-grid reveal-on-scroll">
           {providers.map((provider) => (
             <article className="listing-card provider-card" key={provider.slug}>
-              <img src={provider.image} alt={provider.name} />
+              <img src={provider.image} alt={provider.name} loading="lazy" decoding="async" />
               <div className="listing-card-body">
                 <p className="card-kicker">
                   {provider.role}

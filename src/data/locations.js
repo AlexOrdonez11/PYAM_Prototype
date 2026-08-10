@@ -37,7 +37,7 @@ export const locations = [
     transit: 'Designed to serve south metro families with practical access for routine care.',
     detail:
       'The Eagan office provides south metro families with trusted pediatric care in a convenient and welcoming setting.',
-    image: '/images/eagan-clinic-v2.png',
+    image: '/images/eagan-clinic-optimized.jpg',
     highlights: [
       'Behavioral disorder support',
       'Chronic medication management',
