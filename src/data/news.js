@@ -12,6 +12,25 @@ export const siteAlerts = [
 
 export const news = [
   {
+    slug: 'meet-our-team-dr-tammi-plotnik',
+    category: 'Meet Our Team',
+    dateLabel: 'Provider spotlight',
+    title: 'Meet our team: Dr. Tammi Plotnik',
+    summary:
+      'Get to know Dr. Tammi Plotnik, a board-certified pediatrician who has cared for PYAM families since 2001.',
+    image: '/images/dr-tammi-plotnik-optimized.jpg',
+    body: [
+      'Dr. Tammi Plotnik has been part of Pediatric & Young Adult Medicine since 2001, building long-term relationships with children and families through every stage of growth.',
+      'A board-certified pediatrician, Dr. Plotnik provides preventive and primary pediatric care with a family-centered approach. She also has a growing special interest in sports medicine and enjoys helping active children and teens stay healthy.',
+      'Dr. Plotnik earned her medical degree from the University of Minnesota School of Medicine in 1998 and completed her postgraduate training in pediatrics in 2001.',
+    ],
+    action: {
+      label: 'View Dr. Plotnik’s profile',
+      href: '/providers/tammi-plotnik',
+      internal: true,
+    },
+  },
+  {
     slug: 'welcome-dr-christopher-ordonez',
     category: 'Care Team',
     dateLabel: 'Provider announcement',
