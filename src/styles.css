@@ -909,7 +909,7 @@ button {
 }
 
 .interior-page {
-  padding: 2rem 0 1rem;
+  padding: 0 0 1rem;
 }
 
 .interior-hero,
@@ -2475,7 +2475,7 @@ button {
   }
 
   .interior-page {
-    padding-top: 1.2rem;
+    padding-top: 0;
   }
 
   .interior-hero {
