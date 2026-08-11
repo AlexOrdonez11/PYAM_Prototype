@@ -29,7 +29,6 @@ export const navigation = [
       { label: 'Safety', to: '/services/safety' },
       { label: 'Immunizations', to: '/services/immunizations' },
       { label: 'Newborn Care', to: '/services/newborn-care' },
-      { label: 'Telemedicine', to: '/telemedicine' },
     ],
   },
   {

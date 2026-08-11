@@ -23,6 +23,13 @@ const searchablePages = [
     to: '/patient-portal',
     keywords: ['FollowMyHealth', 'registration', 'proxy access'],
   },
+  {
+    type: 'Page',
+    title: 'Telemedicine',
+    description: 'Learn about virtual visits for established PYAM patients and selected care needs.',
+    to: '/telemedicine',
+    keywords: ['virtual care', 'video visit', 'appointment from home', 'computer', 'tablet', 'phone'],
+  },
   ...providers.map((provider) => ({
     type: 'Provider',
     title: provider.name,
@@ -34,7 +41,7 @@ const searchablePages = [
     type: 'Service',
     title: service.title,
     description: service.description,
-    to: service.to ?? `/services/${service.slug}`,
+    to: `/services/${service.slug}`,
     keywords: [service.eyebrow, service.detail, service.bullets, service.bestFor],
   })),
   ...locations.map((location) => ({

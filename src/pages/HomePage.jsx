@@ -177,7 +177,7 @@ function HomePage() {
                   <h3>{service.title}</h3>
                   <p>
                     {service.description}
-                  <Link to={service.to ?? `/services/${service.slug}`} className="section-link">
+                  <Link to={`/services/${service.slug}`} className="section-link">
                       &ensp;Learn more
                     </Link>
                   </p>
