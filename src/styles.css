@@ -1004,8 +1004,8 @@ button {
 
 .listing-landing-page .interior-hero-copy {
   width: 100%;
-  max-width: 70rem;
-  margin-inline: auto;
+  max-width: 84rem;
+  margin-inline: 0;
 }
 
 .listing-landing-page .interior-hero-copy h1 {
