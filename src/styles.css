@@ -1002,6 +1002,20 @@ button {
   max-width: 46rem;
 }
 
+.listing-landing-page .interior-hero-copy {
+  width: 100%;
+  max-width: 70rem;
+  margin-inline: auto;
+}
+
+.listing-landing-page .interior-hero-copy h1 {
+  text-wrap: balance;
+}
+
+.listing-landing-page .interior-hero-copy > p:last-child {
+  max-width: 62rem;
+}
+
 .interior-hero-copy h1,
 .detail-hero-copy h1,
 .empty-state h1 {
@@ -1324,8 +1338,7 @@ button {
   box-shadow: var(--shadow);
 }
 
-.detail-section-card h2,
-.faq-item h3 {
+.detail-section-card h2 {
   margin: 0;
   font-family: 'Outfit', sans-serif;
 }
@@ -1338,8 +1351,7 @@ button {
   grid-column: 1 / -1;
 }
 
-.stacked-list,
-.faq-list {
+.stacked-list {
   display: grid;
   gap: 0.8rem;
 }
@@ -1351,22 +1363,12 @@ button {
 }
 
 .stacked-list span,
-.stacked-list li,
-.faq-item {
+.stacked-list li {
   padding: 0.95rem 1rem;
   border: 1px solid rgba(22, 50, 79, 0.08);
   border-radius: 18px;
   background: rgba(247, 251, 255, 0.92);
   color: #435e79;
-}
-
-.faq-item {
-  display: grid;
-  gap: 0.55rem;
-}
-
-.faq-item p {
-  margin: 0;
 }
 
 .related-link-row {

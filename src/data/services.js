@@ -19,18 +19,6 @@ export const services = [
       'Age-appropriate preventive guidance',
       'Forms and documentation support when needed',
     ],
-    commonQuestions: [
-      {
-        question: 'What can families expect during a well visit?',
-        answer:
-          'Families can expect screenings, preventive guidance, milestone discussions, and time for routine questions at each stage of growth.',
-      },
-      {
-        question: 'What should I bring to a well visit?',
-        answer:
-          'Bring updated insurance information, a current medication list, and any school, camp, or sports forms that may need to be completed.',
-      },
-    ],
     relatedLinks: ['Immunizations', 'Provider Profiles', 'Locations'],
   },
   {
@@ -52,18 +40,6 @@ export const services = [
       'Routine immunization planning',
       'Record tracking and updates',
       'Support for common vaccine questions',
-    ],
-    commonQuestions: [
-      {
-        question: 'Where can I find vaccine-specific guidance?',
-        answer:
-          'Call the clinic for age-specific recommendations, scheduling questions, or help reviewing your childâ€™s immunization record.',
-      },
-      {
-        question: 'Can PYAM help with school immunization requirements?',
-        answer:
-          'Our team can help families review immunization records and understand common school or activity requirements.',
-      },
     ],
     relatedLinks: ['Well Child Visits', 'Patient Portal', 'Locations'],
   },
@@ -87,18 +63,6 @@ export const services = [
       'Same-day appointment context',
       'Clear next-step instructions for families',
     ],
-    commonQuestions: [
-      {
-        question: 'What health concerns can the clinic evaluate?',
-        answer:
-          'Common symptom guidance, urgent visit expectations, when-to-call advice, and links to related forms or phone support are all strong fits here.',
-      },
-      {
-        question: 'How do I know whether my child should be seen in person?',
-        answer:
-          'Call the appointment line to describe the concern. Our team can help determine whether an office visit, telemedicine visit, or another level of care is appropriate.',
-      },
-    ],
     relatedLinks: ['Locations', 'Telemedicine', 'Providers'],
   },
   {
@@ -120,18 +84,6 @@ export const services = [
       'Evaluation of minor cuts and lacerations',
       'Sutures when appropriate',
       'X-rays for select injury concerns',
-    ],
-    commonQuestions: [
-      {
-        question: 'Can PYAM treat cuts and lacerations?',
-        answer:
-          'Our team evaluates many minor cuts and lacerations and can provide sutures when appropriate. Call ahead so we can help determine the right next step.',
-      },
-      {
-        question: 'Are X-rays available?',
-        answer:
-          'X-rays are available for select injury concerns. The care team will determine whether imaging is appropriate after reviewing the injury.',
-      },
     ],
     relatedLinks: ['Well Child Visits', 'Contact', 'Locations'],
   },
@@ -156,7 +108,6 @@ export const services = [
       'Newborn well-child checks',
       'Circumcisions',
     ],
-    commonQuestions: [],
     relatedLinks: ['Well Child Visits', 'Providers', 'Locations'],
   },
 ]

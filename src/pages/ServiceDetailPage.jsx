@@ -84,21 +84,6 @@ function ServiceDetailPage() {
             </div>
           </article>
 
-          {service.commonQuestions.length ? (
-            <article className="detail-section-card detail-section-wide">
-              <p className="card-kicker">Common Questions</p>
-              <h2>Helpful information before you schedule.</h2>
-              <div className="faq-list">
-                {service.commonQuestions.map((item) => (
-                  <div className="faq-item" key={item.question}>
-                    <h3>{item.question}</h3>
-                    <p>{item.answer}</p>
-                  </div>
-                ))}
-              </div>
-            </article>
-          ) : null}
-
           {relatedLinks.length ? (
             <article className="detail-section-card detail-section-wide">
               <p className="card-kicker">Related Resources</p>

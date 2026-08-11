@@ -3,7 +3,7 @@ import { providers } from '../data'
 
 function ProvidersPage() {
   return (
-    <main className="interior-page">
+    <main className="interior-page listing-landing-page">
       <section className="interior-hero shell reveal-on-scroll">
         <div className="interior-hero-copy">
           <p className="eyebrow">Providers</p>

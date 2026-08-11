@@ -3,7 +3,7 @@ import { locations } from '../data'
 
 function LocationsPage() {
   return (
-    <main className="interior-page">
+    <main className="interior-page listing-landing-page">
       <section className="interior-hero shell reveal-on-scroll">
         <div className="interior-hero-copy">
           <p className="eyebrow">Locations & Hours</p>
