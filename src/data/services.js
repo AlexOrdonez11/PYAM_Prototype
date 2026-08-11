@@ -39,7 +39,7 @@ export const services = [
     eyebrow: 'Preventive Care',
     description:
       'Recommended childhood and adolescent vaccines, clear guidance for families, and help keeping immunization records up to date.',
-    image: '/images/service-immunizations-v3.jpg',
+    image: '/images/service-immunizations-teen.jpg',
     detail:
       'We help families with vaccine schedules, record requests, school compliance guidance, and common immunization questions.',
     bullets: [
@@ -73,7 +73,7 @@ export const services = [
     eyebrow: 'Acute Care',
     description:
       'Evaluation and treatment for common illnesses, minor injuries, fevers, respiratory concerns, rashes, and other everyday pediatric needs.',
-    image: '/images/service-illness-care-v3.jpg',
+    image: '/images/service-illness-throat-exam.jpg',
     detail:
       'Find urgent visit guidance, when-to-call instructions, same-day appointment information, and condition-specific resources.',
     bullets: [
