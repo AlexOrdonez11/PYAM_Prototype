@@ -5,7 +5,7 @@ export const services = [
     eyebrow: 'Preventive Care',
     description:
       'Routine checkups, developmental screenings, school and sports forms, and preventive care to support healthy growth at every stage.',
-    image: '/images/service-well-child-v3.jpg',
+    image: '/images/service-well-child-height-chart.jpg',
     detail:
       'Well visits help families stay ahead of growth, development, school requirements, and preventive care milestones at every age.',
     bullets: [
