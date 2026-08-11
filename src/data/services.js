@@ -5,7 +5,7 @@ export const services = [
     eyebrow: 'Preventive Care',
     description:
       'Routine checkups, developmental screenings, school and sports forms, and preventive care to support healthy growth at every stage.',
-    image: '/images/care-well-child-visits-optimized.jpg',
+    image: '/images/service-well-child-v3.jpg',
     detail:
       'Well visits help families stay ahead of growth, development, school requirements, and preventive care milestones at every age.',
     bullets: [
@@ -39,7 +39,7 @@ export const services = [
     eyebrow: 'Preventive Care',
     description:
       'Recommended childhood and adolescent vaccines, clear guidance for families, and help keeping immunization records up to date.',
-    image: '/images/care-immunization-optimized.jpg',
+    image: '/images/service-immunizations-v3.jpg',
     detail:
       'We help families with vaccine schedules, record requests, school compliance guidance, and common immunization questions.',
     bullets: [
@@ -73,7 +73,7 @@ export const services = [
     eyebrow: 'Acute Care',
     description:
       'Evaluation and treatment for common illnesses, minor injuries, fevers, respiratory concerns, rashes, and other everyday pediatric needs.',
-    image: '/images/care-health-issues-optimized.jpg',
+    image: '/images/service-illness-care-v3.jpg',
     detail:
       'Find urgent visit guidance, when-to-call instructions, same-day appointment information, and condition-specific resources.',
     bullets: [
@@ -107,7 +107,7 @@ export const services = [
     eyebrow: 'Family Guidance',
     description:
       'Practical safety guidance and care for minor injuries, including laceration evaluation, sutures, and X-rays when appropriate.',
-    image: '/images/care-safety-optimized.jpg',
+    image: '/images/service-safety-injury-v3.jpg',
     detail:
       'Our team supports injury prevention and evaluates many minor injuries, with laceration care, sutures, and X-rays available when clinically appropriate.',
     bullets: [
@@ -141,7 +141,8 @@ export const services = [
     eyebrow: 'Infant Care',
     description:
       'Compassionate support for newborns and parents, including lactation consulting, newborn well-child checks, and circumcisions.',
-    image: '/images/newborn-care-optimized.jpg',
+    // Approved image: keep locked unless the client explicitly requests a replacement.
+    image: '/images/service-newborn-locked.jpg',
     detail:
       'Our newborn care team supports feeding, growth, development, preventive care, and common questions during your baby’s earliest weeks.',
     bullets: [
