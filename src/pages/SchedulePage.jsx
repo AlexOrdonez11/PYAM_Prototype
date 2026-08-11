@@ -25,7 +25,7 @@ function SchedulePage() {
             <article className="detail-section-card" key={visit.label}>
               <p className="card-kicker">Online scheduling</p>
               <h2>{visit.label}</h2>
-              <p>Continue to the appropriate scheduling workflow for this visit type.</p>
+              <p>{visit.description}</p>
               <a
                 className="button button-primary"
                 href={visit.href}

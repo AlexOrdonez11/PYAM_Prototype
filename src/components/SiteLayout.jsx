@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import ChatbotWidget from './ChatbotWidget'
+import RouteMetadata from './RouteMetadata'
 import SiteFooter from './SiteFooter'
 import SiteHeader from './SiteHeader'
 
@@ -48,6 +49,7 @@ function SiteLayout() {
 
   return (
     <div className="page-shell">
+      <RouteMetadata />
       <SiteHeader />
       <Outlet />
       <SiteFooter />

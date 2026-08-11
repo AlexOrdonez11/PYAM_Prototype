@@ -40,10 +40,30 @@ export const navigation = [
 ]
 
 export const quickActions = [
-  { label: 'Well Exam', href: 'https://phreesia.me/PYAMReturningPatient' },
-  { label: 'Sick Visit', href: 'https://phreesia.me/PYAMsickvisit' },
-  { label: 'Medication Check', href: 'https://phreesia.me/PYAMmedicationchecks' },
-  { label: 'Eagan Saturday Visit', href: 'https://phreesia.me/PYAMSaturdayVisits' },
+  {
+    label: 'Well Exam',
+    description:
+      'Schedule a routine preventive visit to review growth, development, overall health, and age-appropriate care needs.',
+    href: 'https://phreesia.me/PYAMReturningPatient',
+  },
+  {
+    label: 'Sick Visit',
+    description:
+      'Choose this option when your child needs timely evaluation for an illness, new symptoms, or another immediate health concern.',
+    href: 'https://phreesia.me/PYAMsickvisit',
+  },
+  {
+    label: 'Medication Check',
+    description:
+      'Book a follow-up to review how a current medication is working and discuss dosage, side effects, or ongoing management.',
+    href: 'https://phreesia.me/PYAMmedicationchecks',
+  },
+  {
+    label: 'Eagan Saturday Visit',
+    description:
+      'Request an eligible Saturday medical appointment at our Eagan office, available from 9:00 AM to 5:00 PM.',
+    href: 'https://phreesia.me/PYAMSaturdayVisits',
+  },
 ]
 
 export const sitemapLinks = [

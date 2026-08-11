@@ -1344,7 +1344,14 @@ button {
   gap: 0.8rem;
 }
 
+.stacked-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .stacked-list span,
+.stacked-list li,
 .faq-item {
   padding: 0.95rem 1rem;
   border: 1px solid rgba(22, 50, 79, 0.08);
@@ -1360,6 +1367,12 @@ button {
 
 .faq-item p {
   margin: 0;
+}
+
+.related-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .intro-section {

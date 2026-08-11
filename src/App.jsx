@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SiteLayout from './components/SiteLayout'
 import ContactPage from './pages/ContactPage'
 import HomePage from './pages/HomePage'
@@ -14,6 +14,7 @@ import SearchResultsPage from './pages/SearchResultsPage'
 import PatientPortalPage from './pages/PatientPortalPage'
 import SchedulePage from './pages/SchedulePage'
 import TelemedicinePage from './pages/TelemedicinePage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/:newsSlug" element={<NewsDetailPage />} />
           <Route path="/search" element={<SearchResultsPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

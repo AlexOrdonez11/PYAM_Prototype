@@ -26,12 +26,12 @@ export const services = [
           'Families can expect screenings, preventive guidance, milestone discussions, and time for routine questions at each stage of growth.',
       },
       {
-        question: 'Why keep a dedicated detail page for this service?',
+        question: 'What should I bring to a well visit?',
         answer:
-          'Because well visits often need age-based guidance, downloadable forms, and FAQ content that would be too crowded inside a listing card.',
+          'Bring updated insurance information, a current medication list, and any school, camp, or sports forms that may need to be completed.',
       },
     ],
-    relatedLinks: ['School & Sports Forms', 'Immunizations', 'Provider Profiles'],
+    relatedLinks: ['Immunizations', 'Provider Profiles', 'Locations'],
   },
   {
     slug: 'immunizations',
@@ -57,15 +57,15 @@ export const services = [
       {
         question: 'Where can I find vaccine-specific guidance?',
         answer:
-          'Yes. It is a good place for schedule overviews, common questions, record request links, and visit preparation guidance.',
+          'Call the clinic for age-specific recommendations, scheduling questions, or help reviewing your childâ€™s immunization record.',
       },
       {
-        question: 'Why keep immunizations separate from the general services listing?',
+        question: 'Can PYAM help with school immunization requirements?',
         answer:
-          'Immunizations have their own timing, record, school, and visit-preparation needs, so families benefit from dedicated guidance.',
+          'Our team can help families review immunization records and understand common school or activity requirements.',
       },
     ],
-    relatedLinks: ['Well Child Visits', 'Forms & Resources', 'Locations'],
+    relatedLinks: ['Well Child Visits', 'Patient Portal', 'Locations'],
   },
   {
     slug: 'health-issues-and-illnesses',
@@ -94,9 +94,9 @@ export const services = [
           'Common symptom guidance, urgent visit expectations, when-to-call advice, and links to related forms or phone support are all strong fits here.',
       },
       {
-        question: 'How is this different from a provider page?',
+        question: 'How do I know whether my child should be seen in person?',
         answer:
-          'Our care team evaluates common symptoms and helps families understand the appropriate next step for their child.',
+          'Call the appointment line to describe the concern. Our team can help determine whether an office visit, telemedicine visit, or another level of care is appropriate.',
       },
     ],
     relatedLinks: ['Locations', 'Telemedicine', 'Providers'],
@@ -133,7 +133,7 @@ export const services = [
           'X-rays are available for select injury concerns. The care team will determine whether imaging is appropriate after reviewing the injury.',
       },
     ],
-    relatedLinks: ['Well Child Visits', 'Forms & Resources', 'Locations'],
+    relatedLinks: ['Well Child Visits', 'Contact', 'Locations'],
   },
   {
     slug: 'newborn-care',
