@@ -60,40 +60,6 @@ function LocationDetailPage() {
           </div>
         </div>
       </section>
-
-      <section className="section shell section-soft">
-        <div className="detail-sections reveal-on-scroll">
-          <article className="detail-section-card">
-            <p className="card-kicker">Available Visit Types</p>
-            <h2>Care available at this office.</h2>
-            <ul className="stacked-list">
-              {location.visitTypes.map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </article>
-
-          <article className="detail-section-card">
-            <p className="card-kicker">Before You Arrive</p>
-            <h2>Make check-in easier.</h2>
-            <ul className="stacked-list">
-              {location.arrivalTips.map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </article>
-
-          <article className="detail-section-card">
-            <p className="card-kicker">Scheduling</p>
-            <h2>Plan the right appointment.</h2>
-            <p>{location.schedulingNote}</p>
-            <a className="section-link" href="tel:6512566714">Call the appointment line</a>
-          </article>
-
-          <article className="detail-section-card">
-            <p className="card-kicker">Getting Here</p>
-            <h2>Parking and local access.</h2>
-            <p>{location.parking}</p>
-            <p>{location.transit}</p>
-          </article>
-        </div>
-      </section>
     </main>
   )
 }
