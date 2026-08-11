@@ -5,7 +5,7 @@ export const services = [
     eyebrow: 'Preventive Care',
     description:
       'Routine checkups, developmental screenings, school and sports forms, and preventive care to support healthy growth at every stage.',
-    image: '/images/care-well-child-visits-optimized.jpg',
+    image: '/images/service-well-child-stock.jpg',
     detail:
       'Well visits help families stay ahead of growth, development, school requirements, and preventive care milestones at every age.',
     bullets: [
@@ -39,7 +39,7 @@ export const services = [
     eyebrow: 'Preventive Care',
     description:
       'Recommended childhood and adolescent vaccines, clear guidance for families, and help keeping immunization records up to date.',
-    image: '/images/care-immunization-optimized.jpg',
+    image: '/images/service-immunizations-stock.jpg',
     detail:
       'We help families with vaccine schedules, record requests, school compliance guidance, and common immunization questions.',
     bullets: [
@@ -73,7 +73,7 @@ export const services = [
     eyebrow: 'Acute Care',
     description:
       'Evaluation and treatment for common illnesses, minor injuries, fevers, respiratory concerns, rashes, and other everyday pediatric needs.',
-    image: '/images/care-health-issues-optimized.jpg',
+    image: '/images/service-illness-care-stock.jpg',
     detail:
       'Find urgent visit guidance, when-to-call instructions, same-day appointment information, and condition-specific resources.',
     bullets: [
@@ -106,31 +106,31 @@ export const services = [
     title: 'Safety',
     eyebrow: 'Family Guidance',
     description:
-      'Practical support for injury prevention, seasonal concerns, school health questions, and guidance that helps families feel prepared.',
-    image: '/images/care-safety-optimized.jpg',
+      'Practical safety guidance and care for minor injuries, including laceration evaluation, sutures, and X-rays when appropriate.',
+    image: '/images/service-safety-injury-stock.jpg',
     detail:
-      'Our safety guidance includes seasonal reminders, age-based recommendations, and trusted educational resources.',
+      'Our team supports injury prevention and evaluates many minor injuries, with laceration care, sutures, and X-rays available when clinically appropriate.',
     bullets: [
-      'Seasonal safety reminders',
-      'Injury prevention guidance',
-      'School and sports wellness support',
+      'Laceration evaluation and sutures',
+      'X-rays for select injuries',
+      'Injury prevention and safety guidance',
     ],
-    bestFor: 'Families looking for practical prevention guidance, seasonal reminders, and everyday safety education.',
+    bestFor: 'Families seeking guidance or care for minor cuts, lacerations, possible injuries, and everyday safety concerns.',
     includes: [
-      'Age-based prevention guidance',
-      'Seasonal reminders and wellness topics',
-      'Useful links to related clinic resources',
+      'Evaluation of minor cuts and lacerations',
+      'Sutures when appropriate',
+      'X-rays for select injury concerns',
     ],
     commonQuestions: [
       {
-        question: 'What kinds of safety guidance are available?',
+        question: 'Can PYAM treat cuts and lacerations?',
         answer:
-          'No. It can start with a few strong sections and gradually grow into a richer education hub as you add more resources.',
+          'Our team evaluates many minor cuts and lacerations and can provide sutures when appropriate. Call ahead so we can help determine the right next step.',
       },
       {
-        question: 'Why keep safety as its own service page?',
+        question: 'Are X-rays available?',
         answer:
-          'Because it works well as an evergreen resource center that families may revisit outside of a scheduled appointment.',
+          'X-rays are available for select injury concerns. The care team will determine whether imaging is appropriate after reviewing the injury.',
       },
     ],
     relatedLinks: ['Well Child Visits', 'Forms & Resources', 'Locations'],
@@ -141,7 +141,7 @@ export const services = [
     eyebrow: 'Infant Care',
     description:
       'Compassionate support for newborns and parents, including lactation consulting, newborn well-child checks, and circumcisions.',
-    image: '/images/newborn-care-optimized.jpg',
+    image: '/images/service-newborn-v2.jpg',
     detail:
       'Our newborn care team supports feeding, growth, development, preventive care, and common questions during your baby’s earliest weeks.',
     bullets: [

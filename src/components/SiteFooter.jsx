@@ -21,7 +21,7 @@ function SiteFooter() {
                 {location.city}
               </Link>
             ))}
-            <a href="/#telemedicine">Telemedicine</a>
+            <Link to="/schedule">Telemedicine appointments</Link>
           </div>
         </div>
         <div className="footer-column">
