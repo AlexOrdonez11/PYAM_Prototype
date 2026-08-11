@@ -12,9 +12,9 @@ function HomePage() {
 
         <div className="shell hero-grid" id="top">
           <div className="hero-copy">
-            <h1 className="hero-lead">
+            <h2 className="hero-lead">
               Maplewood And Eagan Locations Plus Telemedicine To Serve You.
-            </h1>
+            </h2>
             <p className="hero-text">
               PYAM has same day appointments for acute care, please call to make an
               appointment if you feel you need to be seen urgently.
