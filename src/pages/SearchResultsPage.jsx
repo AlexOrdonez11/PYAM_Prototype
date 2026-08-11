@@ -34,7 +34,7 @@ const searchablePages = [
     type: 'Service',
     title: service.title,
     description: service.description,
-    to: `/services/${service.slug}`,
+    to: service.to ?? `/services/${service.slug}`,
     keywords: [service.eyebrow, service.detail, service.bullets, service.bestFor],
   })),
   ...locations.map((location) => ({

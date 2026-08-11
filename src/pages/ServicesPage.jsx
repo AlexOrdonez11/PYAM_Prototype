@@ -24,7 +24,7 @@ function ServicesPage() {
                 <p className="card-kicker">{service.eyebrow}</p>
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>
-                <Link to={`/services/${service.slug}`} className="button button-primary">
+                <Link to={service.to ?? `/services/${service.slug}`} className="button button-primary">
                   View service
                 </Link>
               </div>

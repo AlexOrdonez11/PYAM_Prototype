@@ -1177,7 +1177,9 @@ button {
 }
 
 .portal-step-grid,
-.portal-resource-grid {
+.portal-resource-grid,
+.telemedicine-info-grid,
+.telemedicine-step-grid {
   position: relative;
   z-index: 1;
   display: grid;
@@ -1186,12 +1188,16 @@ button {
 }
 
 .portal-step-card,
-.portal-resource-card {
+.portal-resource-card,
+.telemedicine-info-card,
+.telemedicine-step-card {
   align-content: start;
 }
 
 .portal-step-card h2,
-.portal-resource-card h2 {
+.portal-resource-card h2,
+.telemedicine-info-card h2,
+.telemedicine-step-card h2 {
   font-size: 1.35rem;
 }
 
@@ -1211,7 +1217,8 @@ button {
   fill: currentColor;
 }
 
-.portal-help-card {
+.portal-help-card,
+.telemedicine-help-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1223,18 +1230,28 @@ button {
   box-shadow: 0 24px 60px rgba(17, 43, 73, 0.18);
 }
 
+.telemedicine-info-card > p:last-child,
+.telemedicine-step-card > p {
+  margin: 0;
+  color: #435e79;
+}
+
 .portal-help-card .eyebrow,
-.portal-help-card p {
+.portal-help-card p,
+.telemedicine-help-card .eyebrow,
+.telemedicine-help-card p {
   color: rgba(246, 253, 255, 0.82);
 }
 
-.portal-help-card h2 {
+.portal-help-card h2,
+.telemedicine-help-card h2 {
   margin: 0;
   font-family: 'Outfit', sans-serif;
   font-size: clamp(1.7rem, 3vw, 2.5rem);
 }
 
-.portal-help-card p:last-child {
+.portal-help-card p:last-child,
+.telemedicine-help-card p:last-child {
   max-width: 58ch;
   margin-bottom: 0;
 }
@@ -2532,7 +2549,9 @@ button {
   }
 
   .portal-step-grid,
-  .portal-resource-grid {
+  .portal-resource-grid,
+  .telemedicine-info-grid,
+  .telemedicine-step-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2540,7 +2559,8 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .portal-help-card {
+  .portal-help-card,
+  .telemedicine-help-card {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -2712,7 +2732,8 @@ button {
     text-align: center;
   }
 
-  .portal-help-card {
+  .portal-help-card,
+  .telemedicine-help-card {
     gap: 1.2rem;
     border-radius: 24px;
   }

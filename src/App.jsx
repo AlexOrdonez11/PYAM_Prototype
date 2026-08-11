@@ -13,6 +13,7 @@ import ServicesPage from './pages/ServicesPage'
 import SearchResultsPage from './pages/SearchResultsPage'
 import PatientPortalPage from './pages/PatientPortalPage'
 import SchedulePage from './pages/SchedulePage'
+import TelemedicinePage from './pages/TelemedicinePage'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/patient-portal" element={<PatientPortalPage />} />
+          <Route path="/telemedicine" element={<TelemedicinePage />} />
           <Route path="/providers" element={<ProvidersPage />} />
           <Route path="/providers/:providerSlug" element={<ProviderDetailPage />} />
           <Route path="/services" element={<ServicesPage />} />

@@ -29,6 +29,7 @@ export const navigation = [
       { label: 'Safety', to: '/services/safety' },
       { label: 'Immunizations', to: '/services/immunizations' },
       { label: 'Newborn Care', to: '/services/newborn-care' },
+      { label: 'Telemedicine', to: '/telemedicine' },
     ],
   },
   {
@@ -55,6 +56,7 @@ export const sitemapLinks = [
   { label: 'Well Child Visits', to: '/services/well-child-visits' },
   { label: 'Health Issues / Illnesses', to: '/services/health-issues-and-illnesses' },
   { label: 'Newborn Care', to: '/services/newborn-care' },
+  { label: 'Telemedicine', to: '/telemedicine' },
   { label: 'Prescription Refill Line', href: 'tel:6512566796' },
   { label: 'Latest News', to: '/news' },
   { label: 'All News', to: '/news' },

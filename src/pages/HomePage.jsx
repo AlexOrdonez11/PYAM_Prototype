@@ -177,7 +177,7 @@ function HomePage() {
                   <h3>{service.title}</h3>
                   <p>
                     {service.description}
-                    <Link to={`/services/${service.slug}`} className="section-link">
+                  <Link to={service.to ?? `/services/${service.slug}`} className="section-link">
                       &ensp;Learn more
                     </Link>
                   </p>
@@ -277,9 +277,9 @@ function HomePage() {
               </div>
               <Link
                 className="button button-primary telemedicine-overlay-cta"
-                to="/schedule"
+                to="/telemedicine"
               >
-                Book a Telemedicine Visit
+                Learn About Telemedicine
               </Link>
             </div>
           </div>

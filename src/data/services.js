@@ -136,6 +136,30 @@ export const services = [
     relatedLinks: ['Well Child Visits', 'Forms & Resources', 'Locations'],
   },
   {
+    slug: 'telemedicine',
+    to: '/telemedicine',
+    title: 'Telemedicine',
+    eyebrow: 'Virtual Care',
+    description:
+      'Convenient video visits for established patients and selected care needs, with guidance from your PYAM provider at home.',
+    image: '/images/telemedicine-family-video-visit.jpg',
+    detail:
+      'Connect with a provider using a camera-enabled phone, tablet, or computer when telemedicine is appropriate for the visit.',
+    bullets: [
+      'Live video visits from home',
+      'Available for select visit types',
+      'Clear treatment and follow-up guidance',
+    ],
+    bestFor: 'Established PYAM patients whose concerns can be safely and effectively evaluated through a virtual appointment.',
+    includes: [
+      'Live discussion with a provider',
+      'Treatment and next-step guidance',
+      'Prescriptions when clinically appropriate',
+    ],
+    commonQuestions: [],
+    relatedLinks: ['Health Issues & Illnesses', 'Locations', 'Contact'],
+  },
+  {
     slug: 'newborn-care',
     title: 'Newborn Care',
     eyebrow: 'Infant Care',
