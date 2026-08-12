@@ -11,7 +11,7 @@ export const locations = [
     transit: 'Convenient access for east metro families coming from nearby neighborhoods.',
     detail:
       'Our Maplewood office offers convenient east metro access for well visits, illness care, behavioral disorder support, chronic medication management, and ongoing pediatric support.',
-    image: '/images/maplewood.jpg',
+    image: '/images/maplewood-clinic-2026.jpg',
     highlights: [
       'Behavioral disorder support',
       'Chronic medication management',
@@ -37,7 +37,7 @@ export const locations = [
     transit: 'Designed to serve south metro families with practical access for routine care.',
     detail:
       'The Eagan office provides south metro families with trusted pediatric care, including outpatient surgical procedures, behavioral disorder support, chronic medication management, and ongoing pediatric support.',
-    image: '/images/eagan-clinic-optimized.jpg',
+    image: '/images/eagan-clinic-2026.jpg',
     highlights: [
       'Behavioral disorder support',
       'Chronic medication management',
