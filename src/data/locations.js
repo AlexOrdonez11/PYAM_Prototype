@@ -29,7 +29,7 @@ export const locations = [
     city: 'Eagan',
     title: 'Eagan Office',
     featuredLabel: 'Outpatient Surgical Procedures',
-    hours: ['Mon-Fri, 8:00 AM - 5:00 PM', 'Saturday Medical Appointments, 9:00 AM - 5:00 PM'],
+    hours: ['Mon-Fri, 8:00 AM - 5:00 PM', 'Saturday Medical Appointments, 9:00 AM - 4:00 PM'],
     address: '3470 Washington Drive, Suite 201, Eagan, MN 55122',
     phone: '(651) 256-6714',
     schedulingNote: 'Saturday scheduling may vary by visit type, so calling ahead is best.',

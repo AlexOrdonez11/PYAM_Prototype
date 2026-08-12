@@ -14,7 +14,7 @@ Appointments:
 
 Locations and hours:
 - Maplewood Office: 1965 11th Avenue East, Suite 102, Maplewood, MN 55109. Monday-Friday, 9:00 AM-5:00 PM.
-- Eagan Office: 3470 Washington Drive, Suite 201, Eagan, MN 55122. Monday-Friday, 8:00 AM-5:00 PM. Saturday medical appointments, 9:00 AM-5:00 PM.
+- Eagan Office: 3470 Washington Drive, Suite 201, Eagan, MN 55122. Monday-Friday, 8:00 AM-5:00 PM. Saturday medical appointments, 9:00 AM-4:00 PM.
 
 Services:
 - Well child visits, health issues and illnesses, safety and minor injury care, immunizations, and newborn care.
@@ -92,7 +92,7 @@ function placeholderReply(message) {
   }
 
   if (/hour|open|close|saturday/.test(normalized)) {
-    return 'Maplewood is open Monday-Friday, 9:00 AM-5:00 PM. Eagan is open Monday-Friday, 8:00 AM-5:00 PM, with Saturday medical appointments from 9:00 AM-5:00 PM.'
+    return 'Maplewood is open Monday-Friday, 9:00 AM-5:00 PM. Eagan is open Monday-Friday, 8:00 AM-5:00 PM, with Saturday medical appointments from 9:00 AM-4:00 PM.'
   }
 
   if (/schedule|appointment|visit|book/.test(normalized)) {

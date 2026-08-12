@@ -61,7 +61,7 @@ export const quickActions = [
   {
     label: 'Eagan Saturday Visit',
     description:
-      'Request an eligible Saturday medical appointment at our Eagan office, available from 9:00 AM to 5:00 PM.',
+      'Request an eligible Saturday medical appointment at our Eagan office, available from 9:00 AM to 4:00 PM.',
     href: 'https://phreesia.me/PYAMSaturdayVisits',
   },
 ]
