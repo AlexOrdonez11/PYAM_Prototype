@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const quickReplies = ['Schedule a visit', 'Office hours', 'Telemedicine', 'Prescription refill']
 
@@ -32,6 +32,9 @@ function ChatbotWidget({ openSignal = 0 }) {
   const [isOpen, setIsOpen] = useState(false)
   const [draftMessage, setDraftMessage] = useState('')
   const [isAgentThinking, setIsAgentThinking] = useState(false)
+  const sessionId = useRef(
+    globalThis.crypto?.randomUUID?.() ?? `pyam-${Date.now()}-${Math.random()}`,
+  )
   const [messages, setMessages] = useState([
     {
       id: 'intro',
@@ -57,15 +60,6 @@ function ChatbotWidget({ openSignal = 0 }) {
 
     setIsOpen(true)
   }, [openSignal])
-
-  const currentStatus = useMemo(() => {
-    const now = new Date()
-    const hour = now.getHours()
-    const isWeekday = now.getDay() >= 1 && now.getDay() <= 5
-    const isOpenNow = isWeekday && hour >= 8 && hour < 17
-
-    return isOpenNow ? 'Clinic is open now' : 'Chat available anytime'
-  }, [])
 
   const appendBotMessage = (text) => {
     setMessages((previous) => [
@@ -105,27 +99,43 @@ function ChatbotWidget({ openSignal = 0 }) {
       return
     }
 
-    setMessages((previous) => [
-      ...previous,
-      {
-        id: `user-${previous.length}`,
-        sender: 'user',
-        text: nextMessage,
-      },
-    ])
+    const nextUserMessage = {
+      id: `user-${messages.length}`,
+      sender: 'user',
+      text: nextMessage,
+    }
+    const nextMessages = [...messages, nextUserMessage]
+
+    setMessages(nextMessages)
     setDraftMessage('')
     setIsOpen(true)
     setIsAgentThinking(true)
 
     try {
-      // Replace this placeholder with your API call once the backend endpoint is ready.
-      await new Promise((resolve) => {
-        window.setTimeout(resolve, 700)
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sessionId: sessionId.current,
+          messages: nextMessages.slice(-8).map((message) => ({
+            role: message.sender === 'bot' ? 'assistant' : 'user',
+            content: message.text,
+          })),
+        }),
       })
 
-      appendBotMessage(
-        "I'm ready to connect to your virtual agent endpoint. Once you add it, this message can be replaced with the real assistant response.",
-      )
+      const payload = await response.json()
+
+      if (!response.ok || !payload.reply) {
+        throw new Error(payload.error || 'Chat request failed')
+      }
+
+      appendBotMessage(payload.reply)
+    } catch (error) {
+      console.error('Chat request failed:', error)
+      appendBotMessage('I’m temporarily unable to answer. Please call PYAM at (651) 256-6714 for assistance.')
     } finally {
       setIsAgentThinking(false)
     }
@@ -153,7 +163,7 @@ function ChatbotWidget({ openSignal = 0 }) {
           </button>
         </div>
 
-        <p className="chatbot-status">{currentStatus}</p>
+        <p className="chatbot-status">General clinic information only</p>
 
         <div className="chatbot-messages">
           {messages.map((message) => (
@@ -199,11 +209,15 @@ function ChatbotWidget({ openSignal = 0 }) {
               onChange={(event) => setDraftMessage(event.target.value)}
               placeholder="Type your message here..."
               autoComplete="off"
+              maxLength={500}
             />
             <button type="submit" className="chatbot-send" disabled={!draftMessage.trim() || isAgentThinking}>
               Send
             </button>
           </div>
+          <p className="chatbot-privacy-note">
+            Please don&apos;t share names, birth dates, symptoms, or medical information here.
+          </p>
         </form>
       </div>
 

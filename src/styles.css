@@ -648,7 +648,8 @@ button {
 
 .detail-hero-copy .button-secondary,
 .detail-section-card .button-secondary,
-.interior-hero-copy .button-secondary {
+.interior-hero-copy .button-secondary,
+.empty-state .button-secondary {
   border-color: rgba(15, 96, 115, 0.16);
   background: linear-gradient(135deg, rgba(221, 243, 242, 0.94), rgba(242, 249, 252, 0.96));
   color: #0f6073;
@@ -2372,6 +2373,13 @@ button {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.65rem;
+}
+
+.chatbot-privacy-note {
+  margin: 0;
+  color: #667f96;
+  font-size: 0.75rem;
+  line-height: 1.4;
 }
 
 .chatbot-composer input {
