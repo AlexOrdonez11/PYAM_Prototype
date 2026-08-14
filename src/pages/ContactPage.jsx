@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { locations } from '../data'
+import { locations, schedulingUrl } from '../data'
 
 const departments = [
   {
@@ -64,9 +64,9 @@ function ContactPage() {
             <a className="button button-primary" href="tel:6512566714">
               Call (651) 256-6714
             </a>
-            <Link className="button button-secondary" to="/schedule">
+            <a className="button button-secondary" href={schedulingUrl}>
               Schedule online
-            </Link>
+            </a>
           </div>
         </div>
       </section>

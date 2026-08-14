@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-import { locations } from '../data'
+import { locations, schedulingUrl } from '../data'
 
 function LocationDetailPage() {
   const { locationSlug } = useParams()
@@ -56,7 +56,7 @@ function LocationDetailPage() {
             >
               Get directions
             </a>
-            <Link className="button button-secondary" to="/schedule">Schedule a visit</Link>
+            <a className="button button-secondary" href={schedulingUrl}>Schedule a visit</a>
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { navigation, siteAlerts } from '../data'
+import { navigation, schedulingUrl, siteAlerts } from '../data'
 
 function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -140,9 +140,9 @@ function SiteHeader() {
           </span>
         </button>
 
-        <button type="button" className="nav-cta" onClick={() => navigate('/schedule')}>
+        <a className="nav-cta" href={schedulingUrl}>
           Schedule Visit
-        </button>
+        </a>
       </div>
 
       <form

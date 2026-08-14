@@ -39,12 +39,14 @@ export const navigation = [
   { label: 'Contact', to: '/contact' },
 ]
 
+export const schedulingUrl = 'https://phreesia.me/PYAMReturningPatient'
+
 export const quickActions = [
   {
     label: 'Well Exam',
     description:
       'Schedule a routine preventive visit to review growth, development, overall health, and age-appropriate care needs.',
-    href: 'https://phreesia.me/PYAMReturningPatient',
+    href: schedulingUrl,
   },
   {
     label: 'Sick Visit',

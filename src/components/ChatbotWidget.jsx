@@ -1,16 +1,98 @@
 import { useEffect, useRef, useState } from 'react'
 
+const useOpenAIChat = import.meta.env.VITE_CHAT_MODE?.toLowerCase() === 'openai'
+
 const quickReplies = ['Schedule a visit', 'Office hours', 'Telemedicine', 'Prescription refill']
 
 const botAnswers = {
   'Schedule a visit':
-    'Use the Schedule page to choose a Well Exam, Sick Visit, Medication Check, or Eagan Saturday appointment. You can also call (651) 256-6714 for help.',
+    'Use the Schedule Visit button for a Well Exam, Sick Visit, or Medication Check. Eagan Saturday visits use the separate Saturday scheduling option on the home page. You can also call (651) 256-6714 for help.',
   'Office hours':
     'Our Maplewood office is open Monday through Friday, 9:00 AM to 5:00 PM. Our Eagan office is open Monday through Friday, 8:00 AM to 5:00 PM, with Saturday medical appointments from 9:00 AM to 4:00 PM.',
   Telemedicine:
     'Telemedicine is available for select visit types, so families can connect with care from home when appropriate.',
   'Prescription refill':
     'For prescription refills, call the refill line at (651) 256-6796 and follow the recorded instructions.',
+}
+
+const ruleBasedAnswers = [
+  {
+    pattern: /\b(911|emergency|immediate danger|severe symptoms?|self[- ]?harm|suicid|can(?:not|'t) breathe|not breathing|difficulty breathing|unconscious|seizure|severe bleeding)\b/i,
+    answer:
+      'If this may be an emergency or someone is in immediate danger, call 911 or go to the nearest emergency department now.',
+  },
+  {
+    pattern: /\b(date of birth|dob|member id|policy number|medical record number|my name is)\b/i,
+    answer:
+      'Please do not share names, birth dates, insurance information, record numbers, symptoms, or other private medical information here. Call PYAM at (651) 256-6714 for assistance.',
+  },
+  {
+    pattern: /\b(schedule|appointment|book|visit|same[- ]day)\b/i,
+    answer:
+      'Use the Schedule Visit button for a Well Exam, Sick Visit, or Medication Check. Eagan Saturday visits use the separate Saturday scheduling option on the home page. You can also call (651) 256-6714. An appointment is not confirmed until you complete the scheduling process.',
+  },
+  {
+    pattern: /\b(hour|open|close|weekend|saturday)\b/i,
+    answer:
+      'Maplewood is open Monday through Friday, 9:00 AM to 5:00 PM. Eagan is open Monday through Friday, 8:00 AM to 5:00 PM, with Saturday medical appointments from 9:00 AM to 4:00 PM.',
+  },
+  {
+    pattern: /\b(location|address|direction|maplewood|eagan|office)\b/i,
+    answer:
+      'Maplewood: 1965 11th Avenue East, Suite 102, Maplewood, MN 55109. Eagan: 3470 Washington Drive, Suite 201, Eagan, MN 55122. Visit the Locations page for more details.',
+  },
+  {
+    pattern: /\b(telemedicine|telehealth|virtual|video)\b/i,
+    answer:
+      'Telemedicine is available for select visit types. Please call (651) 256-6714 to confirm whether a virtual visit is appropriate.',
+  },
+  {
+    pattern: /\b(prescription|refill|pharmacy)\b/i,
+    answer:
+      'For prescription refills, call (651) 256-6796 and follow the recorded instructions. This chat cannot provide medication instructions.',
+  },
+  {
+    pattern: /\b(patient portal|portal|followmyhealth|follow my health)\b/i,
+    answer:
+      'PYAM uses FollowMyHealth for the patient portal. Open the Patient Portal page on this website for access and registration forms.',
+  },
+  {
+    pattern: /\b(medical record|records|release|proxy access)\b/i,
+    answer:
+      'For medical records, call (651) 256-6717 or email medicalrecords@pyam.com. Please do not share private information in this chat.',
+  },
+  {
+    pattern: /\b(bill|billing|insurance|referral|payment|cost)\b/i,
+    answer:
+      'For billing, insurance, or referral questions, call (651) 227-7806 and choose option 2.',
+  },
+  {
+    pattern: /\b(service|immunization|vaccine|newborn|well child|x-ray|suture|behavioral)\b/i,
+    answer:
+      'PYAM services include well-child visits, illness care, safety and minor-injury care, immunizations, newborn care, behavioral support, and chronic medication management. Visit the Services page or call (651) 256-6714 for details.',
+  },
+  {
+    pattern: /\b(provider|doctor|physician|pediatrician|nurse practitioner)\b/i,
+    answer:
+      'Visit the Providers page to view PYAM physicians and nurse practitioners, including their biographies and clinic locations.',
+  },
+  {
+    pattern: /\b(phone|call|contact|email)\b/i,
+    answer:
+      'For general assistance or appointments, call PYAM at (651) 256-6714. You can also visit the Contact page for office information.',
+  },
+  {
+    pattern: /\b(symptom|diagnos|treat|dose|dosage|medicine|fever|cough|rash|pain|vomit|injury|sick|ill)\b/i,
+    answer:
+      'I cannot assess symptoms or provide medical advice. Please do not share medical details here; call PYAM at (651) 256-6714 to speak with the clinic.',
+  },
+]
+
+function getRuleBasedAnswer(message) {
+  const matchedRule = ruleBasedAnswers.find(({ pattern }) => pattern.test(message))
+
+  return matchedRule?.answer
+    ?? 'I can help with scheduling, office hours, locations, telemedicine, prescription refills, the patient portal, medical records, billing, and services. Please choose a quick question or call PYAM at (651) 256-6714.'
 }
 
 function getGreeting() {
@@ -111,6 +193,12 @@ function ChatbotWidget({ openSignal = 0 }) {
     setIsOpen(true)
     setIsAgentThinking(true)
 
+    if (!useOpenAIChat) {
+      appendBotMessage(getRuleBasedAnswer(nextMessage))
+      setIsAgentThinking(false)
+      return
+    }
+
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
@@ -199,7 +287,7 @@ function ChatbotWidget({ openSignal = 0 }) {
 
         <form className="chatbot-composer" onSubmit={handleSendMessage}>
           <label className="chatbot-composer-label" htmlFor="chatbot-input">
-            Talk to the virtual agent
+            Ask about clinic information
           </label>
           <div className="chatbot-composer-row">
             <input

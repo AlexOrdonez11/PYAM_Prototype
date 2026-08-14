@@ -1,12 +1,12 @@
 import { Link, useSearchParams } from 'react-router-dom'
-import { locations, news, providers, services } from '../data'
+import { locations, news, providers, schedulingUrl, services } from '../data'
 
 const searchablePages = [
   {
     type: 'Page',
     title: 'Schedule a Visit',
     description: 'Choose the correct online scheduling workflow or call the appointment line.',
-    to: '/schedule',
+    href: schedulingUrl,
     keywords: ['appointment', 'well exam', 'sick visit', 'medication check', 'Saturday'],
   },
   {
@@ -102,9 +102,15 @@ function SearchResultsPage() {
             {results.map((result) => (
               <article className="search-result-card" key={`${result.type}-${result.title}`}>
                 <p className="eyebrow">{result.type}</p>
-                <h3><Link to={result.to}>{result.title}</Link></h3>
+                <h3>
+                  {result.href
+                    ? <a href={result.href}>{result.title}</a>
+                    : <Link to={result.to}>{result.title}</Link>}
+                </h3>
                 <p>{result.description}</p>
-                <Link className="section-link" to={result.to}>View {result.title}</Link>
+                {result.href
+                  ? <a className="section-link" href={result.href}>View {result.title}</a>
+                  : <Link className="section-link" to={result.to}>View {result.title}</Link>}
               </article>
             ))}
           </div>

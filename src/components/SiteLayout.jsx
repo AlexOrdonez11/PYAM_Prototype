@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
+import { schedulingUrl } from '../data'
 import ChatbotWidget from './ChatbotWidget'
 import RouteMetadata from './RouteMetadata'
 import SiteFooter from './SiteFooter'
@@ -54,9 +55,9 @@ function SiteLayout() {
       <Outlet />
       <SiteFooter />
       <div className="mobile-cta-bar">
-        <Link to="/schedule">
+        <a href={schedulingUrl}>
           Schedule
-        </Link>
+        </a>
       </div>
       <ChatbotWidget />
     </div>

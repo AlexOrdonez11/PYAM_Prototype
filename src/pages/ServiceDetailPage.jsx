@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-import { services } from '../data'
+import { schedulingUrl, services } from '../data'
 
 const relatedRoutes = {
   'Well Child Visits': '/services/well-child-visits',
@@ -56,7 +56,7 @@ function ServiceDetailPage() {
               </span>
             ))}
           </div>
-          <a href="tel:6512566714" className="button button-primary">
+          <a href={schedulingUrl} className="button button-primary">
             Schedule
           </a>
         </div>
@@ -80,7 +80,7 @@ function ServiceDetailPage() {
             </p>
             <div className="page-action-row">
               <a className="button button-secondary" href="tel:6512566714">Call (651) 256-6714</a>
-              <Link className="section-link" to="/schedule">View scheduling options</Link>
+              <a className="section-link" href={schedulingUrl}>Schedule online</a>
             </div>
           </article>
 

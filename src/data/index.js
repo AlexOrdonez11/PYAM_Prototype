@@ -1,5 +1,5 @@
 export { locations } from './locations'
-export { navigation, quickActions, sitemapLinks, socialLinks } from './navigation'
+export { navigation, quickActions, schedulingUrl, sitemapLinks, socialLinks } from './navigation'
 export { news, siteAlerts } from './news'
 export { providers } from './providers'
 export { services } from './services'
