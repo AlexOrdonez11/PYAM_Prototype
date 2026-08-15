@@ -3140,6 +3140,15 @@ button {
     gap: 0.8rem;
   }
 
+  .chatbot-widget-open .chatbot-panel {
+    height: min(38rem, calc(100dvh - 7rem));
+    max-height: min(38rem, calc(100vh - 7rem));
+  }
+
+  .chatbot-panel-header h2 {
+    display: none;
+  }
+
   .chatbot-trigger {
     justify-content: center;
     width: 4.1rem;
@@ -3147,6 +3156,10 @@ button {
     padding: 0;
     border-radius: 999px;
     box-shadow: 0 18px 40px rgba(11, 89, 112, 0.3);
+  }
+
+  .chatbot-widget-open .chatbot-trigger {
+    display: none;
   }
 
   .chatbot-trigger-copy {

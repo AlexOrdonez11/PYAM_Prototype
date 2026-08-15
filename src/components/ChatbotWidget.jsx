@@ -246,7 +246,7 @@ function ChatbotWidget({ openSignal = 0 }) {
   }
 
   return (
-    <div className={`chatbot-widget ${isMounted ? 'chatbot-widget-visible' : ''}`}>
+    <div className={`chatbot-widget ${isMounted ? 'chatbot-widget-visible' : ''} ${isOpen ? 'chatbot-widget-open' : ''}`}>
       <div
         className={`chatbot-panel ${isOpen ? 'chatbot-panel-open' : ''}`}
         id="chatbot-panel"
