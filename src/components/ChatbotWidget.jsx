@@ -114,6 +114,7 @@ function ChatbotWidget({ openSignal = 0 }) {
   const [isOpen, setIsOpen] = useState(false)
   const [draftMessage, setDraftMessage] = useState('')
   const [isAgentThinking, setIsAgentThinking] = useState(false)
+  const messagesRef = useRef(null)
   const sessionId = useRef(
     globalThis.crypto?.randomUUID?.() ?? `pyam-${Date.now()}-${Math.random()}`,
   )
@@ -142,6 +143,21 @@ function ChatbotWidget({ openSignal = 0 }) {
 
     setIsOpen(true)
   }, [openSignal])
+
+  useEffect(() => {
+    if (!isOpen || !messagesRef.current) {
+      return
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      messagesRef.current?.scrollTo({
+        top: messagesRef.current.scrollHeight,
+        behavior: 'smooth',
+      })
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [isOpen, messages, isAgentThinking])
 
   const appendBotMessage = (text) => {
     setMessages((previous) => [
@@ -253,7 +269,7 @@ function ChatbotWidget({ openSignal = 0 }) {
 
         <p className="chatbot-status">General clinic information only</p>
 
-        <div className="chatbot-messages">
+        <div className="chatbot-messages" ref={messagesRef} aria-live="polite">
           {messages.map((message) => (
             <div
               key={message.id}
@@ -267,22 +283,6 @@ function ChatbotWidget({ openSignal = 0 }) {
               Virtual agent is typing...
             </div>
           ) : null}
-        </div>
-
-        <div className="chatbot-quick-replies-section">
-          <p className="chatbot-quick-replies-label">Quick questions</p>
-          <div className="chatbot-quick-replies">
-            {quickReplies.map((reply) => (
-              <button
-                key={reply}
-                type="button"
-                className="chatbot-chip"
-                onClick={() => handleQuickReply(reply)}
-              >
-                {reply}
-              </button>
-            ))}
-          </div>
         </div>
 
         <form className="chatbot-composer" onSubmit={handleSendMessage}>
@@ -303,15 +303,33 @@ function ChatbotWidget({ openSignal = 0 }) {
               Send
             </button>
           </div>
-          <p className="chatbot-privacy-note">
-            Please don&apos;t share names, birth dates, symptoms, or medical information here.
-          </p>
         </form>
+
+        <div className="chatbot-quick-replies-section">
+          <p className="chatbot-quick-replies-label">Quick questions</p>
+          <div className="chatbot-quick-replies">
+            {quickReplies.map((reply) => (
+              <button
+                key={reply}
+                type="button"
+                className="chatbot-chip"
+                onClick={() => handleQuickReply(reply)}
+              >
+                {reply}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <p className="chatbot-privacy-note">
+          Please don&apos;t share names, birth dates, symptoms, or medical information here.
+        </p>
       </div>
 
       <button
         type="button"
         className={`chatbot-trigger ${isOpen ? 'chatbot-trigger-active' : ''}`}
+        aria-label={isOpen ? 'Close chat' : 'Open chat'}
         aria-expanded={isOpen}
         aria-controls="chatbot-panel"
         onClick={() => setIsOpen((open) => !open)}
