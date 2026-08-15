@@ -3076,6 +3076,10 @@ button {
     
   }
 
+  body:has(.chatbot-widget-open) .mobile-cta-bar {
+    display: none;
+  }
+
   .mobile-cta-bar a {
     display: inline-flex;
     align-items: center;
@@ -3141,8 +3145,12 @@ button {
   }
 
   .chatbot-widget-open .chatbot-panel {
-    height: min(38rem, calc(100dvh - 7rem));
-    max-height: min(38rem, calc(100vh - 7rem));
+    height: min(42rem, calc(100dvh - 1.5rem));
+    max-height: min(42rem, calc(100vh - 1.5rem));
+  }
+
+  .chatbot-widget-open {
+    bottom: 0.75rem;
   }
 
   .chatbot-panel-header h2 {
