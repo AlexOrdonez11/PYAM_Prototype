@@ -304,8 +304,8 @@ function HomePage() {
                   <span className="news-tag">{item.category}</span>
                   <h3>{item.title}</h3>
                   <p>{item.summary}</p>
-                  <Link to={`/news/${item.slug}`} className="section-link">
-                    Read update
+                  <Link to={item.to ?? `/news/${item.slug}`} className="section-link">
+                    {item.to ? 'View back-to-school guide' : 'Read update'}
                   </Link>
                 </div>
               </article>

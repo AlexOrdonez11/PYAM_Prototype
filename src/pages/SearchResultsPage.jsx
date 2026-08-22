@@ -55,7 +55,7 @@ const searchablePages = [
     type: 'News',
     title: item.title,
     description: item.summary,
-    to: `/news/${item.slug}`,
+    to: item.to ?? `/news/${item.slug}`,
     keywords: [item.category, item.dateLabel, item.body],
   })),
 ]
