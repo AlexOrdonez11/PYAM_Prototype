@@ -297,7 +297,7 @@ function HomePage() {
           </div>
 
           <div className="news-grid reveal-on-scroll">
-            {news.map((item) => (
+            {news.slice(0, 3).map((item) => (
               <article className="news-card" key={item.title}>
                 <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                 <div className="news-body">

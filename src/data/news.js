@@ -12,6 +12,25 @@ export const siteAlerts = [
 
 export const news = [
   {
+    slug: 'back-to-school',
+    category: 'Seasonal Care',
+    dateLabel: 'Back-to-school guide',
+    title: 'Get ready for the school year with PYAM',
+    summary:
+      'Plan school physicals, immunization review, and required forms before the first bell.',
+    image: '/images/service-well-child-height-chart.jpg',
+    to: '/back-to-school',
+    body: [
+      'Prepare for the school year with a plan for school physicals, immunization review, and required school, camp, or sports forms.',
+      'Returning patients can use PYAM online scheduling. New patients and families who need help choosing a visit should call the appointment line.',
+    ],
+    action: {
+      label: 'View the back-to-school guide',
+      href: '/back-to-school',
+      internal: true,
+    },
+  },
+  {
     slug: 'meet-our-team-dr-tammi-plotnik',
     category: 'Meet Our Team',
     dateLabel: 'Provider spotlight',
@@ -65,25 +84,6 @@ export const news = [
       label: 'Learn more about i-Health',
       href: 'https://www.i-health.com/',
       internal: false,
-    },
-  },
-  {
-    slug: 'back-to-school',
-    category: 'Seasonal Care',
-    dateLabel: 'Back-to-school guide',
-    title: 'Get ready for the school year with PYAM',
-    summary:
-      'Plan school physicals, immunization review, and required forms before the first bell.',
-    image: '/images/service-well-child-height-chart.jpg',
-    to: '/back-to-school',
-    body: [
-      'Prepare for the school year with a plan for school physicals, immunization review, and required school, camp, or sports forms.',
-      'Returning patients can use PYAM online scheduling. New patients and families who need help choosing a visit should call the appointment line.',
-    ],
-    action: {
-      label: 'View the back-to-school guide',
-      href: '/back-to-school',
-      internal: true,
     },
   },
 ]
