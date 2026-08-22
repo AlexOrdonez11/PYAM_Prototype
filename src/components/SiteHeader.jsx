@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { navigation, schedulingUrl, siteAlerts } from '../data'
 
 function SiteHeader() {
@@ -8,6 +8,8 @@ function SiteHeader() {
   const [searchQuery, setSearchQuery] = useState('')
   const [dismissedAlertId, setDismissedAlertId] = useState(null)
   const navigate = useNavigate()
+  const location = useLocation()
+  const isBackToSchoolPage = location.pathname === '/back-to-school'
   const activeAlert = siteAlerts.find((alert) => alert.id !== dismissedAlertId)
 
   const closeMenus = () => {
@@ -140,8 +142,8 @@ function SiteHeader() {
           </span>
         </button>
 
-        <a className="nav-cta" href={schedulingUrl}>
-          Schedule Visit
+        <a className="nav-cta" href={isBackToSchoolPage ? '#schedule' : schedulingUrl}>
+          {isBackToSchoolPage ? 'Schedule School Visit' : 'Schedule Visit'}
         </a>
       </div>
 

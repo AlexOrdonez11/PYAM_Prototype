@@ -8,6 +8,7 @@ import SiteHeader from './SiteHeader'
 
 function SiteLayout() {
   const location = useLocation()
+  const isBackToSchoolPage = location.pathname === '/back-to-school'
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll('.reveal-on-scroll'))
     if (!elements.length) return
@@ -55,8 +56,8 @@ function SiteLayout() {
       <Outlet />
       <SiteFooter />
       <div className="mobile-cta-bar">
-        <a href={schedulingUrl}>
-          Schedule
+        <a href={isBackToSchoolPage ? '#schedule' : schedulingUrl}>
+          {isBackToSchoolPage ? 'Schedule school visit' : 'Schedule'}
         </a>
       </div>
       <ChatbotWidget />

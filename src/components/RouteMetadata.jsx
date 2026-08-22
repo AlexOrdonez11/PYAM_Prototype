@@ -14,6 +14,12 @@ const staticMetadata = {
     title: `Schedule a Visit | ${siteName}`,
     description: 'Choose the appropriate PYAM appointment type and continue to secure online scheduling.',
   },
+  '/back-to-school': {
+    title: `Back-to-School Physicals & Forms | ${siteName}`,
+    description: 'Plan school physicals, immunization review, and required forms with Pediatric & Young Adult Medicine in Eagan and Maplewood.',
+    image: '/images/service-well-child-height-chart.jpg',
+    noIndex: true,
+  },
   '/contact': {
     title: `Contact PYAM | ${siteName}`,
     description: 'Contact PYAM appointments, billing, medical records, referrals, prescription refills, and clinic locations.',

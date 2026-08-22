@@ -15,6 +15,7 @@ import PatientPortalPage from './pages/PatientPortalPage'
 import SchedulePage from './pages/SchedulePage'
 import TelemedicinePage from './pages/TelemedicinePage'
 import NotFoundPage from './pages/NotFoundPage'
+import BackToSchoolPage from './pages/BackToSchoolPage'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route element={<SiteLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/schedule" element={<SchedulePage />} />
+          <Route path="/back-to-school" element={<BackToSchoolPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/patient-portal" element={<PatientPortalPage />} />
           <Route path="/telemedicine" element={<TelemedicinePage />} />
