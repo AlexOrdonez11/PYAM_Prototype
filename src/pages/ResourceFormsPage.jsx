@@ -51,7 +51,7 @@ const pageContent = {
     cardLabel: 'School and Sports Form',
     forms: [
       {
-        title: '2026-2027 Sports Physical Form',
+        title: 'Sports Physical Form',
         description:
           'Sports qualifying physical examination, health history, and medical eligibility paperwork.',
         href: '/forms/2026-2027-sports-physical-form.pdf',
