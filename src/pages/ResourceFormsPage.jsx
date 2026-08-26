@@ -7,17 +7,47 @@ const pageContent = {
     title: 'Medical records forms and request resources.',
     subtitle:
       'Find the forms you need to request records or manage patient documentation.',
+    heroDetail:
+      'The release form helps you identify which records are needed, where they should be sent, and who is authorized to receive them. Preparing each section carefully can help prevent processing delays.',
     introduction:
-      'A downloadable medical records form will be available here. The final form name, instructions, and file will be added as soon as it is received.',
-    formsHeading: 'Form downloads are coming soon.',
+      'Download and complete the fillable authorization form below to request the release of medical information. Return instructions are included in the form.',
+    formsHeading: 'Medical records release form',
     image: '/images/medical-records-family-consultation.jpg',
     imageAlt: 'Pediatric clinician reviewing a document with a child and parent',
+    guide: {
+      eyebrow: 'Requesting medical records',
+      title: 'Complete, sign, and submit your request.',
+      introduction:
+        'You may type information into the fillable PDF or complete it by hand. Review every section before submitting the form so the Medical Records team has the information needed to process your request.',
+      steps: [
+        {
+          title: 'Download and complete the form',
+          text: 'Open the PDF and fill in the patient information, the facility releasing the records, where the records should be sent, the records requested, and the reason for the request.',
+        },
+        {
+          title: 'Print and sign it by hand',
+          text: 'After completing the form, print it and add a physical handwritten signature. Typed or electronic signatures cannot be accepted.',
+        },
+        {
+          title: 'Email the signed form',
+          text: 'Scan the completed, physically signed form and email it to the PYAM Medical Records team.',
+          action: {
+            label: 'Email medical records',
+            href: 'mailto:medicalrecords@pyam.com',
+          },
+        },
+      ],
+      note:
+        'Incomplete or unsigned forms may delay the request. Please allow up to two weeks for processing after the completed form is received.',
+    },
     cardLabel: 'Medical Records Form',
     forms: [
       {
-        title: 'Medical Records Form',
+        title: 'Authorization for Release of Medical Information',
         description:
-          'This placeholder will be replaced with the final form name, instructions, and PDF download.',
+          'Fillable form authorizing PYAM to release medical records to the person or organization you identify.',
+        href: '/forms/authorization-for-release-of-medical-information.pdf',
+        action: 'Download PDF',
       },
     ],
     contactText:
@@ -163,6 +193,11 @@ function ResourceFormsPage({ page }) {
                 <span className="portal-step-number" aria-hidden="true">{index + 1}</span>
                 <h2>{step.title}</h2>
                 <p>{step.text}</p>
+                {step.action ? (
+                  <a className="section-link resource-step-action" href={step.action.href}>
+                    {step.action.label}
+                  </a>
+                ) : null}
               </article>
             ))}
           </div>

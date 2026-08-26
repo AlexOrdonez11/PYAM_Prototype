@@ -1257,6 +1257,11 @@ button {
   font-weight: 650;
 }
 
+.resource-step-action {
+  width: fit-content;
+  margin-top: 0.15rem;
+}
+
 .portal-step-card h2,
 .portal-resource-card h2,
 .telemedicine-info-card h2,
