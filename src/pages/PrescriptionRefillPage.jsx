@@ -1,6 +1,6 @@
 const refillLine = '6512566796'
 const officeLine = '6512277806'
-const instructionsPdf = '/forms/patient-adhd-refill-instructions.pdf'
+const instructionsPdf = '/forms/prescription-refill-instructions.pdf'
 
 const steps = [
   {
