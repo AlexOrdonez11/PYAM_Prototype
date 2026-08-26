@@ -27,7 +27,7 @@ function HomePage() {
               {quickActions.map((action) => (
                 <a
                   key={action.label}
-                  className="pill"
+                  className={`pill ${action.featured ? 'pill-featured' : ''}`}
                   href={action.href}
                   target="_blank"
                   rel="noopener noreferrer"

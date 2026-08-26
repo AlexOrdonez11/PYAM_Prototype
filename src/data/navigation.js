@@ -29,6 +29,7 @@ export const navigation = [
       { label: 'Safety', to: '/services/safety' },
       { label: 'Immunizations', to: '/services/immunizations' },
       { label: 'Newborn Care', to: '/services/newborn-care' },
+      { label: 'School & Sports Forms', to: '/sports-forms' },
     ],
   },
   {
@@ -66,16 +67,17 @@ export const quickActions = [
     href: 'https://phreesia.me/PYAMmedicationchecksPYAM',
   },
   {
-    label: 'Saturday Visits',
-    description:
-      'Request an eligible Saturday medical appointment at our Eagan office, available from 9:00 AM to 4:00 PM.',
-    href: 'https://phreesia.me/PYAMSaturdayVisitsPYAM',
-  },
-  {
     label: 'Well Exams & Med Checks',
     description:
       'Schedule a combined well-child examination and medication follow-up in one visit.',
     href: 'https://phreesia.me/PYAMwellexamcheck',
+  },
+  {
+    label: 'Eagan Saturday Visits',
+    featured: true,
+    description:
+      'Request an eligible Saturday medical appointment at our Eagan office, available from 9:00 AM to 4:00 PM.',
+    href: 'https://phreesia.me/PYAMSaturdayVisitsPYAM',
   },
 ]
 

@@ -921,6 +921,22 @@ button {
   box-shadow: 0 10px 24px rgba(11, 16, 27, 0.13);
 }
 
+.pill.pill-featured {
+  border-color: rgba(255, 255, 255, 0.52);
+  padding: 0.9rem 1.18rem;
+  background: linear-gradient(135deg, #ffb36f, var(--accent));
+  color: #3f2118;
+  box-shadow: 0 12px 28px rgba(255, 141, 100, 0.32);
+  font-size: 1.06rem;
+  font-weight: 800;
+}
+
+.pill.pill-featured:hover {
+  border-color: rgba(255, 255, 255, 0.72);
+  background: linear-gradient(135deg, #ffc38d, #ff9b76);
+  box-shadow: 0 15px 32px rgba(255, 141, 100, 0.4);
+}
+
 .pill:focus-visible,
 .utility-strip a:focus-visible,
 .social-link:focus-visible,
