@@ -186,6 +186,24 @@ function HomePage() {
             ))}
             <article className="service-card">
               <img
+                src="/images/medical-records-family-consultation.jpg"
+                alt="Pediatric clinician reviewing a document with a child and parent"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="service-body">
+                <h3>Medical Records</h3>
+                <p>
+                  Download the release form and follow the steps for requesting patient
+                  records from PYAM.
+                  <Link to="/medical-records" className="section-link">
+                    &ensp;View forms
+                  </Link>
+                </p>
+              </div>
+            </article>
+            <article className="service-card">
+              <img
                 src="/images/sports-forms-youth-soccer.jpg"
                 alt="Young soccer player holding a ball on the field"
                 loading="lazy"
@@ -219,6 +237,11 @@ function HomePage() {
                   <span className="refill-label">Refill line</span>
                   <a href="tel:6512566796">(651) 256-6796</a>
                 </div>
+              </div>
+              <div className="page-action-row">
+                <Link className="button button-primary" to="/prescription-refills">
+                  View refill instructions
+                </Link>
               </div>
             </div>
 

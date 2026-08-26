@@ -8,6 +8,14 @@
 - License: [Pexels License](https://www.pexels.com/license/)
 - Changes: Resized and compressed for website performance.
 
+## Prescription refill family
+
+- File: `prescription-refill-family.jpg`
+- Source: [Mother Giving His Son Medicine](https://www.pexels.com/photo/mother-giving-his-son-medicine-3985220/)
+- Photographer: Gustavo Fring
+- License: [Pexels License](https://www.pexels.com/license/)
+- Changes: Resized and compressed for website performance.
+
 ## Youth soccer player
 
 - File: `sports-forms-youth-soccer.jpg`

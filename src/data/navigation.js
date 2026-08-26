@@ -29,17 +29,13 @@ export const navigation = [
       { label: 'Safety', to: '/services/safety' },
       { label: 'Immunizations', to: '/services/immunizations' },
       { label: 'Newborn Care', to: '/services/newborn-care' },
+      { label: 'Medical Records', to: '/medical-records' },
       { label: 'School & Sports Forms', to: '/sports-forms' },
     ],
   },
   {
     label: 'Patient Portal',
     to: '/patient-portal',
-    children: [
-      { label: 'Patient Portal', to: '/patient-portal' },
-      { label: 'Medical Records', to: '/medical-records' },
-      { label: 'School & Sports Forms', to: '/sports-forms' },
-    ],
   },
   { label: 'News', to: '/news' },
   { label: 'Contact', to: '/contact' },

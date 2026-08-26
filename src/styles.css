@@ -1262,6 +1262,31 @@ button {
   margin-top: 0.15rem;
 }
 
+.prescription-refill-hero-media img {
+  object-position: center;
+}
+
+.refill-checklist {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #435e79;
+}
+
+.refill-checklist li {
+  padding-left: 0.25rem;
+}
+
+.refill-help-card {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.refill-help-card p:last-child {
+  max-width: 72ch;
+  margin-bottom: 0;
+  color: #435e79;
+}
+
 .portal-step-card h2,
 .portal-resource-card h2,
 .telemedicine-info-card h2,
@@ -2826,6 +2851,15 @@ button {
     width: 100%;
     justify-content: center;
     text-align: center;
+  }
+
+  .refill-help-card {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .refill-help-card .button {
+    width: 100%;
   }
 
   .portal-help-card,

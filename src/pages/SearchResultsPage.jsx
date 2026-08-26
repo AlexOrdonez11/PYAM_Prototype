@@ -39,6 +39,13 @@ const searchablePages = [
   },
   {
     type: 'Page',
+    title: 'Prescription Refill Instructions',
+    description: 'Review ADD and ADHD refill voicemail instructions and download the printable worksheet.',
+    to: '/prescription-refills',
+    keywords: ['prescription', 'refill', 'ADHD', 'ADD', 'medication', 'voicemail', 'pharmacy'],
+  },
+  {
+    type: 'Page',
     title: 'Telemedicine',
     description: 'Learn about virtual visits for established PYAM patients and selected care needs.',
     to: '/telemedicine',

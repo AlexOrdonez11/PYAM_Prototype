@@ -32,6 +32,25 @@ function ServicesPage() {
           ))}
           <article className="listing-card">
             <img
+              src="/images/medical-records-family-consultation.jpg"
+              alt="Pediatric clinician reviewing a document with a child and parent"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="listing-card-body">
+              <p className="card-kicker">Forms &amp; Requests</p>
+              <h2>Medical Records</h2>
+              <p>
+                Download the release form and find instructions for requesting patient
+                records from PYAM.
+              </p>
+              <Link to="/medical-records" className="button button-primary">
+                View medical records
+              </Link>
+            </div>
+          </article>
+          <article className="listing-card">
+            <img
               src="/images/sports-forms-youth-soccer.jpg"
               alt="Young soccer player holding a ball on the field"
               loading="lazy"
