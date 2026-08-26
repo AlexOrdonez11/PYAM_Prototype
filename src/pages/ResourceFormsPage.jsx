@@ -71,11 +71,6 @@ const pageContent = {
         href: '/forms/day-care-health-summary.pdf',
         action: 'Download PDF',
       },
-      {
-        title: 'School and Sports Form 3',
-        description:
-          'This placeholder will be replaced with the final form name, instructions, and PDF download.',
-      },
     ],
     contactText:
       'For questions about appointments or paperwork for an upcoming activity, call the PYAM appointment team.',
