@@ -113,6 +113,7 @@ function PrescriptionRefillPage() {
           <article className="detail-section-card">
             <h2>Important refill policies</h2>
             <ul className="stacked-list refill-checklist">
+              <li>Please provide all requested information that is required to process your request</li>
               <li>Messages are reviewed and processed during regular business hours.</li>
               <li>Medication checkups are required every 6 months for patients receiving ADD, ADHD, Anxiety or Depression prescriptions.</li>
               <li>Patients starting, restarting, or changing a medication or dosage must be seen three weeks after starting the prescription.</li>
