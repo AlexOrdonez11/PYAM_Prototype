@@ -1308,7 +1308,7 @@ button {
 }
 
 .refill-important-note p:last-child {
-  max-width: 92ch;
+  max-width: 132ch;
   margin: 0;
   color: #5d3c34;
 }
