@@ -84,8 +84,8 @@ function PrescriptionRefillPage() {
           <h2>Medication follow-up is required.</h2>
           <p>
             All ADD, ADHD, Anxiety and Depression patients who receive prescriptions are required to have
-            a medication checkup every six months. Patients starting or restarting a
-            prescription, or changing a medication or dosage, must be seen three weeks
+            a medication checkup every 6 months. Patients starting or restarting a
+            prescription, or changing a medication or dosage, must be seen 3 or 4 weeks
             after starting the new prescription. Failure to complete the required
             follow-up may cause the refill to be denied.
           </p>
