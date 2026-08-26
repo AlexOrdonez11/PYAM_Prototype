@@ -13,7 +13,7 @@ const steps = [
   },
   {
     title: 'Allow time for processing',
-    text: 'Allow 48 hours for electronic transmission to the pharmacy, excluding Saturdays, Sundays, and holidays. Prescriptions are processed during regular business hours.',
+    text: 'Allow 72 hours for electronic transmission to the pharmacy, excluding Saturdays, Sundays, and holidays. Prescriptions are processed during regular business hours.',
   },
 ]
 
