@@ -892,6 +892,7 @@ button {
 }
 
 .quick-actions {
+  align-items: center;
   margin-top: 0.9rem;
   gap: 0.65rem;
 }

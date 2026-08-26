@@ -44,7 +44,7 @@ const pageContent = {
     subtitle:
       'Find downloadable forms for school sports and other organized activities.',
     introduction:
-      'Download the 2026-2027 Minnesota State High School League sports physical form. Three additional school and sports forms will be added as soon as they are received.',
+      'Download the currently available school and sports forms below. One additional form will be added as soon as it is received.',
     formsHeading: 'School and sports forms',
     image: '/images/sports-forms-youth-soccer.jpg',
     imageAlt: 'Young soccer player holding a ball on the field',
@@ -58,14 +58,18 @@ const pageContent = {
         action: 'Download PDF',
       },
       {
-        title: 'School and Sports Form 1',
+        title: 'Authorization for Administration of Medication',
         description:
-          'This placeholder will be replaced with the final form name, instructions, and PDF download.',
+          'Authorization form for medication to be administered at school during the 2026-2027 school year.',
+        href: '/forms/authorization-for-administration-of-medication.pdf',
+        action: 'Download PDF',
       },
       {
-        title: 'School and Sports Form 2',
+        title: 'Day Care Health Summary',
         description:
-          'This placeholder will be replaced with the final form name, instructions, and PDF download.',
+          'Health care summary for a child care program, to be completed by a health care provider.',
+        href: '/forms/day-care-health-summary.pdf',
+        action: 'Download PDF',
       },
       {
         title: 'School and Sports Form 3',
