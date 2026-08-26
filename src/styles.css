@@ -1247,6 +1247,16 @@ button {
   object-position: center;
 }
 
+.resource-guidance-note {
+  margin: 1.2rem 0 0;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(15, 96, 115, 0.14);
+  border-radius: 18px;
+  background: rgba(231, 246, 245, 0.72);
+  color: #34546f;
+  font-weight: 650;
+}
+
 .portal-step-card h2,
 .portal-resource-card h2,
 .telemedicine-info-card h2,

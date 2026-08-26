@@ -42,12 +42,34 @@ const pageContent = {
     eyebrow: 'School and Sports Forms',
     title: 'School and sports forms.',
     subtitle:
-      'Find downloadable forms for school sports and other organized activities.',
+      'Help your child get ready for school, athletics, day care, and other activities with the paperwork their program requests.',
     introduction:
       'Download the currently available school and sports forms below. One additional form will be added as soon as it is received.',
     formsHeading: 'School and sports forms',
     image: '/images/sports-forms-youth-soccer.jpg',
     imageAlt: 'Young soccer player holding a ball on the field',
+    guide: {
+      eyebrow: 'Preparing for school and activities',
+      title: 'Make the paperwork part of your appointment plan.',
+      introduction:
+        'School and activity forms help families share the information requested by teachers, coaches, nurses, and child care programs. Preparing the correct paperwork before the visit gives your child’s care team more time to review it with you.',
+      steps: [
+        {
+          title: 'Download the correct form',
+          text: 'Choose the form requested by your school, team, or child care program. Download and print every page before the appointment.',
+        },
+        {
+          title: 'Complete the family sections',
+          text: 'Fill in the student information, health history, and parent or guardian signatures. Leave sections marked for a clinician or health care provider blank.',
+        },
+        {
+          title: 'Bring it to the clinic',
+          text: 'Bring the printed form and any instructions from the school or program to the appointment. Provider completion may require an examination, additional information, or follow-up.',
+        },
+      ],
+      note:
+        'Plan ahead when possible. School and sports deadlines can be busy, and some paperwork may not be completed on the same day it is received.',
+    },
     cardLabel: 'School and Sports Form',
     forms: [
       {
@@ -73,7 +95,7 @@ const pageContent = {
       },
     ],
     contactText:
-      'For questions about appointments or paperwork for an upcoming activity, call the PYAM appointment team.',
+      'If the form requires a physical examination or provider review, call the PYAM appointment team before bringing it to the clinic.',
     primaryAction: {
       label: 'Call (651) 256-6714',
       href: 'tel:6512566714',
@@ -123,6 +145,28 @@ function ResourceFormsPage({ page }) {
           </div>
         </div>
       </section>
+
+      {content.guide ? (
+        <section className="section shell resource-guidance-section">
+          <div className="section-heading reveal-on-scroll">
+            <p className="eyebrow">{content.guide.eyebrow}</p>
+            <h2>{content.guide.title}</h2>
+            <p>{content.guide.introduction}</p>
+          </div>
+
+          <div className="portal-step-grid reveal-on-scroll">
+            {content.guide.steps.map((step, index) => (
+              <article className="detail-section-card portal-step-card" key={step.title}>
+                <span className="portal-step-number" aria-hidden="true">{index + 1}</span>
+                <h2>{step.title}</h2>
+                <p>{step.text}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="resource-guidance-note reveal-on-scroll">{content.guide.note}</p>
+        </section>
+      ) : null}
 
       <section className="section shell section-soft-alt resource-forms-section">
         <div className="section-heading reveal-on-scroll">
