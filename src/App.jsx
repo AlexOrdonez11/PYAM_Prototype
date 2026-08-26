@@ -16,6 +16,7 @@ import SchedulePage from './pages/SchedulePage'
 import TelemedicinePage from './pages/TelemedicinePage'
 import NotFoundPage from './pages/NotFoundPage'
 import BackToSchoolPage from './pages/BackToSchoolPage'
+import { MedicalRecordsPage, SportsFormsPage } from './pages/ResourceFormsPage'
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
           <Route path="/back-to-school" element={<BackToSchoolPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/patient-portal" element={<PatientPortalPage />} />
+          <Route path="/medical-records" element={<MedicalRecordsPage />} />
+          <Route path="/sports-forms" element={<SportsFormsPage />} />
           <Route path="/telemedicine" element={<TelemedicinePage />} />
           <Route path="/providers" element={<ProvidersPage />} />
           <Route path="/providers/:providerSlug" element={<ProviderDetailPage />} />

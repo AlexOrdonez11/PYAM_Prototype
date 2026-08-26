@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const portalLogin = 'https://www.followmyhealth.com/Login/Home/Index?authproviders=0&returnArea=PatientAccess#!/default'
 
 const portalResources = [
@@ -131,6 +133,7 @@ function PatientPortalPage() {
             <p>Call (651) 256-6717 or email medicalrecords@pyam.com for record requests and documentation questions.</p>
           </div>
           <div className="page-action-row">
+            <Link className="button button-light" to="/medical-records">View medical records forms</Link>
             <a className="button button-light" href="tel:6512566717">Call medical records</a>
             <a className="button button-light" href="mailto:medicalrecords@pyam.com">Send an email</a>
           </div>

@@ -34,6 +34,11 @@ export const navigation = [
   {
     label: 'Patient Portal',
     to: '/patient-portal',
+    children: [
+      { label: 'Patient Portal', to: '/patient-portal' },
+      { label: 'Medical Records', to: '/medical-records' },
+      { label: 'Sports Forms', to: '/sports-forms' },
+    ],
   },
   { label: 'News', to: '/news' },
   { label: 'Contact', to: '/contact' },
@@ -82,6 +87,8 @@ export const sitemapLinks = [
   { label: 'Latest News', to: '/news' },
   { label: 'All News', to: '/news' },
   { label: 'Patient Portal', to: '/patient-portal' },
+  { label: 'Medical Records', to: '/medical-records' },
+  { label: 'Sports Forms', to: '/sports-forms' },
   { label: 'Contact', to: '/contact' },
 ]
 

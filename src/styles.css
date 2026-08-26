@@ -1209,6 +1209,22 @@ button {
   align-content: start;
 }
 
+.resource-form-placeholder {
+  min-height: 22rem;
+}
+
+.form-placeholder-action {
+  align-self: end;
+  margin-top: auto;
+  cursor: default;
+  opacity: 0.68;
+  pointer-events: none;
+}
+
+.resource-forms-hero-media img {
+  object-position: center;
+}
+
 .portal-step-card h2,
 .portal-resource-card h2,
 .telemedicine-info-card h2,

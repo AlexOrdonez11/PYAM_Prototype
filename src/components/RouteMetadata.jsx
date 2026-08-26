@@ -28,6 +28,15 @@ const staticMetadata = {
     title: `Patient Portal | ${siteName}`,
     description: 'Access FollowMyHealth and download PYAM patient portal registration and proxy-access forms.',
   },
+  '/medical-records': {
+    title: `Medical Records Forms | ${siteName}`,
+    description: 'Find PYAM medical records forms and contact information for patient documentation requests.',
+  },
+  '/sports-forms': {
+    title: `Sports Forms | ${siteName}`,
+    description: 'Find PYAM sports and activity forms for children, teens, and young adults.',
+    image: '/images/service-well-child-height-chart.jpg',
+  },
   '/telemedicine': {
     title: `Telemedicine | ${siteName}`,
     description: 'Learn about telemedicine appointments for established PYAM patients and selected pediatric care needs.',

@@ -25,6 +25,20 @@ const searchablePages = [
   },
   {
     type: 'Page',
+    title: 'Medical Records Forms',
+    description: 'Find medical records forms and contact the Medical Records team.',
+    to: '/medical-records',
+    keywords: ['records request', 'documentation', 'release', 'forms', 'medical records'],
+  },
+  {
+    type: 'Page',
+    title: 'Sports Forms',
+    description: 'Find forms and paperwork for school sports and organized activities.',
+    to: '/sports-forms',
+    keywords: ['sports physical', 'activity', 'school', 'athletics', 'forms'],
+  },
+  {
+    type: 'Page',
     title: 'Telemedicine',
     description: 'Learn about virtual visits for established PYAM patients and selected care needs.',
     to: '/telemedicine',
