@@ -38,7 +38,7 @@ const staticMetadata = {
     image: '/images/service-well-child-height-chart.jpg',
   },
   '/prescription-refills': {
-    title: `ADD & ADHD Prescription Refills | ${siteName}`,
+    title: `Prescription Refills | ${siteName}`,
     description: 'Review PYAM ADD and ADHD prescription refill instructions, required voicemail information, timing, and follow-up guidance.',
     image: '/images/prescription-refill-family.jpg',
   },

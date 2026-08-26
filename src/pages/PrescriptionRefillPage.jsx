@@ -9,7 +9,7 @@ const steps = [
   },
   {
     title: 'Call the refill voicemail',
-    text: 'Call the ADD/ADHD prescription refill line at (651) 256-6796. Requests may be left 24 hours a day, seven days a week.',
+    text: 'Call the Prescription refill line at (651) 256-6796. Requests may be left 24 hours a day, seven days a week.',
   },
   {
     title: 'Allow time for processing',
@@ -39,7 +39,7 @@ function PrescriptionRefillPage() {
         </div>
         <div className="detail-hero-copy">
           <p className="eyebrow">Prescription Refills</p>
-          <h1>ADD and ADHD prescription refill instructions.</h1>
+          <h1>Prescription refill instructions.</h1>
           <p className="detail-subtitle">
             Prepare the required information, leave a complete voicemail, and allow
             enough time for your child’s refill to be processed.
@@ -83,7 +83,7 @@ function PrescriptionRefillPage() {
           <p className="card-kicker">Important</p>
           <h2>Medication follow-up is required.</h2>
           <p>
-            All ADD and ADHD patients who receive prescriptions are required to have
+            All ADD, ADHD, Anxiety and Depression patients who receive prescriptions are required to have
             a medication checkup every six months. Patients starting or restarting a
             prescription, or changing a medication or dosage, must be seen three weeks
             after starting the new prescription. Failure to complete the required
@@ -113,26 +113,10 @@ function PrescriptionRefillPage() {
           <article className="detail-section-card">
             <h2>Important refill policies</h2>
             <ul className="stacked-list refill-checklist">
-              <li>This voicemail line is for ADD and ADHD prescription refills only.</li>
               <li>Messages are reviewed and processed during regular business hours.</li>
-              <li>Medication checkups are required every six months for patients receiving ADD or ADHD prescriptions.</li>
+              <li>Medication checkups are required every 6 months for patients receiving ADD, ADHD, Anxiety or Depression prescriptions.</li>
               <li>Patients starting, restarting, or changing a medication or dosage must be seen three weeks after starting the prescription.</li>
             </ul>
-          </article>
-
-          <article className="detail-section-card detail-section-wide refill-help-card">
-            <div>
-              <p className="eyebrow">Questions or dosage concerns?</p>
-              <h2>Contact your primary provider.</h2>
-              <p>
-                The refill voicemail cannot be used for other prescriptions or other
-                care concerns. If there is a problem with the current dosage, call the
-                clinic and ask to speak with the patient’s primary provider.
-              </p>
-            </div>
-            <a className="button button-primary" href={`tel:${officeLine}`}>
-              Call (651) 227-7806
-            </a>
           </article>
         </div>
       </section>
