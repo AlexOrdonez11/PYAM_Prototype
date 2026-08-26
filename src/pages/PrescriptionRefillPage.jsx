@@ -78,6 +78,18 @@ function PrescriptionRefillPage() {
             </article>
           ))}
         </div>
+
+        <aside className="refill-important-note reveal-on-scroll" aria-label="Important medication follow-up requirement">
+          <p className="card-kicker">Important</p>
+          <h2>Medication follow-up is required.</h2>
+          <p>
+            All ADD and ADHD patients who receive prescriptions are required to have
+            a medication checkup every six months. Patients starting or restarting a
+            prescription, or changing a medication or dosage, must be seen three weeks
+            after starting the new prescription. Failure to complete the required
+            follow-up may cause the refill to be denied.
+          </p>
+        </aside>
       </section>
 
       <section className="section shell section-soft-alt refill-details-section">
