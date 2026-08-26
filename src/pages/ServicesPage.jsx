@@ -30,6 +30,25 @@ function ServicesPage() {
               </div>
             </article>
           ))}
+          <article className="listing-card">
+            <img
+              src="/images/sports-forms-youth-soccer.jpg"
+              alt="Young soccer player holding a ball on the field"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="listing-card-body">
+              <p className="card-kicker">Forms &amp; Downloads</p>
+              <h2>Sports Forms</h2>
+              <p>
+                Find downloadable forms and activity paperwork for school sports and
+                other organized activities.
+              </p>
+              <Link to="/sports-forms" className="button button-primary">
+                View sports forms
+              </Link>
+            </div>
+          </article>
         </div>
       </section>
     </main>

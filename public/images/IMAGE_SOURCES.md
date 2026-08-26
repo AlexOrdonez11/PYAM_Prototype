@@ -7,3 +7,11 @@
 - Photographer: Pavel Danilyuk
 - License: [Pexels License](https://www.pexels.com/license/)
 - Changes: Resized and compressed for website performance.
+
+## Youth soccer player
+
+- File: `sports-forms-youth-soccer.jpg`
+- Source: [Kid Holding the Soccer Ball](https://www.pexels.com/photo/kid-holding-the-soccer-ball-8941643/)
+- Photographer: Kampus Production
+- License: [Pexels License](https://www.pexels.com/license/)
+- Changes: Resized and compressed for website performance.

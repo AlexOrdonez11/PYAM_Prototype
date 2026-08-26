@@ -40,8 +40,8 @@ const pageContent = {
       'Find downloadable forms for school sports and other organized activities.',
     introduction:
       'Three downloadable sports forms will be available here. The final form names, instructions, and files will be added as soon as they are received.',
-    image: '/images/service-well-child-height-chart.jpg',
-    imageAlt: 'Child completing a height measurement during a well visit',
+    image: '/images/sports-forms-youth-soccer.jpg',
+    imageAlt: 'Young soccer player holding a ball on the field',
     cardLabel: 'Sports Form',
     formTitle: (number) => `Sports Form ${number}`,
     formDescription:
