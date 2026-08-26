@@ -184,6 +184,24 @@ function HomePage() {
                 </div>
               </article>
             ))}
+            <article className="service-card">
+              <img
+                src="/images/sports-forms-youth-soccer.jpg"
+                alt="Young soccer player holding a ball on the field"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="service-body">
+                <h3>School and Sports Forms</h3>
+                <p>
+                  Find downloadable forms and activity paperwork for school sports
+                  and other organized activities.
+                  <Link to="/sports-forms" className="section-link">
+                    &ensp;View forms
+                  </Link>
+                </p>
+              </div>
+            </article>
           </div>
         </section>
 

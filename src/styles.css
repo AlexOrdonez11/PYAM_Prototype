@@ -1221,6 +1221,11 @@ button {
   pointer-events: none;
 }
 
+.form-download-action {
+  align-self: end;
+  margin-top: auto;
+}
+
 .resource-forms-hero-media img {
   object-position: center;
 }

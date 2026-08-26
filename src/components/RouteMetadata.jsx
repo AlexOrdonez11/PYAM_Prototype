@@ -33,7 +33,7 @@ const staticMetadata = {
     description: 'Find PYAM medical records forms and contact information for patient documentation requests.',
   },
   '/sports-forms': {
-    title: `Sports Forms | ${siteName}`,
+    title: `School and Sports Forms | ${siteName}`,
     description: 'Find PYAM sports and activity forms for children, teens, and young adults.',
     image: '/images/service-well-child-height-chart.jpg',
   },

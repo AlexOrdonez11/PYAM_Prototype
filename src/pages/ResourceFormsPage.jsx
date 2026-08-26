@@ -8,13 +8,18 @@ const pageContent = {
     subtitle:
       'Find the forms you need to request records or manage patient documentation.',
     introduction:
-      'Three downloadable medical records forms will be available here. The final form names, instructions, and files will be added as soon as they are received.',
+      'A downloadable medical records form will be available here. The final form name, instructions, and file will be added as soon as it is received.',
+    formsHeading: 'Form downloads are coming soon.',
     image: '/images/medical-records-family-consultation.jpg',
     imageAlt: 'Pediatric clinician reviewing a document with a child and parent',
     cardLabel: 'Medical Records Form',
-    formTitle: (number) => `Medical Records Form ${number}`,
-    formDescription:
-      'This placeholder will be replaced with the final form name, instructions, and PDF download.',
+    forms: [
+      {
+        title: 'Medical Records Form',
+        description:
+          'This placeholder will be replaced with the final form name, instructions, and PDF download.',
+      },
+    ],
     contactText:
       'For help with record requests or patient documentation, contact the Medical Records team.',
     primaryAction: {
@@ -26,26 +31,48 @@ const pageContent = {
       href: 'mailto:medicalrecords@pyam.com',
     },
     relatedLabel: 'Looking for activity paperwork?',
-    relatedTitle: 'Visit the Sports Forms page.',
+    relatedTitle: 'Visit the School and Sports Forms page.',
     relatedText:
       'Sports-related form downloads will be organized separately so families can find the correct paperwork quickly.',
     relatedTo: '/sports-forms',
-    relatedAction: 'View sports forms',
+    relatedAction: 'View school and sports forms',
   },
   sportsForms: {
     pageClass: 'sports-forms-page',
-    eyebrow: 'Sports Forms',
-    title: 'Sports forms and activity paperwork.',
+    eyebrow: 'School and Sports Forms',
+    title: 'School and sports forms.',
     subtitle:
       'Find downloadable forms for school sports and other organized activities.',
     introduction:
-      'Three downloadable sports forms will be available here. The final form names, instructions, and files will be added as soon as they are received.',
+      'Download the 2026-2027 Minnesota State High School League sports physical form. Three additional school and sports forms will be added as soon as they are received.',
+    formsHeading: 'School and sports forms',
     image: '/images/sports-forms-youth-soccer.jpg',
     imageAlt: 'Young soccer player holding a ball on the field',
-    cardLabel: 'Sports Form',
-    formTitle: (number) => `Sports Form ${number}`,
-    formDescription:
-      'This placeholder will be replaced with the final form name, instructions, and PDF download.',
+    cardLabel: 'School and Sports Form',
+    forms: [
+      {
+        title: '2026-2027 Sports Physical Form',
+        description:
+          'Sports qualifying physical examination, health history, and medical eligibility paperwork.',
+        href: '/forms/2026-2027-sports-physical-form.pdf',
+        action: 'Download PDF',
+      },
+      {
+        title: 'School and Sports Form 1',
+        description:
+          'This placeholder will be replaced with the final form name, instructions, and PDF download.',
+      },
+      {
+        title: 'School and Sports Form 2',
+        description:
+          'This placeholder will be replaced with the final form name, instructions, and PDF download.',
+      },
+      {
+        title: 'School and Sports Form 3',
+        description:
+          'This placeholder will be replaced with the final form name, instructions, and PDF download.',
+      },
+    ],
     contactText:
       'For questions about appointments or paperwork for an upcoming activity, call the PYAM appointment team.',
     primaryAction: {
@@ -73,7 +100,6 @@ function PlaceholderIcon() {
 
 function ResourceFormsPage({ page }) {
   const content = pageContent[page]
-  const placeholders = [1, 2, 3]
 
   return (
     <main className={`interior-page resource-forms-page ${content.pageClass}`}>
@@ -102,20 +128,30 @@ function ResourceFormsPage({ page }) {
       <section className="section shell section-soft-alt resource-forms-section">
         <div className="section-heading reveal-on-scroll">
           <p className="eyebrow">Forms &amp; Downloads</p>
-          <h2>Form downloads are coming soon.</h2>
+          <h2>{content.formsHeading}</h2>
           <p>{content.introduction}</p>
         </div>
 
         <div className="portal-resource-grid reveal-on-scroll">
-          {placeholders.map((number) => (
-            <article className="detail-section-card portal-resource-card resource-form-placeholder" key={number}>
+          {content.forms.map((form) => (
+            <article className="detail-section-card portal-resource-card resource-form-placeholder" key={form.title}>
               <PlaceholderIcon />
               <p className="card-kicker">{content.cardLabel}</p>
-              <h2>{content.formTitle(number)}</h2>
-              <p>{content.formDescription}</p>
-              <span className="button button-secondary form-placeholder-action" aria-disabled="true">
-                Coming soon
-              </span>
+              <h2>{form.title}</h2>
+              <p>{form.description}</p>
+              {form.href ? (
+                <a
+                  className="button button-secondary form-download-action"
+                  href={form.href}
+                  download
+                >
+                  {form.action}
+                </a>
+              ) : (
+                <span className="button button-secondary form-placeholder-action" aria-disabled="true">
+                  Coming soon
+                </span>
+              )}
             </article>
           ))}
         </div>

@@ -39,13 +39,13 @@ function ServicesPage() {
             />
             <div className="listing-card-body">
               <p className="card-kicker">Forms &amp; Downloads</p>
-              <h2>Sports Forms</h2>
+              <h2>School and Sports Forms</h2>
               <p>
                 Find downloadable forms and activity paperwork for school sports and
                 other organized activities.
               </p>
               <Link to="/sports-forms" className="button button-primary">
-                View sports forms
+                View school and sports forms
               </Link>
             </div>
           </article>

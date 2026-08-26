@@ -32,7 +32,7 @@ const searchablePages = [
   },
   {
     type: 'Page',
-    title: 'Sports Forms',
+    title: 'School and Sports Forms',
     description: 'Find forms and paperwork for school sports and organized activities.',
     to: '/sports-forms',
     keywords: ['sports physical', 'activity', 'school', 'athletics', 'forms'],

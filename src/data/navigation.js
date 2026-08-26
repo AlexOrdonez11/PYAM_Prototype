@@ -37,18 +37,18 @@ export const navigation = [
     children: [
       { label: 'Patient Portal', to: '/patient-portal' },
       { label: 'Medical Records', to: '/medical-records' },
-      { label: 'Sports Forms', to: '/sports-forms' },
+      { label: 'School & Sports Forms', to: '/sports-forms' },
     ],
   },
   { label: 'News', to: '/news' },
   { label: 'Contact', to: '/contact' },
 ]
 
-export const schedulingUrl = 'https://phreesia.me/PYAMReturningPatient'
+export const schedulingUrl = 'https://phreesia.me/PYAMReturningPatientPYAM'
 
 export const quickActions = [
   {
-    label: 'Well Exam',
+    label: 'Well Child Exams',
     description:
       'Schedule a routine preventive visit to review growth, development, overall health, and age-appropriate care needs.',
     href: schedulingUrl,
@@ -57,19 +57,25 @@ export const quickActions = [
     label: 'Sick Visit',
     description:
       'Choose this option when your child needs timely evaluation for an illness, new symptoms, or another immediate health concern.',
-    href: 'https://phreesia.me/PYAMsickvisit',
+    href: 'https://phreesia.me/PYAMsickvisitPYAM',
   },
   {
-    label: 'Medication Check',
+    label: 'Medication Checks',
     description:
       'Book a follow-up to review how a current medication is working and discuss dosage, side effects, or ongoing management.',
-    href: 'https://phreesia.me/PYAMmedicationchecks',
+    href: 'https://phreesia.me/PYAMmedicationchecksPYAM',
   },
   {
-    label: 'Eagan Saturday Visit',
+    label: 'Saturday Visits',
     description:
       'Request an eligible Saturday medical appointment at our Eagan office, available from 9:00 AM to 4:00 PM.',
-    href: 'https://phreesia.me/PYAMSaturdayVisits',
+    href: 'https://phreesia.me/PYAMSaturdayVisitsPYAM',
+  },
+  {
+    label: 'Well Exams & Med Checks',
+    description:
+      'Schedule a combined well-child examination and medication follow-up in one visit.',
+    href: 'https://phreesia.me/PYAMwellexamcheck',
   },
 ]
 
@@ -88,7 +94,7 @@ export const sitemapLinks = [
   { label: 'All News', to: '/news' },
   { label: 'Patient Portal', to: '/patient-portal' },
   { label: 'Medical Records', to: '/medical-records' },
-  { label: 'Sports Forms', to: '/sports-forms' },
+  { label: 'School & Sports Forms', to: '/sports-forms' },
   { label: 'Contact', to: '/contact' },
 ]
 
