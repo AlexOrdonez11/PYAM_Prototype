@@ -9,8 +9,8 @@ const pageContent = {
       'Find the forms you need to request records or manage patient documentation.',
     introduction:
       'Three downloadable medical records forms will be available here. The final form names, instructions, and files will be added as soon as they are received.',
-    image: '/images/i-health-768x576.jpg',
-    imageAlt: 'i-Health patient care network',
+    image: '/images/medical-records-family-consultation.jpg',
+    imageAlt: 'Pediatric clinician reviewing a document with a child and parent',
     cardLabel: 'Medical Records Form',
     formTitle: (number) => `Medical Records Form ${number}`,
     formDescription:
