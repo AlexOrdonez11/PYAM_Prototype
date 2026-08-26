@@ -43,6 +43,8 @@ const pageContent = {
     title: 'School and sports forms.',
     subtitle:
       'Help your child get ready for school, athletics, day care, and other activities with the paperwork their program requests.',
+    heroDetail:
+      'From sports physicals and medication authorizations to day care health summaries, having the correct form ready helps families stay organized and gives schools, coaches, and care programs the information they need.',
     introduction:
       'Download the currently available school and sports forms below. One additional form will be added as soon as it is received.',
     formsHeading: 'School and sports forms',
@@ -132,6 +134,7 @@ function ResourceFormsPage({ page }) {
           <p className="eyebrow">{content.eyebrow}</p>
           <h1>{content.title}</h1>
           <p className="detail-subtitle">{content.subtitle}</p>
+          {content.heroDetail ? <p>{content.heroDetail}</p> : null}
           <p>{content.contactText}</p>
           <div className="page-action-row">
             <a className="button button-primary" href={content.primaryAction.href}>
